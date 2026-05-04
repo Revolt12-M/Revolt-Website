@@ -1,0 +1,625 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Revolt Recruiting · The deepest contract network in the industry</title>
+  <meta name="description" content="190+ firm contracts. 40 negotiation points per deal. A principal in every meeting until your first onboarding day. The last recruiter call you ever make.">
+
+  <link rel="canonical" href="https://revoltfinancial.com/advisor-recruiting.html">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Revolt">
+  <meta property="og:url" content="https://revoltfinancial.com/advisor-recruiting.html">
+  <meta property="og:title" content="Revolt Recruiting · The deepest contract network in the industry">
+  <meta property="og:description" content="190+ firm contracts. 40 negotiation points per deal. A principal in every meeting until your first onboarding day. The last recruiter call you ever make.">
+  <meta property="og:image" content="https://revoltfinancial.com/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Revolt Recruiting. 190 firm contracts. A principal in every meeting.">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Revolt Recruiting · The deepest contract network in the industry">
+  <meta name="twitter:description" content="190+ firm contracts. 40 negotiation points per deal. A principal in every meeting until your first onboarding day. The last recruiter call you ever make.">
+  <meta name="twitter:image" content="https://revoltfinancial.com/assets/og-image.png">
+  <meta name="twitter:image:alt" content="Revolt Recruiting. 190 firm contracts. A principal in every meeting.">
+
+  <!-- Theme -->
+  <meta name="theme-color" content="#0B0E13">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap">
+  <link rel="preload" href="assets/fonts/DegularDisplay-Bold.otf" as="font" type="font/otf" crossorigin>
+  <link rel="stylesheet" href="assets/css/revolt.css?v=3">
+  <style>
+    /* Page-specific positioning. Inline scope only. */
+    .ar-hero .backdrop-num { right: -3vw; bottom: -10vh; font-size: 22vw; }
+    .ar-buckets-num { right: -2vw; top: -40px; font-size: 22vw; color: var(--mustard); opacity: 0.05; }
+    .ar-rule3-num   { left: 50%; top: 50%; transform: translate(-50%, -50%); font-size: 34vw; color: var(--mustard); opacity: 0.06; }
+
+    /* Four Buckets — 2x2 grid (signature framework) */
+    .buckets-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--gap-xl);
+      margin-top: 64px;
+    }
+    .bucket {
+      border: 1px solid var(--cream-30, rgba(244,238,225,0.18));
+      padding: var(--gap-xl);
+      display: flex;
+      flex-direction: column;
+      gap: var(--gap-md);
+      transition: border-color 0.3s var(--ease);
+    }
+    .bucket:hover { border-color: var(--mustard); }
+    .bucket__num {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.04em;
+      color: var(--mustard);
+    }
+    .bucket__name {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: 28px;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+      color: var(--fg);
+    }
+    .bucket__spec { display: flex; flex-direction: column; margin-top: var(--gap-sm); }
+    .bucket__spec .compare__row {
+      grid-template-columns: 140px 1fr;
+      padding: var(--gap-sm) 0;
+      gap: var(--gap-md);
+      border-bottom-color: var(--cream-30, rgba(244,238,225,0.12));
+    }
+    .bucket__spec .compare__row:last-child { border-bottom: 0; }
+    .bucket__spec .industry {
+      font-family: var(--body);
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding-right: 0;
+    }
+    .bucket__spec .revolt {
+      font-family: var(--body);
+      font-weight: 400;
+      border-left: 0;
+      padding-left: 0;
+    }
+
+    /* Process — vertical numbered list, 7 stages */
+    .process-list { margin-top: 64px; display: flex; flex-direction: column; }
+    .process-stage {
+      display: grid;
+      grid-template-columns: 64px 1fr 140px;
+      gap: var(--gap-lg);
+      padding: var(--gap-lg) 0;
+      border-bottom: 1px solid var(--mustard);
+      align-items: baseline;
+    }
+    .process-stage:last-child { border-bottom: 0; }
+    .process-stage__num {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.04em;
+      color: var(--mustard);
+    }
+    .process-stage__body { display: flex; flex-direction: column; gap: var(--gap-sm); }
+    .process-stage__title {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 1.15;
+      color: var(--fg);
+    }
+    .process-stage__desc {
+      font-family: var(--body);
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--ink-70, var(--slate-60));
+      max-width: 60ch;
+    }
+    .process-stage__time {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.04em;
+      color: var(--mustard);
+      text-align: right;
+    }
+
+    /* Case study — split + 2x2 data grid */
+    .case-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: var(--gap-2xl);
+      align-items: start;
+    }
+    .data-grid-2x2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border-top: 1px solid var(--cream-30, rgba(244,238,225,0.18));
+      border-left: 1px solid var(--cream-30, rgba(244,238,225,0.18));
+    }
+    .data-cell {
+      border-right: 1px solid var(--cream-30, rgba(244,238,225,0.18));
+      border-bottom: 1px solid var(--cream-30, rgba(244,238,225,0.18));
+      padding: var(--gap-xl) var(--gap-lg);
+      display: flex;
+      flex-direction: column;
+      gap: var(--gap-sm);
+      min-height: 180px;
+      justify-content: flex-end;
+    }
+    .data-cell__figure {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: clamp(40px, 5vw, 64px);
+      line-height: 1;
+      letter-spacing: -0.02em;
+      color: var(--fg);
+    }
+    .data-cell__label {
+      font-family: var(--body);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--mustard);
+    }
+
+    /* What You Get — 5 numbered rows, mustard left border */
+    .get-row {
+      display: grid;
+      grid-template-columns: 64px 1fr;
+      gap: var(--gap-lg);
+      padding: var(--gap-lg) 0 var(--gap-lg) var(--gap-lg);
+      border-left: 2px solid var(--mustard);
+      border-bottom: 1px solid var(--cream-30, rgba(244,238,225,0.18));
+      align-items: baseline;
+    }
+    .get-row:last-child { border-bottom: 0; }
+    .get-row__num {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.04em;
+      color: var(--mustard);
+    }
+    .get-row__body {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: clamp(22px, 2.4vw, 30px);
+      line-height: 1.2;
+      color: var(--fg);
+    }
+    .get-row__body em {
+      display: block;
+      font-style: normal;
+      font-family: var(--body);
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--cream-80, var(--slate-60));
+      margin-top: var(--gap-sm);
+    }
+
+    @media (max-width: 900px) {
+      .buckets-grid { grid-template-columns: 1fr; gap: var(--gap-lg); }
+      .process-stage { grid-template-columns: 48px 1fr; }
+      .process-stage__time { grid-column: 2 / 3; text-align: left; }
+      .case-grid { grid-template-columns: 1fr; }
+      .get-row { grid-template-columns: 48px 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAV (canonical — active: Recruiting) ===== -->
+  <nav class="nav" data-scroll-state="top" aria-label="Primary">
+    <a class="nav__logo" href="/">
+      <img src="assets/images/revolt-logo-stacked.png" alt="Revolt">
+    </a>
+    <ul class="nav__links">
+      <li><a href="/advisor-recruiting.html" aria-current="page">Recruiting</a></li>
+      <li><a href="/team-recruiting.html">Team Recruiting</a></li>
+      <li><a href="/ma.html">M&amp;A</a></li>
+      <li><a href="/platform.html">Platform</a></li>
+    </ul>
+    <a class="btn-primary" href="#contact">Contact Us</a>
+    <button class="nav__toggle" type="button" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav__mobile" role="menu">
+      <a href="/advisor-recruiting.html">Recruiting</a>
+      <a href="/team-recruiting.html">Team Recruiting</a>
+      <a href="/ma.html">M&amp;A</a>
+      <a href="/platform.html">Platform</a>
+      <a class="btn-primary" href="#contact">Contact Us</a>
+    </div>
+  </nav>
+
+  <main class="page" data-screen-label="02 Revolt Recruiting">
+
+    <!-- ===== 3.1 Hero (black over Two_People_Blue) ===== -->
+    <section class="hero ar-hero bg-black" data-screen-label="3.1 Hero">
+      <div class="hero__photo" style="background-image: url('assets/images/brand/Two_People_Blue.jpg');" role="img" aria-label="Two advisors in conversation, grayscale"></div>
+      <div class="hero__overlay"></div>
+      <span class="backdrop-num" aria-hidden="true">190</span>
+      <div class="hero__inner container">
+        <span class="eyebrow"><span class="rule"></span>Revolt Recruiting</span>
+        <h1 class="h1" style="margin-top: 32px; max-width: 22ch;">You are being shown <span class="strike">three firms</span>. There are one hundred and ninety.</h1>
+        <p class="lead" style="margin-top: 32px; max-width: 64ch;">The last recruiter call you ever make. 190 firm contracts. 40 negotiation points per deal. A principal in every meeting until your first onboarding day.</p>
+        <div class="cta" style="display: flex; flex-wrap: wrap; gap: var(--gap-md); margin-top: 40px;">
+          <a class="btn-primary" href="#contact">Start a private conversation</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 3.2 The Industry Is Structurally Broken (cream) ===== -->
+    <section class="section bg-cream" data-screen-label="3.2 Problem">
+      <div class="container">
+        <span class="eyebrow" data-reveal><span class="rule"></span>The problem</span>
+        <h2 class="h2" data-reveal data-stagger="1" style="margin-top: 24px; max-width: 22ch;">Most advisors get sold. We get hired.</h2>
+        <div style="margin-top: 64px;" data-reveal data-stagger="2">
+          <div class="compare__row">
+            <span class="industry">3 to 5 firm contracts</span>
+            <span class="revolt">190+ firm contracts, audited annually</span>
+          </div>
+          <div class="compare__row">
+            <span class="industry">Phone calls and email blasts</span>
+            <span class="revolt">Principal-led intake, in person where it matters</span>
+          </div>
+          <div class="compare__row">
+            <span class="industry">Submit a name, wait for an offer</span>
+            <span class="revolt">Custom 40-point deal structures</span>
+          </div>
+          <div class="compare__row">
+            <span class="industry">Junior associate runs the call</span>
+            <span class="revolt">Principal in every meeting through onboarding day one</span>
+          </div>
+          <div class="compare__row">
+            <span class="industry">10% commission, paid by the firm</span>
+            <span class="revolt">Contingent on you staying. We win when you stay.</span>
+          </div>
+          <div class="compare__row">
+            <span class="industry">Press release at signature</span>
+            <span class="revolt">Never publicized. Discreet by default.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 3.3 The Four Structural Buckets (black, signature framework) ===== -->
+    <section class="section bg-black" data-screen-label="3.3 Four Buckets">
+      <span class="backdrop-num ar-buckets-num" aria-hidden="true">04</span>
+      <div class="container" style="position: relative;">
+        <span class="eyebrow" data-reveal><span class="rule"></span>The framework</span>
+        <h2 class="h2" data-reveal data-stagger="1" style="margin-top: 24px; max-width: 26ch;">Most advisors get pitched from inside one bucket without knowing the other three exist.</h2>
+        <p class="lead" data-reveal data-stagger="2" style="margin-top: 32px; max-width: 64ch;">Before the firm question, there is a structure question. The right move is the right structure first, the right firm second. Here are the four.</p>
+
+        <div class="buckets-grid">
+          <article class="bucket" data-reveal data-stagger="1">
+            <span class="bucket__num">01</span>
+            <span class="bucket__name">W-2 at a major firm</span>
+            <div class="bucket__spec">
+              <div class="compare__row"><span class="industry">Economics</span><span class="revolt">Salary + production grid</span></div>
+              <div class="compare__row"><span class="industry">Autonomy</span><span class="revolt">Low. Compliance dictates.</span></div>
+              <div class="compare__row"><span class="industry">Equity</span><span class="revolt">None in firm.</span></div>
+              <div class="compare__row"><span class="industry">Best fit</span><span class="revolt">Advisors who want infrastructure and scale and accept the cap.</span></div>
+            </div>
+          </article>
+
+          <article class="bucket" data-reveal data-stagger="2">
+            <span class="bucket__num">02</span>
+            <span class="bucket__name">Independent BD / Insurance BD</span>
+            <div class="bucket__spec">
+              <div class="compare__row"><span class="industry">Economics</span><span class="revolt">80–95% payout grid</span></div>
+              <div class="compare__row"><span class="industry">Autonomy</span><span class="revolt">Medium. Platform dictates.</span></div>
+              <div class="compare__row"><span class="industry">Equity</span><span class="revolt">None in firm; book is yours.</span></div>
+              <div class="compare__row"><span class="industry">Best fit</span><span class="revolt">Advisors who want grid economics and moderate freedom.</span></div>
+            </div>
+          </article>
+
+          <article class="bucket" data-reveal data-stagger="3">
+            <span class="bucket__num">03</span>
+            <span class="bucket__name">Hybrid RIA</span>
+            <div class="bucket__spec">
+              <div class="compare__row"><span class="industry">Economics</span><span class="revolt">RIA fees + BD commissions</span></div>
+              <div class="compare__row"><span class="industry">Autonomy</span><span class="revolt">High. You set the platform.</span></div>
+              <div class="compare__row"><span class="industry">Equity</span><span class="revolt">Build practice equity.</span></div>
+              <div class="compare__row"><span class="industry">Best fit</span><span class="revolt">Advisors with both fee + commission books who want optionality.</span></div>
+            </div>
+          </article>
+
+          <article class="bucket" data-reveal data-stagger="4">
+            <span class="bucket__num">04</span>
+            <span class="bucket__name">RIA</span>
+            <div class="bucket__spec">
+              <div class="compare__row"><span class="industry">Economics</span><span class="revolt">100% of revenue, fee-only</span></div>
+              <div class="compare__row"><span class="industry">Autonomy</span><span class="revolt">Highest. You are the platform.</span></div>
+              <div class="compare__row"><span class="industry">Equity</span><span class="revolt">Full practice equity.</span></div>
+              <div class="compare__row"><span class="industry">Best fit</span><span class="revolt">Advisors building a generational firm.</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 3.4 The Process (tan) — 7-stage vertical numbered list ===== -->
+    <section class="section bg-tan" data-screen-label="3.4 Process">
+      <div class="container">
+        <span class="eyebrow" data-reveal><span class="rule"></span>What a Revolt engagement looks like</span>
+        <h2 class="h2" data-reveal data-stagger="1" style="margin-top: 24px; max-width: 22ch;">Seven stages. Ninety days, typically.</h2>
+        <div class="process-list" data-reveal data-stagger="2">
+          <div class="process-stage">
+            <span class="process-stage__num">01</span>
+            <div class="process-stage__body">
+              <span class="process-stage__title">Intake</span>
+              <span class="process-stage__desc">Thirty minutes. We listen. You decide whether to keep talking.</span>
+            </div>
+            <span class="process-stage__time">30 min</span>
+          </div>
+          <div class="process-stage">
+            <span class="process-stage__num">02</span>
+            <div class="process-stage__body">
+              <span class="process-stage__title">Practice mapping</span>
+              <span class="process-stage__desc">We document what you have actually built: production, AUM, client mix, team, real estate.</span>
+            </div>
+            <span class="process-stage__time">1 week</span>
+          </div>
+          <div class="process-stage">
+            <span class="process-stage__num">03</span>
+            <div class="process-stage__body">
+              <span class="process-stage__title">Bucket selection</span>
+              <span class="process-stage__desc">The structural question first. Right structure, then right firm.</span>
+            </div>
+            <span class="process-stage__time">Week 2</span>
+          </div>
+          <div class="process-stage">
+            <span class="process-stage__num">04</span>
+            <div class="process-stage__body">
+              <span class="process-stage__title">Firm shortlist</span>
+              <span class="process-stage__desc">Three firms, never more. Each one a real fit, not filler.</span>
+            </div>
+            <span class="process-stage__time">Week 3</span>
+          </div>
+          <div class="process-stage">
+            <span class="process-stage__num">05</span>
+            <div class="process-stage__body">
+              <span class="process-stage__title">Term sheet review</span>
+              <span class="process-stage__desc">Apples-to-apples comparison. Net-of-cost economics, not headline grids.</span>
+            </div>
+            <span class="process-stage__time">Week 4</span>
+          </div>
+          <div class="process-stage">
+            <span class="process-stage__num">06</span>
+            <div class="process-stage__body">
+              <span class="process-stage__title">Negotiation</span>
+              <span class="process-stage__desc">Up to 40 points per deal. Valuation, transition, platform, model fees, real estate.</span>
+            </div>
+            <span class="process-stage__time">Weeks 5–10</span>
+          </div>
+          <div class="process-stage">
+            <span class="process-stage__num">07</span>
+            <div class="process-stage__body">
+              <span class="process-stage__title">Onboarding</span>
+              <span class="process-stage__desc">Principal stays in the room through your first day at the new firm.</span>
+            </div>
+            <span class="process-stage__time">Days 1–90</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 3.5 Rule of Three (cream, big "3") ===== -->
+    <section class="section bg-cream" data-screen-label="3.5 Rule of Three">
+      <span class="backdrop-num ar-rule3-num" aria-hidden="true">3</span>
+      <div class="container" style="position: relative;">
+        <span class="eyebrow" data-reveal><span class="rule"></span>The principle</span>
+        <h2 class="h2" data-reveal data-stagger="1" style="margin-top: 24px; max-width: 24ch;">We will never put more than three firms in front of you.</h2>
+        <p class="lead" data-reveal data-stagger="2" style="margin-top: 32px; max-width: 64ch;">Volume is what recruiters do when they cannot pick. Five firms, eight firms, ten firms. The generosity is a tell. By the time we sit down with you, the work of narrowing has already been done. What you see is the short list. The reasons are ours to defend.</p>
+      </div>
+    </section>
+
+    <!-- ===== 3.6 See your offer before you take the call (tan) ===== -->
+    <section class="section bg-tan" data-screen-label="3.6 See your offer">
+      <div class="container">
+        <span class="eyebrow" data-reveal><span class="rule"></span>The link</span>
+        <h2 class="h2" data-reveal data-stagger="1" style="margin-top: 24px; max-width: 22ch;">See your offer before you take the call.</h2>
+        <p class="lead" data-reveal data-stagger="2" style="margin-top: 32px; max-width: 64ch;">After the first conversation, your recruiter generates a private link. You enter your practice profile. The link surfaces real economics across 190+ firms in one screen. Every offer. Every line. Every fee.</p>
+        <p class="lead" data-reveal data-stagger="3" style="margin-top: 24px; max-width: 64ch; color: var(--slate-80);">We are not a platform. We are a firm with tools sharper than yours. We built the data because we have done the deals. The link is the first conversation, made tangible.</p>
+        <div data-reveal data-stagger="4" style="margin-top: 40px;">
+          <a class="btn-ghost" href="/platform.html">Learn more about how the link works &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 3.7 Anonymized Case Study (olive) ===== -->
+    <section class="section bg-olive" data-screen-label="3.7 Case Study">
+      <div class="container">
+        <div class="case-grid">
+          <div data-reveal>
+            <span class="eyebrow"><span class="rule"></span>Recent work</span>
+            <h2 class="h2" style="margin-top: 24px; max-width: 22ch;">$50M Maryland team. Stuck for two years. Ninety days to signed.</h2>
+            <p class="lead" style="margin-top: 32px; max-width: 60ch;">The team had been in conversation with two retained recruiters for over a year before they reached us. Both recruiters held the same handful of firm relationships. The deal economics on the table were a 110% transition with a five-year retention. Standard. We ran a 40-point negotiation. The final structure included a higher transition, a shorter retention, real-estate concessions, and a custom equity ramp the firm had never offered before. Materially higher economic value. Materially less risk on the back end. Six months from intake to signature.</p>
+          </div>
+          <div class="data-grid-2x2" data-reveal data-stagger="1">
+            <div class="data-cell">
+              <span class="data-cell__figure">$50M</span>
+              <span class="data-cell__label">Production</span>
+            </div>
+            <div class="data-cell">
+              <span class="data-cell__figure">40</span>
+              <span class="data-cell__label">Negotiation points</span>
+            </div>
+            <div class="data-cell">
+              <span class="data-cell__figure">4</span>
+              <span class="data-cell__label">Custom terms unlocked</span>
+            </div>
+            <div class="data-cell">
+              <span class="data-cell__figure">6 mo.</span>
+              <span class="data-cell__label">Time to close</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 3.8 What You Get (black) — 5 numbered rows ===== -->
+    <section class="section bg-black" data-screen-label="3.8 What You Get">
+      <div class="container">
+        <span class="eyebrow" data-reveal><span class="rule"></span>What you get</span>
+        <h2 class="h2" data-reveal data-stagger="1" style="margin-top: 24px; max-width: 24ch;">Five things you cannot get from a retained recruiter.</h2>
+        <div style="margin-top: 64px;">
+          <div class="get-row" data-reveal data-stagger="1">
+            <span class="get-row__num">01</span>
+            <span class="get-row__body">The full firm market.<em>190+ contracts vs. 3–5.</em></span>
+          </div>
+          <div class="get-row" data-reveal data-stagger="2">
+            <span class="get-row__num">02</span>
+            <span class="get-row__body">A principal, not an associate.<em>Every meeting, intake to onboarding.</em></span>
+          </div>
+          <div class="get-row" data-reveal data-stagger="3">
+            <span class="get-row__num">03</span>
+            <span class="get-row__body">Custom deal terms.<em>40 negotiation points. Standard recruiters submit a name.</em></span>
+          </div>
+          <div class="get-row" data-reveal data-stagger="4">
+            <span class="get-row__num">04</span>
+            <span class="get-row__body">Skin in the game.<em>Our fee is contingent on you staying through retention.</em></span>
+          </div>
+          <div class="get-row" data-reveal data-stagger="5">
+            <span class="get-row__num">05</span>
+            <span class="get-row__body">Confidentiality.<em>No press release. No leaks. Your team finds out when you decide.</em></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 3.9 Confidentiality block (cream) — verbatim from V2 PRD §3.9 ===== -->
+    <section class="section bg-cream" data-screen-label="3.9 Confidentiality">
+      <div class="container">
+        <span class="eyebrow" data-reveal><span class="rule"></span>The operating principle</span>
+        <h2 class="h2" data-reveal data-stagger="1" style="margin-top: 24px; max-width: 24ch;">You will not find named testimonials on this website.</h2>
+        <div data-reveal data-stagger="2" style="margin-top: 40px; max-width: 68ch;">
+          <p class="lead" style="margin-bottom: 24px;">There are two reasons for that. The first is that the financial services industry runs on discretion. The advisors and firms we work with do not want their transitions turned into marketing content, and we are not willing to trade their privacy for our lead generation.</p>
+          <p class="lead" style="margin-bottom: 24px;">The second reason is simpler: when your name is the one on the deal, you will not want it on a website either. The same confidentiality that protects our past clients will protect you.</p>
+          <p class="lead">What we will show you is the work itself. Real deal structures (anonymized). Real economics. Real patterns from hundreds of transitions. The kind of intelligence most recruiters will not share because they do not have it. If you want names, there are firms that will give you names. We will give you a track record, a process, and a handshake. That is what we trade on.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 3.10 FAQ (cream, native details) ===== -->
+    <section class="section bg-cream" data-screen-label="3.10 FAQ">
+      <div class="container">
+        <span class="eyebrow" data-reveal><span class="rule"></span>Questions, answered</span>
+        <h2 class="h2" data-reveal data-stagger="1" style="margin-top: 24px; max-width: 22ch;">The eight that come up first.</h2>
+        <div style="margin-top: 64px; max-width: 880px;" data-reveal data-stagger="2">
+          <details class="faq">
+            <summary>How long does a move take?</summary>
+            <p>Typically 90 days from intake to signed deal, but the timeline runs on your readiness, not ours. Some teams take 12 months. Some take 30 days.</p>
+          </details>
+          <details class="faq">
+            <summary>What does Revolt actually cost me?</summary>
+            <p>Nothing direct. We are paid by the firm you join, contingent on you staying through the retention period. We win when you stay.</p>
+          </details>
+          <details class="faq">
+            <summary>How do you avoid conflicts of interest with 190 firms?</summary>
+            <p>We do not have favorites. We are not paid more by one firm than another. The 190-contract network exists so we never have to push a firm that does not fit you.</p>
+          </details>
+          <details class="faq">
+            <summary>Can I talk to you without committing?</summary>
+            <p>Yes. The first conversation is thirty minutes. No commitment. No follow-up unless you ask for it.</p>
+          </details>
+          <details class="faq">
+            <summary>What if I am not ready to move for two years?</summary>
+            <p>That is the right time to start the conversation. The advisors who get the best deals plan the move years out.</p>
+          </details>
+          <details class="faq">
+            <summary>What size practice do you work with?</summary>
+            <p>Sweet spot is $1M+ in production, $10M+ in AUM. We have done deals from $500K to $50M.</p>
+          </details>
+          <details class="faq">
+            <summary>What happens to my team and clients?</summary>
+            <p>Your team can move with you. Your clients move with you. We map both before the offer goes out.</p>
+          </details>
+          <details class="faq">
+            <summary>Will my current firm find out?</summary>
+            <p>No. We have never publicized a team we have moved. Discretion is operational, not aspirational.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 3.11 Contact CTA (black over Building_Green) ===== -->
+    <section id="contact" class="hero bg-black" data-screen-label="3.11 Contact CTA" style="min-height: 64vh;">
+      <div class="hero__photo" style="background-image: url('assets/images/brand/Building_Green.jpg');" role="img" aria-label="Glass-tower office building, grayscale"></div>
+      <div class="hero__overlay"></div>
+      <div class="hero__inner container">
+        <span class="eyebrow"><span class="rule"></span>Start here</span>
+        <h2 class="h2" style="margin-top: 32px; max-width: 24ch; color: var(--mustard);">Ready? Contact us. Not ready? Contact us anyway.</h2>
+        <div class="cta" style="display: flex; flex-wrap: wrap; gap: var(--gap-md); margin-top: 40px;">
+          <a class="btn-primary" href="mailto:desk@revoltfinancial.com">Contact Us</a>
+          <a class="btn-ghost" href="tel:+17865551234">786-555-1234</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER (canonical) ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__cols">
+        <div class="footer__col">
+          <span class="footer__mark"><img src="assets/images/revolt-logo-stacked.png" alt="Revolt"></span>
+          <p class="small footer__lede">Revolt is a boutique financial-services talent firm. Recruiting, Team Recruiting, and M&amp;A. We work with established advisors, the firms that hire and grow them, and the principals 3-5 years from a sale.</p>
+          <p class="small footer__principle">Discreet by default. Relentless on your behalf.</p>
+        </div>
+        <div class="footer__col">
+          <h4>Revolt</h4>
+          <ul>
+            <li><a href="/advisor-recruiting.html">Recruiting</a></li>
+            <li><a href="/team-recruiting.html">Team Recruiting</a></li>
+            <li><a href="/ma.html">M&amp;A</a></li>
+          </ul>
+          <h4 style="margin-top: 32px;">Resources</h4>
+          <ul>
+            <li><a href="/platform.html">Platform</a></li>
+            <li><a href="https://www.example.com/podcast" rel="noopener">Podcast</a></li>
+            <li><a href="https://www.linkedin.com/" rel="noopener">LinkedIn</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+17865551234">786-555-1234</a></li>
+            <li><a href="mailto:desk@revoltfinancial.com">desk@revoltfinancial.com</a></li>
+            <li><a href="mailto:enterprise@revoltfinancial.com">enterprise@revoltfinancial.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__rule"></div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 Revolt. All rights reserved. &nbsp;<a href="/privacy.html">Privacy</a> &nbsp; <a href="/terms.html">Terms</a></p>
+        <p>Registration disclosures pending compliance review pre-launch.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/revolt.js" defer></script>
+</body>
+</html>

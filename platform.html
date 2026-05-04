@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Revolt Platform · The deal data every advisor should see before they commit to anything</title>
+  <meta name="description" content="Self-service valuation, full-network offer modeling, practice intelligence. The 190-firm contract network, fed into the model. Coming 2026.">
+
+  <link rel="canonical" href="https://revoltfinancial.com/platform.html">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Revolt">
+  <meta property="og:url" content="https://revoltfinancial.com/platform.html">
+  <meta property="og:title" content="Revolt Platform · The deal data every advisor should see before they commit to anything">
+  <meta property="og:description" content="Self-service valuation, full-network offer modeling, practice intelligence. The 190-firm contract network, fed into the model. Coming 2026.">
+  <meta property="og:image" content="https://revoltfinancial.com/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Revolt Platform. The market, in minutes. 190 firm contracts, on one screen.">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Revolt Platform · The deal data every advisor should see before they commit to anything">
+  <meta name="twitter:description" content="Self-service valuation, full-network offer modeling, practice intelligence. The 190-firm contract network, fed into the model. Coming 2026.">
+  <meta name="twitter:image" content="https://revoltfinancial.com/assets/og-image.png">
+  <meta name="twitter:image:alt" content="Revolt Platform. The market, in minutes. 190 firm contracts, on one screen.">
+
+  <!-- Theme -->
+  <meta name="theme-color" content="#0B0E13">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap">
+  <link rel="preload" href="assets/fonts/DegularDisplay-Bold.otf" as="font" type="font/otf" crossorigin>
+  <link rel="stylesheet" href="assets/css/revolt.css?v=3">
+  <style>
+    /* Page-specific positioning only. */
+
+    /* 6.1 Hero — atmospheric, NO photo, precision-instrument feel */
+    .pf-hero { min-height: 92vh; }
+    .pf-hero__atmos {
+      position: absolute; inset: 0; z-index: 0;
+      background:
+        radial-gradient(ellipse at 80% 25%, rgba(229,161,0,0.08) 0%, transparent 55%),
+        linear-gradient(180deg, #0B0E13 0%, #0F1218 100%);
+    }
+    .pf-hero__grid {
+      position: absolute; inset: 0; z-index: 0;
+      background-image:
+        linear-gradient(to right, rgba(60,69,85,0.4) 0 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(60,69,85,0.4) 0 1px, transparent 1px);
+      background-size: 60px 60px;
+      opacity: 0.4;
+      pointer-events: none;
+      mask-image: radial-gradient(ellipse at 50% 50%, rgba(0,0,0,1) 30%, rgba(0,0,0,0.4) 70%, rgba(0,0,0,0.1) 100%);
+      -webkit-mask-image: radial-gradient(ellipse at 50% 50%, rgba(0,0,0,1) 30%, rgba(0,0,0,0.4) 70%, rgba(0,0,0,0.1) 100%);
+    }
+    .pf-hero .backdrop-num {
+      right: -2vw; bottom: -10vh; font-size: 24vw; letter-spacing: -0.04em;
+    }
+
+    /* 6.2 Counter */
+    .counter-row {
+      display: flex; align-items: baseline; gap: var(--gap-lg); flex-wrap: wrap;
+      margin-top: var(--gap-2xl);
+      padding-top: var(--gap-xl);
+      border-top: 1px solid var(--hairline, var(--slate-30));
+    }
+    .counter-row__figure {
+      font-family: var(--display); font-weight: 700;
+      font-size: clamp(72px, 10vw, 120px);
+      line-height: 0.9; letter-spacing: -0.03em;
+      color: var(--mustard);
+      font-variant-numeric: tabular-nums;
+    }
+    .counter-row__label {
+      font-family: var(--body); font-weight: 300;
+      font-size: clamp(18px, 1.6vw, 22px);
+      line-height: 1.4; color: var(--fg);
+      max-width: 28ch;
+    }
+
+    /* 6.3 Pillar cards */
+    .pillar-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gap-xl); }
+    .pillar-card {
+      display: flex; flex-direction: column; gap: var(--gap-md);
+      border-top: 3px solid var(--mustard);
+      padding-top: var(--gap-lg);
+    }
+    .pillar-card__num {
+      font-family: var(--display); font-weight: 700;
+      font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--mustard);
+    }
+    .pillar-card__title {
+      font-family: var(--display); font-weight: 700;
+      font-size: clamp(22px, 1.9vw, 26px); line-height: 1.1;
+      color: var(--fg);
+    }
+    .pillar-card__body {
+      font-family: var(--body); font-weight: 300;
+      font-size: 15px; line-height: 1.6; color: var(--fg);
+    }
+    .pillar-preview {
+      width: 100%;
+      aspect-ratio: 280 / 180;
+      background:
+        linear-gradient(to right, rgba(60,69,85,0.5) 0 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(60,69,85,0.5) 0 1px, transparent 1px),
+        #0B0E13;
+      background-size: 24px 24px;
+      position: relative;
+      margin-top: var(--gap-md);
+    }
+    .pillar-preview::after {
+      content: 'Preview coming · 2026';
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--display); font-weight: 700;
+      font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--mustard); opacity: 0.85;
+    }
+
+    /* 6.5 Big-numeral claims (olive) */
+    .claim-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gap-xl); }
+    .claim-cell {
+      display: flex; flex-direction: column; gap: var(--gap-md);
+      border-top: 1px solid rgba(255,255,255,0.18);
+      padding-top: var(--gap-lg);
+    }
+    .claim-cell__figure {
+      font-family: var(--display); font-weight: 700;
+      font-size: clamp(72px, 9vw, 128px);
+      line-height: 0.9; letter-spacing: -0.03em;
+      color: var(--mustard);
+    }
+    .claim-cell__body {
+      font-family: var(--body); font-weight: 300;
+      font-size: 16px; line-height: 1.55;
+      color: var(--cream-80);
+    }
+
+    /* 6.7 Access cards */
+    .access-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap-xl); }
+    .access-card {
+      display: flex; flex-direction: column; gap: var(--gap-md);
+      padding: var(--gap-xl);
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+    .access-card--primary { border-top: 3px solid var(--mustard); }
+    .access-card__label {
+      font-family: var(--display); font-weight: 700;
+      font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--mustard);
+    }
+    .access-card__title {
+      font-family: var(--display); font-weight: 700;
+      font-size: clamp(24px, 2vw, 30px); line-height: 1.1; color: var(--white);
+    }
+    .access-card__body {
+      font-family: var(--body); font-weight: 300;
+      font-size: 15px; line-height: 1.6; color: var(--cream-80);
+    }
+    .ea-form { display: flex; gap: var(--gap-sm); margin-top: auto; padding-top: var(--gap-md); align-items: end; flex-wrap: wrap; }
+    .ea-form .field { flex: 1 1 220px; min-width: 0; }
+    .ea-form .field input {
+      color: var(--white);
+      border-bottom-color: rgba(255,255,255,0.4);
+    }
+    .ea-form .field label { color: var(--cream-60); }
+
+    @media (max-width: 900px) {
+      .pillar-grid, .claim-grid, .access-grid { grid-template-columns: 1fr; }
+      .counter-row { flex-direction: column; gap: var(--gap-md); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAV (canonical · active: Platform) ===== -->
+  <nav class="nav" data-scroll-state="top" aria-label="Primary">
+    <a class="nav__logo" href="/">
+      <img src="assets/images/revolt-logo-stacked.png" alt="Revolt">
+    </a>
+    <ul class="nav__links">
+      <li><a href="/advisor-recruiting.html">Recruiting</a></li>
+      <li><a href="/team-recruiting.html">Team Recruiting</a></li>
+      <li><a href="/ma.html">M&amp;A</a></li>
+      <li><a href="/platform.html" aria-current="page">Platform</a></li>
+    </ul>
+    <a class="btn-primary" href="#contact">Contact Us</a>
+    <button class="nav__toggle" type="button" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav__mobile" role="menu">
+      <a href="/advisor-recruiting.html">Recruiting</a>
+      <a href="/team-recruiting.html">Team Recruiting</a>
+      <a href="/ma.html">M&amp;A</a>
+      <a href="/platform.html" aria-current="page">Platform</a>
+      <a class="btn-primary" href="#contact">Contact Us</a>
+    </div>
+  </nav>
+
+  <main class="page" data-screen-label="04 Revolt Platform">
+
+    <!-- ===== 6.1 Hero (black · atmospheric grid · NO photo) ===== -->
+    <section class="hero pf-hero bg-black" data-screen-label="6.1 Hero">
+      <div class="pf-hero__atmos" aria-hidden="true"></div>
+      <div class="pf-hero__grid" aria-hidden="true"></div>
+      <div class="hero__overlay"></div>
+      <span class="backdrop-num" aria-hidden="true">190</span>
+      <div class="hero__inner container">
+        <span class="eyebrow"><span class="rule"></span>Revolt Platform</span>
+        <h1 class="h1" style="margin-top: 32px; max-width: 22ch;">The deal data every advisor should see before they commit to anything.</h1>
+        <p class="lead" style="margin-top: 32px; max-width: 64ch;">We are not a platform company. We are a firm with the deepest contract network in the industry, and we built the tools to put that network on a screen. Upload once. See what 190 firms would actually offer. The market, in minutes.</p>
+        <div class="cta" style="display: flex; flex-wrap: wrap; gap: var(--gap-md); margin-top: 40px;">
+          <a class="btn-primary" href="#how-to-access">Ask your recruiter for a link</a>
+          <a class="btn-ghost" href="#firms-custodians">Get the early-access brief &darr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 6.2 We are not a platform (cream) ===== -->
+    <section class="section bg-cream" data-screen-label="6.2 Not a platform">
+      <div class="container">
+        <span class="eyebrow" data-reveal><span class="rule"></span>What this is</span>
+        <h2 class="h2" data-reveal data-stagger="1" style="margin-top: 24px; max-width: 26ch;">We are not a platform. We are a firm with tools sharper than yours.</h2>
+        <div data-reveal data-stagger="2" style="margin-top: 40px; max-width: 70ch;">
+          <p class="lead" style="margin-bottom: 24px;">Most software companies trying to enter this space build a tool, then try to acquire the relationships. We did it the other way around. Twenty years of relationships. 190 firm contracts. Then a tool, built by the people who run the deals, to put that network on one screen.</p>
+          <p class="lead">The platform is the work, made tangible. It is not a replacement for your recruiter. It is what your recruiter brings to the first conversation.</p>
+        </div>
+        <div class="counter-row" data-reveal data-stagger="3" style="margin-top: 64px;">
+          <span class="counter-row__figure" data-counter="247">247</span>
+          <span class="counter-row__label">advisors on the early-access list. In private beta with select Revolt prospects through 2026.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 6.3 What It Does — Three Pillars (tan) ===== -->
+    <section class="section bg-tan" data-screen-label="6.3 Three Pillars">
+      <div class="container">
+        <span class="eyebrow" data-reveal><span class="rule"></span>Three pillars</span>
+        <h2 class="h2" data-reveal data-stagger="1" style="margin-top: 24px; max-width: 28ch;">Self-service valuation. Full-network offer modeling. Practice intelligence.</h2>
+        <div class="pillar-grid" style="margin-top: 64px;">
+          <article class="pillar-card" data-reveal data-stagger="1">
+            <span class="pillar-card__num">Pillar 01</span>
+            <h3 class="pillar-card__title">Self-service valuation</h3>
+            <p class="pillar-card__body">Enter your practice profile. The platform returns a valuation across three lenses, cash flow, strategic, succession, with the inputs visible. The same model we run on M&amp;A deals.</p>
+            <div class="pillar-preview" aria-label="Self-service valuation preview · coming 2026"></div>
+          </article>
+          <article class="pillar-card" data-reveal data-stagger="2">
+            <span class="pillar-card__num">Pillar 02</span>
+            <h3 class="pillar-card__title">Full-network offer modeling</h3>
+            <p class="pillar-card__body">The 190-firm contract network fed directly into the model. Every offer priced to your specific practice, within 10 basis points. Updated quarterly.</p>
+            <div class="pillar-preview" aria-label="Full-network offer modeling preview · coming 2026"></div>
+          </article>
+          <article class="pillar-card" data-reveal data-stagger="3">
+            <span class="pillar-card__num">Pillar 03</span>
+            <h3 class="pillar-card__title">Practice intelligence</h3>
+            <p class="pillar-card__body">Once you have a baseline, the platform tracks the levers, production mix, fee model, client concentration, equity structure, that move your number. The same 27 levers Eric uses on every advisor call.</p>
+            <div class="pillar-preview" aria-label="Practice intelligence preview · coming 2026"></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 6.4 We built the data because we did the deals (black) ===== -->
+    <section class="section bg-black" data-screen-label="6.4 We built the data">
+      <div class="container">
+        <span class="eyebrow" data-reveal><span class="rule"></span>Why we built it</span>
+        <h2 class="h2" data-reveal data-stagger="1" style="margin-top: 24px; max-width: 26ch;">We built the data because we did the deals.</h2>
+        <div data-reveal data-stagger="2" style="margin-top: 40px; max-width: 72ch;">
+          <p class="lead" style="margin-bottom: 24px;">Every other platform you have seen in this space was built by software people who then went looking for relationships. Ours was built the other way around. Eric ran 190 firm relationships and hundreds of closed transitions before a single line of code was written. The dataset is not synthetic. It is the residue of work we have already done.</p>
+          <p class="lead">That is why the model is accurate within ten basis points. That is why the network is 190 deep, not five. That is why your recruiter can walk you through every line and tell you why it is what it is. The platform exists to put twenty years of work on one screen, in front of you, before you have to commit to anything.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 6.5 What Makes the Data Different (olive) ===== -->
+    <section class="section bg-olive" data-screen-label="6.5 Data Different">
+      <div class="container">
+        <span class="eyebrow" data-reveal><span class="rule"></span>What makes the data different</span>
+        <h2 class="h2" data-reveal data-stagger="1" style="margin-top: 24px; max-width: 24ch;">Three numbers nobody else can put on a page.</h2>
+        <div class="claim-grid" style="margin-top: 64px;">
+          <div class="claim-cell" data-reveal data-stagger="1">
+            <span class="claim-cell__figure" data-counter="190">190</span>
+            <p class="claim-cell__body">Firm contracts feeding the model. The next platform down has 5 to 15.</p>
+          </div>
+          <div class="claim-cell" data-reveal data-stagger="2">
+            <span class="claim-cell__figure">&plusmn;10 bps</span>
+            <p class="claim-cell__body">Accuracy target on every offer in the model. Verified against closed deals.</p>
+          </div>
+          <div class="claim-cell" data-reveal data-stagger="3">
+            <span class="claim-cell__figure">Quarterly</span>
+            <p class="claim-cell__body">Refresh cadence. Deal terms move; the model moves with them.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 6.6 Privacy & Data Handling (cream) ===== -->
+    <section class="section bg-cream" data-screen-label="6.6 Privacy">
+      <div class="container">
+        <span class="eyebrow" data-reveal><span class="rule"></span>What we do with your data</span>
+        <h2 class="h2" data-reveal data-stagger="1" style="margin-top: 24px; max-width: 28ch;">Your data is yours. We never sell it. We never share it without your explicit request.</h2>
+        <p class="lead" data-reveal data-stagger="2" style="margin-top: 32px; max-width: 72ch;">The platform stores your practice profile only for as long as you are in conversation with a Revolt recruiter. Aggregate, anonymized data: what segments of the market are looking, where, how often. That is used internally to improve the model. We do not sell that data to firms. We do not share it with anyone outside Revolt without your written request.</p>
+      </div>
+    </section>
+
+    <!-- ===== 6.7 How to Get Access (black · two cards · NO Sign Up) ===== -->
+    <section id="how-to-access" class="section bg-black" data-screen-label="6.7 How to Access">
+      <div class="container">
+        <span class="eyebrow" data-reveal><span class="rule"></span>How to get access</span>
+        <h2 class="h2" data-reveal data-stagger="1" style="margin-top: 24px; max-width: 16ch;">Two ways in.</h2>
+        <div class="access-grid" style="margin-top: 64px;">
+          <article class="access-card access-card--primary" data-reveal data-stagger="1">
+            <span class="access-card__label">Path 01 · Primary</span>
+            <h3 class="access-card__title">Talk to a recruiter.</h3>
+            <p class="access-card__body">The fastest way is the same way every Revolt engagement starts. Contact us. Thirty minutes. If we are the right fit for the conversation, your recruiter generates a private link. You enter your practice profile and the platform opens.</p>
+            <div style="margin-top: var(--gap-md);">
+              <a class="btn-primary" href="mailto:desk@revoltfinancial.com">Contact Us</a>
+            </div>
+          </article>
+          <article class="access-card" data-reveal data-stagger="2">
+            <span class="access-card__label">Path 02 · Secondary</span>
+            <h3 class="access-card__title">Join early access.</h3>
+            <p class="access-card__body">Not ready for a recruiter conversation? The early-access list opens to public users in waves through 2026. Drop your email and we will send the public invite when your wave opens.</p>
+            <!-- Backend wiring TBD per PRD §9. Endpoint to be confirmed pre-launch.
+                 list_id passed so marketing can segment. -->
+            <form class="ea-form" novalidate>
+              <input type="hidden" name="list_id" value="platform-early-access">
+              <div class="field">
+                <label for="ea-email">Email</label>
+                <input id="ea-email" name="email" type="email" autocomplete="email" inputmode="email" required>
+              </div>
+              <button class="btn-primary" type="submit">Add me to the list</button>
+            </form>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 6.8 For Firms & Custodians (cream · small) ===== -->
+    <section id="firms-custodians" class="section section--tight bg-cream" data-screen-label="6.8 For Firms">
+      <div class="container">
+        <div style="max-width: 720px;">
+          <span class="eyebrow" data-reveal><span class="rule"></span>For firms and custodians</span>
+          <h3 class="h3" data-reveal data-stagger="1" style="margin-top: 24px;">For firms and custodians: there is a data product.</h3>
+          <p class="lead" data-reveal data-stagger="2" style="margin-top: 24px;">If you want to understand where the market is moving, which firms are gaining advisor mindshare, which deal structures are winning, where talent is concentrating, talk to us about the data product. Aggregate, anonymized, never advisor-identifiable.</p>
+          <div data-reveal data-stagger="3" style="margin-top: 32px;">
+            <a class="btn-ghost" href="mailto:enterprise@revoltfinancial.com">enterprise@revoltfinancial.com</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER (canonical) ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__cols">
+        <div class="footer__col">
+          <span class="footer__mark"><img src="assets/images/revolt-logo-stacked.png" alt="Revolt"></span>
+          <p class="small footer__lede">Revolt is a boutique financial-services talent firm. Recruiting, Team Recruiting, and M&amp;A. We work with established advisors, the firms that hire and grow them, and the principals 3-5 years from a sale.</p>
+          <p class="small footer__principle">Discreet by default. Relentless on your behalf.</p>
+        </div>
+        <div class="footer__col">
+          <h4>Revolt</h4>
+          <ul>
+            <li><a href="/advisor-recruiting.html">Recruiting</a></li>
+            <li><a href="/team-recruiting.html">Team Recruiting</a></li>
+            <li><a href="/ma.html">M&amp;A</a></li>
+          </ul>
+          <h4 style="margin-top: 32px;">Resources</h4>
+          <ul>
+            <li><a href="/platform.html">Platform</a></li>
+            <li><a href="https://www.example.com/podcast" rel="noopener">Podcast</a></li>
+            <li><a href="https://www.linkedin.com/" rel="noopener">LinkedIn</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+17865551234">786-555-1234</a></li>
+            <li><a href="mailto:desk@revoltfinancial.com">desk@revoltfinancial.com</a></li>
+            <li><a href="mailto:enterprise@revoltfinancial.com">enterprise@revoltfinancial.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__rule"></div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 Revolt. All rights reserved. &nbsp;<a href="/privacy.html">Privacy</a> &nbsp; <a href="/terms.html">Terms</a></p>
+        <p>Registration disclosures pending compliance review pre-launch.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/revolt.js" defer></script>
+</body>
+</html>
