@@ -110,7 +110,7 @@ details summary { list-style: none; cursor: pointer; }
 details summary::-webkit-details-marker { display: none; }
 
 /* ---------- 4. Layout helpers ---------- */
-.page { max-width: var(--max-page); margin: 0 auto; }
+.page { width: 100%; margin: 0 auto; }
 .container { max-width: var(--max-content); margin: 0 auto; padding-left: var(--pad-side); padding-right: var(--pad-side); }
 .prose { max-width: var(--max-prose); }
 .section { padding-top: var(--pad-section); padding-bottom: var(--pad-section); position: relative; overflow: hidden; }

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Revolt M&amp;A · The first licensed investment bank built for the independent advisor space</title>
-  <meta name="description" content="Sell-side advisory, succession, complex multi-party transactions. Institutional valuation methodology. Curated buyer process. Discreet by default.">
+  <title>Sell Your Practice · Revolt</title>
+  <meta name="description" content="For practice owners thinking about an exit. We connect you, confidentially, to the right buyer. We are not your investment bank. We are the people who know who the right buyer is, and how to reach them.">
 
   <link rel="canonical" href="https://revoltfinancial.com/ma.html">
 
@@ -17,19 +17,19 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Revolt">
   <meta property="og:url" content="https://revoltfinancial.com/ma.html">
-  <meta property="og:title" content="Revolt M&amp;A · The first licensed investment bank built for the independent advisor space">
-  <meta property="og:description" content="Sell-side advisory, succession, complex multi-party transactions. Institutional valuation methodology. Curated buyer process. Discreet by default.">
+  <meta property="og:title" content="Sell Your Practice · Revolt">
+  <meta property="og:description" content="For practice owners thinking about an exit. We connect you, confidentially, to the right buyer.">
   <meta property="og:image" content="https://revoltfinancial.com/assets/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Revolt M&amp;A. The first licensed investment bank built for the independent advisor space.">
+  <meta property="og:image:alt" content="Revolt · Sell Your Practice. Connecting sellers to qualified buyers, confidentially.">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Revolt M&amp;A · The first licensed investment bank built for the independent advisor space">
-  <meta name="twitter:description" content="Sell-side advisory, succession, complex multi-party transactions. Institutional valuation methodology. Curated buyer process. Discreet by default.">
+  <meta name="twitter:title" content="Sell Your Practice · Revolt">
+  <meta name="twitter:description" content="For practice owners thinking about an exit. We connect you, confidentially, to the right buyer.">
   <meta name="twitter:image" content="https://revoltfinancial.com/assets/og-image.png">
-  <meta name="twitter:image:alt" content="Revolt M&amp;A. The first licensed investment bank built for the independent advisor space.">
+  <meta name="twitter:image:alt" content="Revolt · Sell Your Practice. Connecting sellers to qualified buyers, confidentially.">
 
   <!-- Theme -->
   <meta name="theme-color" content="#0B0E13">
@@ -227,44 +227,7 @@
       line-height: 1.55; color: var(--cream-80);
     }
 
-    /* 5.7 JP block */
-    .jp-grid { display: grid; grid-template-columns: 280px 1fr; gap: var(--gap-2xl); align-items: start; }
-    .jp-photo {
-      width: 280px; height: 280px;
-      background: #0B0E13;
-      position: relative;
-      overflow: hidden;
-      flex-shrink: 0;
-    }
-    .jp-photo::before {
-      content: '';
-      position: absolute; inset: 0;
-      background-image:
-        radial-gradient(ellipse at 30% 20%, rgba(229,161,0,0.08) 0%, transparent 60%),
-        repeating-linear-gradient(45deg, rgba(255,255,255,0.012) 0 1px, transparent 1px 3px),
-        repeating-linear-gradient(-45deg, rgba(255,255,255,0.012) 0 1px, transparent 1px 3px);
-      pointer-events: none;
-    }
-    .jp-photo::after {
-      content: 'JP';
-      position: absolute; inset: 0;
-      display: flex; align-items: center; justify-content: center;
-      font-family: var(--display); font-weight: 700;
-      font-size: 120px; line-height: 1;
-      color: var(--mustard);
-      letter-spacing: -0.03em;
-    }
-    .jp-photo__caption {
-      position: absolute;
-      bottom: 14px; left: 14px;
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-      font-size: 10px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--mustard);
-      opacity: 0.55;
-      z-index: 2;
-    }
+    /* 5.7 [DELETED] JP block CSS removed -- .jp-grid and .jp-photo no longer used. */
 
     /* 5.8 CTA contact pattern */
     .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap-2xl); align-items: start; }
@@ -274,9 +237,6 @@
     @media (max-width: 900px) {
       .tracks-grid, .lens-grid, .conf-rules,
       .contact-grid, .form-grid { grid-template-columns: 1fr; }
-      .jp-grid { grid-template-columns: 1fr; }
-      .jp-photo { width: 200px; height: 200px; }
-      .jp-photo::after { font-size: 84px; }
       .proc-row { grid-template-columns: 64px 1fr; gap: var(--gap-md); }
       .proc-row__num { font-size: 36px; }
       .proc-row__desc { grid-column: 2 / 3; }
@@ -287,99 +247,124 @@
 </head>
 <body>
 
-  <!-- ===== NAV (canonical · active: M&A) ===== -->
+  <!-- ===== NAV (canonical · active: Sell Your Practice) ===== -->
   <nav class="nav" data-scroll-state="top" aria-label="Primary">
     <a class="nav__logo" href="/">
       <img src="assets/images/revolt-logo-stacked.png" alt="Revolt">
     </a>
     <ul class="nav__links">
-      <li><a href="/advisor-recruiting.html">Recruiting</a></li>
-      <li><a href="/team-recruiting.html">Team Recruiting</a></li>
-      <li><a href="/ma.html" aria-current="page">M&amp;A</a></li>
-      <li><a href="/platform.html">Platform</a></li>
+      <li><a href="/advisor-recruiting.html">Explore Your Next Firm</a></li>
+      <li><a href="/team-recruiting.html">Hire Staff</a></li>
+      <li><a href="/ma.html" aria-current="page">Sell Your Practice</a></li>
+      <li><a href="/platform.html">Compare Deals</a></li>
     </ul>
-    <a class="btn-primary" href="#contact">Contact Us</a>
+    <a class="btn-primary" href="/contact.html">Contact Us</a>
     <button class="nav__toggle" type="button" aria-label="Open menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
     <div class="nav__mobile" role="menu">
-      <a href="/advisor-recruiting.html">Recruiting</a>
-      <a href="/team-recruiting.html">Team Recruiting</a>
-      <a href="/ma.html">M&amp;A</a>
-      <a href="/platform.html">Platform</a>
-      <a class="btn-primary" href="#contact">Contact Us</a>
+      <a href="/advisor-recruiting.html">Explore Your Next Firm</a>
+      <a href="/team-recruiting.html">Hire Staff</a>
+      <a href="/ma.html">Sell Your Practice</a>
+      <a href="/platform.html">Compare Deals</a>
+      <a class="btn-primary" href="/contact.html">Contact Us</a>
     </div>
   </nav>
 
-  <main class="page" data-screen-label="03 M&amp;A">
+  <!--
+    ============================================================
+    COMPLIANCE NOT VERIFIED.
+    This page was rewritten on Option B (no exemption-article cross-check).
+    Every line below is finder/connector framing per Eric's May 15 directive.
+    Legal must verify against the 2023 broker-dealer finder's exemption
+    before launch. Compliance-sensitive lines flagged inline with FLAG:.
+    ============================================================
+  -->
+  <main class="page" data-screen-label="03 Sell Your Practice">
 
-    <!-- ===== 5.1 Hero (black, atmospheric, no people) ===== -->
+    <!-- ===== 5.1 Hero (black, atmospheric, no people) =====
+         CHANGES:
+           - <title>, h1, eyebrow, and meta swept off "M&A" and "investment bank."
+           - H1 set to the agency-lever alternative "Sell your practice on your terms, not the buyer's."
+             (Prompt offered "Sell Your Practice" as title and this as alt h1; using alt for stronger hero.)
+           - Lead replaced. Prior "first and only licensed investment bank..." was a false claim per Eric May 15.
+             New lead is the prompt's locked voice line on the unlicensed framing.
+           - Backdrop word "M&A" replaced with the page label.
+         FLAG: language reviewed against forbidden list. No "M&A," "investment bank," "licensed," etc. -->
     <section class="hero ma-hero bg-black" data-screen-label="5.1 Hero">
-      <div class="ma-hero__atmos" aria-hidden="true"></div>
       <div class="hero__overlay"></div>
-      <span class="backdrop-num" aria-hidden="true">M&amp;A</span>
+      <span class="backdrop-num" aria-hidden="true">SELL</span>
       <div class="hero__inner container">
-        <span class="eyebrow"><span class="rule"></span>Revolt M&amp;A</span>
-        <h1 class="h1" style="margin-top: 32px; max-width: 22ch;">When the transaction is generational, the process has to match.</h1>
-        <p class="lead" style="margin-top: 32px; max-width: 64ch;">The first and only licensed investment bank built for the independent advisor space. Sell-side advisory, succession planning, complex multi-party deals.</p>
+        <span class="eyebrow"><span class="rule"></span>Sell Your Practice</span>
+        <h1 class="h1" style="margin-top: 32px; max-width: 22ch;">Sell your practice on your terms, not the buyer's.</h1>
+        <p class="lead" style="margin-top: 32px; max-width: 64ch;">We are not your investment bank. We are the people who know who the right buyer is, and how to reach them confidentially.</p>
         <div class="cta" style="display: flex; flex-wrap: wrap; gap: var(--gap-md); margin-top: 40px;">
-          <a class="btn-primary" href="#contact">Start a confidential intake</a>
+          <a class="btn-primary" href="/contact.html">Start a confidential intake</a>
           <a class="btn-ghost" href="#tracks">See the two tracks &darr;</a>
         </div>
+        <p class="small" style="margin-top: 24px; color: var(--cream-80); letter-spacing: 0.02em; text-transform: uppercase;">Discreet by default. Relentless on your behalf.</p>
       </div>
     </section>
 
-    <!-- ===== 5.2 Banker vs Consultant (cream) ===== -->
-    <section class="section bg-cream" data-screen-label="5.2 Banker vs Consultant">
+    <!-- ===== 5.2 Don't go it alone (cream) =====
+         FULL REWRITE per Eric May 15 directive.
+         CHANGES:
+           - DELETED FALSE CLAIM rows: "A licensed investment bank,"
+             "Fiduciary duty under FINRA / SEC oversight,"
+             "Registered representatives, audit trail, regulatory backstop."
+           - DELETED "Institutional valuation methodology, three-lens model" row (implied Revolt valuation service).
+           - DELETED "Negotiation by structured competing bids" row (implied Revolt runs a bid process).
+           - H2 swapped to the loss-aversion anchor "Don't go it alone."
+           - New rows reframe Revolt as a connector to qualified buyers, not an advisor/bank.
+         FLAG: cross-check every line below against the 2023 finder's exemption when the article is in hand. -->
+    <section class="section bg-cream" data-screen-label="5.2 Don't go it alone">
       <div class="container">
         <span class="eyebrow" data-reveal><span class="rule"></span>Why this matters</span>
-        <h2 class="h2" data-reveal data-stagger="1" style="margin-top: 24px; max-width: 24ch;">Most advisor M&amp;A is run by consultants. We are not consultants.</h2>
+        <h2 class="h2" data-reveal data-stagger="1" style="margin-top: 24px; max-width: 22ch;">Don't go it alone.</h2>
+        <p class="lead" data-reveal data-stagger="2" style="margin-top: 32px; max-width: 64ch;">Most practice owners get a cold call, a friend-of-a-friend, and a single buyer in the room. That is not a sale. That is a hand-off. We work differently. We are consultants who connect you to qualified buyers, one at a time, confidentially.</p>
         <div style="margin-top: 64px; display: grid; grid-template-columns: 1fr 1fr; gap: 0 var(--gap-lg); padding-bottom: var(--gap-md); border-bottom: 1px solid var(--hairline, var(--slate-30));">
-          <span class="label" style="color: var(--slate-60);">The consultant standard</span>
-          <span class="label" style="color: var(--mustard); padding-left: var(--gap-md);">A licensed investment bank</span>
+          <span class="label" style="color: var(--slate-60);">What most sellers get</span>
+          <span class="label" style="color: var(--mustard); padding-left: var(--gap-md);">What we do as your finder</span>
         </div>
         <div data-reveal>
           <div class="compare__row">
-            <div class="industry">Rule-of-thumb valuations (2x revenue, 7x EBITDA)</div>
-            <div class="revolt">Institutional valuation methodology, three-lens model</div>
+            <div class="industry">Cold outreach from whoever's calling</div>
+            <div class="revolt">Introductions only to buyers we already know</div>
           </div>
           <div class="compare__row">
-            <div class="industry">Buyer universe of 5 to 15 known names</div>
-            <div class="revolt">Curated bid process across the relevant strategic and financial buyer universe</div>
+            <div class="industry">A handful of names floating around</div>
+            <div class="revolt">A curated list, matched to your practice</div>
           </div>
           <div class="compare__row">
-            <div class="industry">No fiduciary duty</div>
-            <div class="revolt">Fiduciary duty under FINRA / SEC oversight</div>
+            <div class="industry">Your name leaks before you decide</div>
+            <div class="revolt">Buyers approached one at a time, under NDA</div>
           </div>
           <div class="compare__row">
-            <div class="industry">Solo-operator deal team</div>
-            <div class="revolt">Staffed deal team: principal, analyst, legal coordinator</div>
+            <div class="industry">You do the sourcing yourself</div>
+            <div class="revolt">We sit with you. We don't pitch you.</div>
           </div>
           <div class="compare__row">
             <div class="industry">Press release at close</div>
-            <div class="revolt">Never publicized. Confidentiality is operational.</div>
-          </div>
-          <div class="compare__row">
-            <div class="industry">Deal priced to the consultant&rsquo;s quarter</div>
-            <div class="revolt">Deal priced to your generational outcome</div>
-          </div>
-          <div class="compare__row">
-            <div class="industry">Negotiation by phone</div>
-            <div class="revolt">Negotiation by structured competing bids</div>
-          </div>
-          <div class="compare__row">
-            <div class="industry">No regulatory recourse</div>
-            <div class="revolt">Registered representatives, audit trail, regulatory backstop</div>
+            <div class="revolt">Never publicized. Confidentiality is the product.</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ===== 5.3 Two Tracks (black) ===== -->
+    <!-- ===== 5.3 Two Tracks (black) =====
+         CHANGES:
+           - Section H2 set to the prior strong line "When the transaction is generational, the process has to match."
+             (kept per instructions; demoted from h1 to section h2).
+           - Track A "Succession Planning": rewritten as connector framing.
+             Removed "What we run" language implying Revolt designs equity ramps / tax-efficient exit structures.
+           - Track B "Complex / Multi-Party Deal": rewritten as connector framing.
+             Removed "sell-side advisory," "valuation modeling," "competing bid process," "regulatory close" -- all imply licensed work.
+         FLAG: "Best fit" revenue band kept (describes the prospect, not Revolt fees). Confirm with legal. -->
     <section id="tracks" class="section bg-black" data-screen-label="5.3 Two Tracks">
       <div class="container">
         <span class="eyebrow" data-reveal><span class="rule"></span>Two tracks</span>
-        <h2 class="h2" data-reveal data-stagger="1" style="margin-top: 24px; max-width: 28ch;">Knowing which track you are on is the first decision.</h2>
+        <h2 class="h2" data-reveal data-stagger="1" style="margin-top: 24px; max-width: 28ch;">When the transaction is generational, the process has to match.</h2>
+        <p class="lead" data-reveal data-stagger="2" style="margin-top: 32px; max-width: 60ch;">Knowing which track you are on is the first decision. We sit with you on both.</p>
         <div class="tracks-grid" style="margin-top: 64px;">
           <article class="track-card" data-reveal data-stagger="1">
             <span class="track-card__label">Track A</span>
@@ -387,114 +372,117 @@
             <span class="track-card__horizon">Three to seven years out</span>
             <dl class="track-spec">
               <dt>Best fit</dt>
-              <dd>$1M&ndash;$25M annual revenue, internal successor possible.</dd>
-              <dt>What we run</dt>
-              <dd>Internal successor identification, equity ramp design, phased transition, tax-efficient exit structure.</dd>
-              <dt>Value created</dt>
-              <dd>Maximizes after-tax net to the seller, protects practice continuity, retains key clients.</dd>
+              <dd>Practice owners with an internal successor in mind, or open to one.</dd>
+              <dt>What we do</dt>
+              <dd>We introduce you to the people who have run this transition before. Internal successors, family-office buyers, partner-track candidates. You decide who is in the room.</dd>
+              <dt>What you walk away with</dt>
+              <dd>A short list of people who fit your practice, your timeline, and your terms.</dd>
               <dt>Timeline</dt>
-              <dd>12&ndash;36 months.</dd>
+              <dd>Years, typically. We work to your pace.</dd>
             </dl>
           </article>
           <article class="track-card" data-reveal data-stagger="2">
             <span class="track-card__label">Track B</span>
-            <h3 class="track-card__title">Complex / Multi-Party Deal</h3>
-            <span class="track-card__horizon">Sell-side now</span>
+            <h3 class="track-card__title">Complex or Multi-Party</h3>
+            <span class="track-card__horizon">Ready to move</span>
             <dl class="track-spec">
               <dt>Best fit</dt>
-              <dd>Multi-partner cap tables, carve-outs, strategic roll-ups, sell-side advisory.</dd>
-              <dt>What we run</dt>
-              <dd>Competing bid process, valuation modeling, negotiation across multiple parties, regulatory close.</dd>
-              <dt>Value created</dt>
-              <dd>Strategic premium over headline multiple, structure that survives diligence, clean close.</dd>
+              <dd>Multi-partner cap tables. Carve-outs. Strategic roll-ups. Anything where the room has more than two chairs.</dd>
+              <dt>What we do</dt>
+              <dd>We connect you, confidentially, to qualified buyers we already know. One at a time, under NDA.</dd>
+              <dt>What you walk away with</dt>
+              <dd>A curated list of buyers matched to your practice, with the introductions already made.</dd>
               <dt>Timeline</dt>
-              <dd>6&ndash;18 months.</dd>
+              <dd>Depends on your readiness, not ours.</dd>
             </dl>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- ===== 5.4 Seven-Stage Process (tan) ===== -->
-    <section class="section bg-tan" data-screen-label="5.4 Seven-Stage Process">
+    <!-- ===== 5.4 The Introduction Sequence (tan) =====
+         REWRITE per Eric May 15 directive. Prior 7-stage section described Revolt running
+         valuation, structured bid process, multi-round negotiation, and regulatory close --
+         all of which imply licensed work and were sources of the false claims being pulled.
+         New 5-step sequence frames Revolt's actual role: confidential intake, mapping the buyer
+         universe Revolt already knows, making introductions one at a time, sitting in the room.
+         No promises about price, terms, multiples, earn-outs, or running diligence.
+         FLAG: cross-check this section line-by-line against the finder's exemption. -->
+    <section class="section bg-tan" data-screen-label="5.4 Introduction Sequence">
       <div class="container">
-        <span class="eyebrow" data-reveal><span class="rule"></span>How we run a deal</span>
-        <h2 class="h2" data-reveal data-stagger="1" style="margin-top: 24px; max-width: 26ch;">Seven stages. Each one a discipline, not a checklist.</h2>
+        <span class="eyebrow" data-reveal><span class="rule"></span>How we work with you</span>
+        <h2 class="h2" data-reveal data-stagger="1" style="margin-top: 24px; max-width: 26ch;">Five steps. Each one is a conversation, not a checklist.</h2>
         <div style="margin-top: 64px;">
           <div class="proc-row" data-reveal data-stagger="1">
             <span class="proc-row__num">01</span>
-            <span class="proc-row__title">Engagement</span>
+            <span class="proc-row__title">Confidential intake</span>
             <span class="proc-row__time">Day zero</span>
-            <p class="proc-row__desc">Confidential intake. Scope, fees, deal team agreed.</p>
+            <p class="proc-row__desc">We sit with you. We listen first. You decide whether to keep talking.</p>
           </div>
           <div class="proc-row" data-reveal data-stagger="2">
             <span class="proc-row__num">02</span>
-            <span class="proc-row__title">Valuation</span>
+            <span class="proc-row__title">Practice profile</span>
             <span class="proc-row__time">Weeks 1&ndash;3</span>
-            <p class="proc-row__desc">Three-lens model. Cash flow, strategic, succession. Each lens is its own analysis.</p>
+            <p class="proc-row__desc">We map what makes your practice yours. The things buyers will care about, and the things you will not negotiate.</p>
           </div>
           <div class="proc-row" data-reveal data-stagger="3">
             <span class="proc-row__num">03</span>
-            <span class="proc-row__title">Positioning</span>
+            <span class="proc-row__title">Buyer shortlist</span>
             <span class="proc-row__time">Weeks 3&ndash;5</span>
-            <p class="proc-row__desc">Practice prepared for buyer view. Materials, financials, narrative.</p>
+            <p class="proc-row__desc">A curated list of qualified buyers we already know. Matched to your practice. Nothing blasted, nothing public.</p>
           </div>
           <div class="proc-row" data-reveal data-stagger="4">
             <span class="proc-row__num">04</span>
-            <span class="proc-row__title">Buyer curation</span>
-            <span class="proc-row__time">Weeks 4&ndash;6</span>
-            <p class="proc-row__desc">Strategic + financial buyer universe mapped. Curated, not blasted. If your name shows up in an industry newsletter, we failed at stage four.</p>
+            <span class="proc-row__title">Introductions</span>
+            <span class="proc-row__time">Weeks 5&ndash;12</span>
+            <p class="proc-row__desc">We make the introductions, one at a time, under NDA. If your name shows up in an industry newsletter, we failed at step three.</p>
           </div>
           <div class="proc-row" data-reveal data-stagger="5">
             <span class="proc-row__num">05</span>
-            <span class="proc-row__title">Bidding</span>
-            <span class="proc-row__time">Weeks 6&ndash;10</span>
-            <p class="proc-row__desc">Structured competing bid process. Apples-to-apples terms, not just headline price.</p>
-          </div>
-          <div class="proc-row" data-reveal data-stagger="6">
-            <span class="proc-row__num">06</span>
-            <span class="proc-row__title">Negotiation</span>
-            <span class="proc-row__time">Weeks 10&ndash;16</span>
-            <p class="proc-row__desc">Multi-round. Price, structure, earnouts, retention, regulatory close conditions.</p>
-          </div>
-          <div class="proc-row" data-reveal data-stagger="7">
-            <span class="proc-row__num">07</span>
-            <span class="proc-row__title">Close &amp; integration</span>
-            <span class="proc-row__time">Weeks 16&ndash;28</span>
-            <p class="proc-row__desc">Regulatory close. 90-day post-close integration support.</p>
+            <span class="proc-row__title">In the room</span>
+            <span class="proc-row__time">Through close</span>
+            <p class="proc-row__desc">Your senior consultant stays with you through the conversations. You and your own counsel run the deal. We are in the room when you want us there.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ===== 5.5 Three-Lens Valuation (cream) ===== -->
-    <section class="section bg-cream" data-screen-label="5.5 Three-Lens Valuation">
+    <!-- ===== 5.5 Capture Your Value (cream) =====
+         REWRITE per Eric May 15 directive. Prior "Three-Lens Valuation" section had Revolt
+         performing valuation analysis -- forbidden. Reframed as education for the seller about
+         what buyers actually look at. Revolt is not running the analysis; the seller and their
+         own counsel are. Section header set to the Bridgemark-inspired anchor "Capture your value."
+         FLAG: every line below describes buyer-side considerations as general industry information.
+         Not Revolt providing valuation. Legal to verify framing. -->
+    <section class="section bg-cream" data-screen-label="5.5 Capture Your Value">
       <div class="container">
-        <span class="eyebrow" data-reveal><span class="rule"></span>Valuation methodology</span>
-        <h2 class="h2" data-reveal data-stagger="1" style="margin-top: 24px; max-width: 26ch;">Three lenses. Whichever produces the highest defensible number wins.</h2>
+        <span class="eyebrow" data-reveal><span class="rule"></span>What buyers look at</span>
+        <h2 class="h2" data-reveal data-stagger="1" style="margin-top: 24px; max-width: 26ch;">Capture your value.</h2>
+        <p class="lead" data-reveal data-stagger="2" style="margin-top: 32px; max-width: 64ch;">Before you take the call, it helps to know what the other side of the table is paying attention to. Three lenses, in plain language.</p>
         <div class="lens-grid" style="margin-top: 64px;">
           <article class="lens-card" data-reveal data-stagger="1">
             <span class="lens-card__num">Lens 01</span>
             <h3 class="lens-card__title">Cash flow</h3>
-            <p class="lens-card__measures">What the practice earns, in the buyer&rsquo;s hands.</p>
-            <span class="lens-card__inputs-label">Inputs</span>
-            <p class="lens-card__inputs">Revenue. EBITDA. Run-rate adjustments. Normalization. DCF.</p>
+            <p class="lens-card__measures">What the practice earns, in the buyer's hands.</p>
+            <span class="lens-card__inputs-label">Buyers ask about</span>
+            <p class="lens-card__inputs">Revenue. Recurring vs. transactional mix. Margins. Run-rate adjustments.</p>
           </article>
           <article class="lens-card" data-reveal data-stagger="2">
             <span class="lens-card__num">Lens 02</span>
-            <h3 class="lens-card__title">Strategic</h3>
+            <h3 class="lens-card__title">Strategic fit</h3>
             <p class="lens-card__measures">What the practice enables for the buyer.</p>
-            <span class="lens-card__inputs-label">Inputs</span>
+            <span class="lens-card__inputs-label">Buyers ask about</span>
             <p class="lens-card__inputs">Geographic fit. Client segment fit. Capability gap. Cross-sell unlocked.</p>
           </article>
           <article class="lens-card" data-reveal data-stagger="3">
             <span class="lens-card__num">Lens 03</span>
-            <h3 class="lens-card__title">Succession</h3>
-            <p class="lens-card__measures">What the practice risks losing if the deal does not happen.</p>
-            <span class="lens-card__inputs-label">Inputs</span>
-            <p class="lens-card__inputs">Key-person concentration. Attrition risk. Retention dependency.</p>
+            <h3 class="lens-card__title">Continuity</h3>
+            <p class="lens-card__measures">What the practice risks losing in the transition.</p>
+            <span class="lens-card__inputs-label">Buyers ask about</span>
+            <p class="lens-card__inputs">Key-person concentration. Client retention. Team retention.</p>
           </article>
         </div>
+        <p class="small" data-reveal data-stagger="4" style="margin-top: 48px; max-width: 64ch; color: var(--slate-60);">We don't sell the move. We show you the math, the way buyers will read it.</p>
       </div>
     </section>
 
@@ -525,31 +513,25 @@
       </div>
     </section>
 
-    <!-- ===== 5.7 Who Runs It (black, JP block) ===== -->
-    <section class="section bg-black" data-screen-label="5.7 Who Runs It">
-      <div class="container">
-        <div class="jp-grid">
-          <div class="jp-photo" data-reveal role="img" aria-label="JP Aubry, Head of Investment Banking — placeholder until headshot is finalized">
-            <span class="jp-photo__caption">Final headshot pending</span>
-          </div>
-          <div data-reveal data-stagger="1">
-            <span class="eyebrow"><span class="rule"></span>Who runs this</span>
-            <h3 class="h2" style="margin-top: 24px; color: var(--mustard);">JP Aubry &middot; Head of Investment Banking</h3>
-            <p class="lead" style="margin-top: 32px; max-width: 64ch;">JP runs Revolt&rsquo;s M&amp;A practice. Licensed under [registration to be filled by compliance]. He has run sell-side advisory and succession transactions in the advisor space for [X years, fill]. The discipline he brings, institutional valuation, structured bid processes, regulatory close, is the difference between a transaction that closes and a transaction that closes well.</p>
-            <p class="small" style="margin-top: 32px; color: var(--cream-60); max-width: 64ch;">Bio is placeholder. Eric and JP to provide final bio, credentials, and headshot before launch.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- ===== 5.7 [DELETED] Who Runs It / JP Aubry block =====
+         Removed in full per Eric May 15 directive. JP is no longer with Revolt.
+         Headshot placeholder, bio, and "Head of Investment Banking" title all gone.
+         Section number 5.7 is intentionally left empty; renumber on next major pass. -->
 
-    <!-- ===== 5.8 CTA (cream) ===== -->
-    <section id="contact" class="section bg-cream" data-screen-label="5.8 CTA">
+    <!-- ===== 5.7 CTA (cream) =====
+         (Renumbered from 5.8 after JP block deletion.)
+         CHANGES:
+           - Lead rewritten to drop "strategy session" language (read close to advisory framing).
+             Replaced with the prompt's locked tone: confidential intake, sitting with you, not pitching.
+           - Email address kept as ma@revoltfinancial.com pending direction on whether to rename.
+         FLAG: confirm ma@ inbox stays or moves (e.g. exits@, sell@) to match new positioning. -->
+    <section id="contact" class="section bg-cream" data-screen-label="5.7 CTA">
       <div class="container">
         <div class="contact-grid">
           <div data-reveal>
             <span class="eyebrow"><span class="rule"></span>Begin</span>
             <h2 class="h2" style="margin-top: 24px;">Start a confidential intake.</h2>
-            <p class="lead" style="margin-top: 32px; max-width: 50ch;">A strategy session is two hours. The first ten minutes are spent making sure we are the right room for the conversation. The rest is the conversation.</p>
+            <p class="lead" style="margin-top: 32px; max-width: 50ch;">Confidential. Thirty minutes. No pitch. No pressure. We listen first. You decide whether to keep talking.</p>
             <p class="small" style="margin-top: 40px; color: var(--slate-60); max-width: 50ch;">Or call directly: 786-555-1234. Or email: ma@revoltfinancial.com.</p>
           </div>
           <form data-reveal data-stagger="1" novalidate>
@@ -561,6 +543,10 @@
               <div class="field">
                 <label for="f-firm">Practice (current)</label>
                 <input id="f-firm" name="firm" type="text" autocomplete="organization">
+              </div>
+                            <div class="field span-2">
+                <label for="f-email">Email</label>
+                <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" required>
               </div>
               <div class="field span-2">
                 <label for="f-mobile">Mobile</label>
@@ -587,19 +573,19 @@
       <div class="footer__cols">
         <div class="footer__col">
           <span class="footer__mark"><img src="assets/images/revolt-logo-stacked.png" alt="Revolt"></span>
-          <p class="small footer__lede">Revolt is a boutique financial-services talent firm. Recruiting, Team Recruiting, and M&amp;A. We work with established advisors, the firms that hire and grow them, and the principals 3-5 years from a sale.</p>
+          <p class="small footer__lede">Revolt is a boutique financial-services talent firm for advisors who build their book on their own terms. We work with established advisors, the firms that hire and grow them, and the principals three to five years from a sale.</p>
           <p class="small footer__principle">Discreet by default. Relentless on your behalf.</p>
         </div>
         <div class="footer__col">
           <h4>Revolt</h4>
           <ul>
-            <li><a href="/advisor-recruiting.html">Recruiting</a></li>
-            <li><a href="/team-recruiting.html">Team Recruiting</a></li>
-            <li><a href="/ma.html">M&amp;A</a></li>
+            <li><a href="/advisor-recruiting.html">Explore Your Next Firm</a></li>
+            <li><a href="/team-recruiting.html">Hire Staff</a></li>
+            <li><a href="/ma.html">Sell Your Practice</a></li>
           </ul>
           <h4 style="margin-top: 32px;">Resources</h4>
           <ul>
-            <li><a href="/platform.html">Platform</a></li>
+            <li><a href="/platform.html">Compare Deals</a></li>
             <li><a href="https://www.example.com/podcast" rel="noopener">Podcast</a></li>
             <li><a href="https://www.linkedin.com/" rel="noopener">LinkedIn</a></li>
           </ul>
