@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Apply for Access · Compare Deals · Revolt</title>
+  <meta name="description" content="Apply for access to the Revolt platform. Tell us about your practice. We respond within one business day.">
+
+  <link rel="canonical" href="https://revoltfinancial.com/apply.html">
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Revolt">
+  <meta property="og:url" content="https://revoltfinancial.com/apply.html">
+  <meta property="og:title" content="Apply for Access · Compare Deals · Revolt">
+  <meta property="og:description" content="Apply for access to the Revolt platform. Tell us about your practice.">
+  <meta property="og:image" content="https://revoltfinancial.com/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Apply for Access · Compare Deals · Revolt">
+  <meta name="twitter:description" content="Apply for access to the Revolt platform. Tell us about your practice.">
+  <meta name="twitter:image" content="https://revoltfinancial.com/assets/og-image.png">
+
+  <meta name="theme-color" content="#0B0E13">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap">
+  <link rel="preload" href="assets/fonts/DegularDisplay-Bold.otf" as="font" type="font/otf" crossorigin>
+  <link rel="stylesheet" href="assets/css/revolt.css?v=3">
+  <style>
+    /* Apply page — full black background, white + mustard primaries. */
+    body { background: var(--black); color: var(--white); }
+    .apply-hero { min-height: 56vh; }
+    .apply-hero .backdrop-num { right: -3vw; bottom: -10vh; font-size: 22vw; }
+
+    .apply-section { background: var(--black); color: var(--white); padding-top: var(--pad-tight); padding-bottom: var(--pad-section); position: relative; }
+    .apply-section .eyebrow { color: var(--mustard); }
+    .apply-section .eyebrow .rule { background: var(--mustard); }
+    .apply-section .h2 { color: var(--white); }
+
+    .apply-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: var(--gap-2xl); align-items: start; }
+
+    .apply-intro h2 { color: var(--white); }
+    .apply-intro p.lead { color: var(--cream-80); }
+    .apply-intro p.small { color: var(--cream-80); }
+    .apply-intro .bullet-list { display: flex; flex-direction: column; gap: var(--gap-md); margin-top: var(--gap-xl); }
+    .apply-intro .bullet-list li {
+      font-family: var(--body); font-weight: 400;
+      font-size: 14px; line-height: 1.5;
+      color: var(--cream-80);
+      padding-left: 28px;
+      position: relative;
+    }
+    .apply-intro .bullet-list li::before {
+      content: '';
+      position: absolute; left: 0; top: 8px;
+      width: 14px; height: 1.5px;
+      background: var(--mustard);
+    }
+
+    /* Form on dark bg — override field colors */
+    .apply-form .field label {
+      color: var(--mustard);
+      font-weight: 700;
+      letter-spacing: 0.14em;
+    }
+    .apply-form .field input,
+    .apply-form .field textarea,
+    .apply-form .field select {
+      color: var(--white);
+      border-bottom-color: rgba(255,255,255,0.4);
+    }
+    .apply-form .field input::placeholder,
+    .apply-form .field textarea::placeholder { color: rgba(255,255,255,0.4); }
+    .apply-form .field input:focus,
+    .apply-form .field textarea:focus,
+    .apply-form .field select:focus { border-color: var(--mustard); }
+    .apply-form .field select option { background: var(--black); color: var(--white); }
+
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap-lg) var(--gap-lg); }
+    .form-grid .span-2 { grid-column: 1 / -1; }
+
+    .radio-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--gap-sm); margin-top: var(--gap-xs); }
+    .radio-grid label {
+      display: flex; align-items: center; gap: 10px;
+      font-family: var(--body); font-weight: 400; font-size: 14px;
+      color: var(--white);
+      padding: 12px 16px;
+      border: 1px solid rgba(255,255,255,0.2);
+      cursor: pointer;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+    .radio-grid label:hover { border-color: var(--mustard); }
+    .radio-grid input[type="radio"],
+    .radio-grid input[type="checkbox"] {
+      appearance: none; -webkit-appearance: none;
+      width: 16px; height: 16px;
+      min-width: 16px; min-height: 16px;
+      aspect-ratio: 1 / 1;
+      padding: 0; margin: 0;
+      box-sizing: border-box;
+      border: 1.5px solid var(--mustard);
+      background: transparent;
+      flex-shrink: 0;
+      cursor: pointer;
+      position: relative;
+      border-radius: 0;
+    }
+    .radio-grid input[type="radio"] { border-radius: 50%; }
+    .radio-grid input[type="checkbox"] { border-radius: 0; }
+    .radio-grid input[type="radio"]:checked::after,
+    .radio-grid input[type="checkbox"]:checked::after {
+      content: '';
+      position: absolute;
+      inset: 3px;
+      background: var(--mustard);
+    }
+    .radio-grid input[type="radio"]:checked::after { border-radius: 50%; }
+    .radio-grid input[type="checkbox"]:checked::after { border-radius: 0; }
+    .radio-grid label:has(input:checked) { border-color: var(--mustard); }
+
+    .field-group-title {
+      font-family: var(--body); font-weight: 700;
+      font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--mustard);
+      margin-top: var(--gap-xl);
+      padding-bottom: var(--gap-sm);
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+    }
+    .field-group-title:first-child { margin-top: 0; }
+
+    .apply-form .field .field-helper {
+      font-family: var(--body); font-size: 12px; font-weight: 400;
+      color: rgba(255,255,255,0.55);
+      letter-spacing: 0;
+      text-transform: none;
+      margin-top: 6px;
+    }
+
+    .apply-cta {
+      margin-top: var(--gap-xl);
+      padding-top: var(--gap-lg);
+      border-top: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .footer { background: #0F1218; }
+
+    @media (max-width: 900px) {
+      .apply-grid { grid-template-columns: 1fr; }
+      .form-grid, .radio-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav" data-scroll-state="top" aria-label="Primary">
+    <a class="nav__logo" href="/">
+      <img src="assets/images/revolt-logo-stacked.png" alt="Revolt">
+    </a>
+    <ul class="nav__links">
+      <li><a href="/advisor-recruiting.html">Explore Your Next Firm</a></li>
+      <li><a href="/team-recruiting.html">Hire Staff</a></li>
+      <li><a href="/ma.html">Sell Your Practice</a></li>
+      <li><a href="/platform.html">Compare Deals</a></li>
+    </ul>
+    <a class="btn-primary" href="/contact.html">Contact Us</a>
+    <button class="nav__toggle" type="button" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav__mobile" role="menu">
+      <a href="/advisor-recruiting.html">Explore Your Next Firm</a>
+      <a href="/team-recruiting.html">Hire Staff</a>
+      <a href="/ma.html">Sell Your Practice</a>
+      <a href="/platform.html">Compare Deals</a>
+      <a class="btn-primary" href="/contact.html">Contact Us</a>
+    </div>
+  </nav>
+
+  <main class="page" data-screen-label="06 Apply">
+
+    <!-- ===== Hero ===== -->
+    <section class="hero apply-hero bg-black" data-screen-label="Apply Hero">
+      <div class="hero__overlay"></div>
+      <span class="backdrop-num" aria-hidden="true">APPLY</span>
+      <div class="hero__inner container">
+        <span class="eyebrow"><span class="rule"></span>Compare Deals · Apply for access</span>
+        <h1 class="h1" style="margin-top: 32px; max-width: 18ch;">See what your book is worth.</h1>
+        <p class="lead" style="margin-top: 32px; max-width: 60ch; color: var(--cream-80);">Tell us about your practice. We respond within one business day with a link to the platform or a private conversation, whichever fits.</p>
+      </div>
+    </section>
+
+    <!-- ===== Form ===== -->
+    <section class="apply-section" data-screen-label="Application">
+      <div class="container">
+        <div class="apply-grid">
+
+          <aside class="apply-intro" data-reveal>
+            <span class="eyebrow"><span class="rule"></span>What happens next</span>
+            <h2 class="h2" style="margin-top: 24px; max-width: 16ch;">Three steps. No pitch.</h2>
+            <ul class="bullet-list">
+              <li>You complete this short application. Five minutes.</li>
+              <li>A senior consultant reviews it within one business day.</li>
+              <li>We send a private link to the platform, or a thirty-minute call if that fits better.</li>
+            </ul>
+            <p class="small" style="margin-top: var(--gap-xl); color: rgba(255,255,255,0.55); max-width: 40ch;">Everything you tell us stays inside Revolt. Discretion is operational, not aspirational.</p>
+          </aside>
+
+          <form class="apply-form" data-reveal data-stagger="1" novalidate>
+
+            <!-- About you -->
+            <p class="field-group-title">About you</p>
+            <div class="form-grid" style="margin-top: var(--gap-md);">
+              <div class="field">
+                <label for="f-first">First name</label>
+                <input id="f-first" name="first_name" type="text" autocomplete="given-name" required>
+              </div>
+              <div class="field">
+                <label for="f-last">Last name</label>
+                <input id="f-last" name="last_name" type="text" autocomplete="family-name" required>
+              </div>
+              <div class="field span-2">
+                <label for="f-email">Email</label>
+                <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" required>
+              </div>
+              <div class="field span-2">
+                <label for="f-mobile">Mobile</label>
+                <input id="f-mobile" name="mobile" type="tel" autocomplete="tel" inputmode="tel">
+              </div>
+              <div class="field">
+                <label for="f-firm">Current firm</label>
+                <input id="f-firm" name="current_firm" type="text" autocomplete="organization">
+              </div>
+              <div class="field">
+                <label for="f-role">Your role</label>
+                <input id="f-role" name="role" type="text" placeholder="Principal, partner, senior advisor">
+              </div>
+              <div class="field span-2">
+                <label for="f-channel">How did you hear about Revolt?</label>
+                <select id="f-channel" name="channel">
+                  <option value="">Pick one</option>
+                  <option value="podcast">Podcast</option>
+                  <option value="referral">Referral</option>
+                  <option value="ad">Ad</option>
+                  <option value="search">Search</option>
+                  <option value="linkedin">LinkedIn</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Your practice -->
+            <p class="field-group-title">Your practice</p>
+            <div class="form-grid" style="margin-top: var(--gap-md);">
+              <div class="field span-2">
+                <label>Practice size by production (GDC)</label>
+                <div class="radio-grid">
+                  <label><input type="radio" name="production_band" value="under_1m"> Under $1M</label>
+                  <label><input type="radio" name="production_band" value="1m_3m"> $1M – $3M</label>
+                  <label><input type="radio" name="production_band" value="3m_10m"> $3M – $10M</label>
+                  <label><input type="radio" name="production_band" value="10m_25m"> $10M – $25M</label>
+                  <label><input type="radio" name="production_band" value="25m_plus"> $25M+</label>
+                  <label><input type="radio" name="production_band" value="rather_not"> Prefer not to say</label>
+                </div>
+              </div>
+
+              <div class="field span-2">
+                <label>Assets under management</label>
+                <div class="radio-grid">
+                  <label><input type="radio" name="aum_band" value="under_50m"> Under $50M</label>
+                  <label><input type="radio" name="aum_band" value="50m_250m"> $50M – $250M</label>
+                  <label><input type="radio" name="aum_band" value="250m_1b"> $250M – $1B</label>
+                  <label><input type="radio" name="aum_band" value="1b_plus"> $1B+</label>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="f-team-size">Team size</label>
+                <input id="f-team-size" name="team_size" type="number" min="1" placeholder="Total headcount including you">
+              </div>
+              <div class="field">
+                <label for="f-structure">Current structure</label>
+                <select id="f-structure" name="current_structure">
+                  <option value="">Pick one</option>
+                  <option value="w2">W-2 at a major firm</option>
+                  <option value="ibd">Independent BD / Insurance BD</option>
+                  <option value="hybrid">Hybrid RIA</option>
+                  <option value="ria">RIA</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Timing and intent -->
+            <p class="field-group-title">Timing and intent</p>
+            <div class="form-grid" style="margin-top: var(--gap-md);">
+              <div class="field span-2">
+                <label>When do you plan to move?</label>
+                <div class="radio-grid">
+                  <label><input type="radio" name="timeline" value="now"> Ready now</label>
+                  <label><input type="radio" name="timeline" value="6mo"> Within 6 months</label>
+                  <label><input type="radio" name="timeline" value="12mo"> Within 12 months</label>
+                  <label><input type="radio" name="timeline" value="1_2yr"> 1 to 2 years out</label>
+                  <label><input type="radio" name="timeline" value="2_5yr"> 2 to 5 years out</label>
+                  <label><input type="radio" name="timeline" value="exploring"> Just exploring</label>
+                </div>
+              </div>
+
+              <div class="field span-2">
+                <label>Have you met with other recruiters or firms?</label>
+                <div class="radio-grid">
+                  <label><input type="radio" name="met_others" value="no"> No, this is the first step</label>
+                  <label><input type="radio" name="met_others" value="one"> Yes, one</label>
+                  <label><input type="radio" name="met_others" value="few"> Yes, two or three</label>
+                  <label><input type="radio" name="met_others" value="many"> Yes, many</label>
+                </div>
+              </div>
+
+              <div class="field span-2">
+                <label>What are you most curious about? (pick all that apply)</label>
+                <div class="radio-grid">
+                  <label><input type="checkbox" name="interest" value="valuation"> What my book is worth</label>
+                  <label><input type="checkbox" name="interest" value="market"> What firms would pay</label>
+                  <label><input type="checkbox" name="interest" value="structure"> The right structure for me</label>
+                  <label><input type="checkbox" name="interest" value="succession"> Succession or sale</label>
+                  <label><input type="checkbox" name="interest" value="staff"> Hiring staff for my practice</label>
+                  <label><input type="checkbox" name="interest" value="just_curious"> Just curious</label>
+                </div>
+              </div>
+
+              <div class="field span-2">
+                <label for="f-notes">Anything else we should know?</label>
+                <textarea id="f-notes" name="notes" rows="4" placeholder="Open-ended. Whatever is on your mind."></textarea>
+                <span class="field-helper">Optional. Stays inside Revolt.</span>
+              </div>
+            </div>
+
+            <div class="apply-cta">
+              <button class="btn-primary" type="submit">Submit application</button>
+              <p class="small" style="margin-top: var(--gap-md); color: rgba(255,255,255,0.55);">By submitting, you confirm everything above is yours to share. We respond within one business day.</p>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__cols">
+        <div class="footer__col">
+          <span class="footer__mark"><img src="assets/images/revolt-logo-stacked.png" alt="Revolt"></span>
+          <p class="small footer__lede">Revolt is a boutique financial-services talent firm for advisors who build their book on their own terms. We work with established advisors, the firms that hire and grow them, and the principals three to five years from a sale.</p>
+          <p class="small footer__principle">Discreet by default. Relentless on your behalf.</p>
+        </div>
+        <div class="footer__col">
+          <h4>Revolt</h4>
+          <ul>
+            <li><a href="/advisor-recruiting.html">Explore Your Next Firm</a></li>
+            <li><a href="/team-recruiting.html">Hire Staff</a></li>
+            <li><a href="/ma.html">Sell Your Practice</a></li>
+          </ul>
+          <h4 style="margin-top: 32px;">Resources</h4>
+          <ul>
+            <li><a href="/platform.html">Compare Deals</a></li>
+            <li><a href="https://www.example.com/podcast" rel="noopener">Podcast</a></li>
+            <li><a href="https://www.linkedin.com/" rel="noopener">LinkedIn</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+17865551234">786-555-1234</a></li>
+            <li><a href="mailto:desk@revoltfinancial.com">desk@revoltfinancial.com</a></li>
+            <li><a href="mailto:enterprise@revoltfinancial.com">enterprise@revoltfinancial.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__rule"></div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 Revolt. All rights reserved. &nbsp;<a href="/privacy.html">Privacy</a> &nbsp; <a href="/terms.html">Terms</a></p>
+        <p>Registration disclosures pending compliance review pre-launch.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/revolt.js" defer></script>
+</body>
+</html>

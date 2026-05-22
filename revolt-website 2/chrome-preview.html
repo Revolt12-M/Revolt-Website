@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chrome Preview · Revolt Financial</title>
+  <meta name="description" content="Preview of shared chrome: tokens, type scale, buttons, components, nav, and footer.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap">
+  <link rel="stylesheet" href="assets/css/revolt.css?v=3">
+  <link rel="preload" href="assets/fonts/DegularDisplay-Bold.otf" as="font" type="font/otf" crossorigin>
+  <style>
+    /* Preview-only styling. Not part of the design system. */
+    .preview { padding-top: 96px; }
+    .preview__section { padding: var(--gap-2xl) var(--pad-side); border-bottom: 1px solid var(--hairline, var(--slate-30)); }
+    .preview__section h2 { margin-bottom: var(--gap-md); }
+    .swatch-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: var(--gap-md); margin-top: var(--gap-lg); }
+    .swatch { display: flex; flex-direction: column; gap: 8px; }
+    .swatch__chip { aspect-ratio: 4/3; border: 1px solid var(--slate-30); }
+    .swatch__name { font-family: var(--display); font-weight: 700; font-size: 16px; }
+    .swatch__hex { font-size: 12px; letter-spacing: 0.08em; color: var(--slate-60); font-variant-numeric: tabular-nums; }
+    .type-row { display: grid; grid-template-columns: 140px 1fr; gap: var(--gap-lg); align-items: baseline; padding: var(--gap-md) 0; border-bottom: 1px solid var(--hairline, var(--slate-30)); }
+    .type-row .label { color: var(--slate-60); font-variant-numeric: tabular-nums; }
+    .stack { display: flex; flex-direction: column; gap: var(--gap-md); }
+    .row { display: flex; flex-wrap: wrap; gap: var(--gap-md); align-items: center; }
+    .bg-block { padding: var(--gap-xl) var(--gap-lg); }
+    .file-tree { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; line-height: 1.7; white-space: pre; background: var(--white); border: 1px solid var(--slate-30); padding: var(--gap-lg); color: var(--ink); }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAV (canonical, inlined from components/nav.html) ===== -->
+  <nav class="nav" data-scroll-state="top" aria-label="Primary">
+    <a class="nav__logo" href="/">
+      <img src="assets/images/revolt-logo-stacked.png" alt="Revolt">
+      <span class="tagline">Boutique excellence</span>
+    </a>
+    <ul class="nav__links">
+      <li><a href="/advisor-recruiting.html">Advisor Recruiting</a></li>
+      <li><a href="/team-recruiting.html">Team Recruiting</a></li>
+      <li><a href="/ma.html">M&amp;A</a></li>
+      <li><a href="/platform.html">Platform</a></li>
+    </ul>
+    <a class="btn-sms" href="sms:+17865551234">Text the Desk</a>
+    <button class="nav__toggle" type="button" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav__mobile" role="menu">
+      <a href="/advisor-recruiting.html">Advisor Recruiting</a>
+      <a href="/team-recruiting.html">Team Recruiting</a>
+      <a href="/ma.html">M&amp;A</a>
+      <a href="/platform.html">Platform</a>
+      <a class="btn-sms" href="sms:+17865551234">Text the Desk</a>
+    </div>
+  </nav>
+
+  <main class="preview page">
+
+    <section class="preview__section bg-cream">
+      <span class="eyebrow"><span class="rule"></span>Prompt 0 · Shared Chrome</span>
+      <h1 class="h1" style="margin-top: 24px; max-width: 18ch;">Chrome ready. Review before page builds.</h1>
+      <p class="lead" style="margin-top: 24px; max-width: 60ch;">CSS, JS, nav, and footer are in. No page templates yet. This preview shows the system. Sign off and I will start on the homepage.</p>
+      <div class="row" style="margin-top: 40px;">
+        <a class="btn-primary" href="sms:+17865551234">Approve and ship Prompt 1</a>
+        <a class="btn-ghost" href="#tree">See file tree</a>
+      </div>
+    </section>
+
+    <section id="tree" class="preview__section bg-cream">
+      <span class="eyebrow"><span class="rule"></span>File tree</span>
+      <h2 class="h2" style="margin-top: 24px;">What is on disk.</h2>
+      <div class="file-tree" style="margin-top: 32px;">revolt-website/
+├── index.html              [stub]
+├── advisor-recruiting.html [stub]
+├── team-recruiting.html    [stub]
+├── ma.html                 [stub]
+├── platform.html           [stub]
+├── chrome-preview.html     [this file — review only]
+├── assets/
+│   ├── css/
+│   │   └── revolt.css      ✓ 20.3 KB (under 30 KB target)
+│   ├── js/
+│   │   └── revolt.js       ✓ 3.6 KB  (under 5 KB target)
+│   ├── fonts/
+│   │   └── DegularDisplay-Bold.otf
+│   └── images/             [empty — brand photos to be added]
+├── components/
+│   ├── nav.html            ✓ canonical
+│   └── footer.html         ✓ canonical
+├── DESIGN_TOKENS.md
+├── PRD_REVOLT_SITE_V2.md
+└── PROMPT_PACK.md</div>
+      <p class="body" style="margin-top: 24px; max-width: 70ch;">
+        <strong>Font note.</strong> Degular Display Bold ships as <code>.otf</code> for now. The build pipeline should convert to <code>.woff2</code> at deploy (the @font-face declaration accepts both). Trade Gothic Next LT Pro is not licensed for web at this stage, so body type falls back to Inter per tokens Section 2. The metrics are close and the rhythm is preserved.
+      </p>
+    </section>
+
+    <!-- ===== Color swatches ===== -->
+    <section class="preview__section bg-cream">
+      <span class="eyebrow"><span class="rule"></span>01 · Color</span>
+      <h2 class="h2" style="margin-top: 24px;">Seven colors. Yellow is rationed.</h2>
+      <div class="swatch-grid">
+        <div class="swatch"><div class="swatch__chip" style="background:#0B0E13"></div><span class="swatch__name">Black</span><span class="swatch__hex">#0B0E13 · primary dark</span></div>
+        <div class="swatch"><div class="swatch__chip" style="background:#3C4555"></div><span class="swatch__name">Slate</span><span class="swatch__hex">#3C4555 · cards on black</span></div>
+        <div class="swatch"><div class="swatch__chip" style="background:#E5A100"></div><span class="swatch__name">Mustard</span><span class="swatch__hex">#E5A100 · headlines + CTA only</span></div>
+        <div class="swatch"><div class="swatch__chip" style="background:#B0A68E"></div><span class="swatch__name">Tan</span><span class="swatch__hex">#B0A68E · warm bg</span></div>
+        <div class="swatch"><div class="swatch__chip" style="background:#9E9474"></div><span class="swatch__name">Olive</span><span class="swatch__hex">#9E9474 · warm tertiary</span></div>
+        <div class="swatch"><div class="swatch__chip" style="background:#DDDAD2"></div><span class="swatch__name">Cream</span><span class="swatch__hex">#DDDAD2 · default page bg</span></div>
+        <div class="swatch"><div class="swatch__chip" style="background:#5B8A8A"></div><span class="swatch__name">Teal</span><span class="swatch__hex">#5B8A8A · accent · 1 / page</span></div>
+      </div>
+    </section>
+
+    <!-- ===== Type scale ===== -->
+    <section class="preview__section bg-cream">
+      <span class="eyebrow"><span class="rule"></span>02 · Type scale</span>
+      <h2 class="h2" style="margin-top: 24px;">Degular Display + Inter fallback.</h2>
+      <div style="margin-top: 40px;">
+        <div class="type-row"><span class="label">.h1</span><span class="h1">You have more options than you think.</span></div>
+        <div class="type-row"><span class="label">.h2</span><span class="h2">Most advisors are shown three firms.</span></div>
+        <div class="type-row"><span class="label">.h3</span><span class="h3">A principal in every meeting.</span></div>
+        <div class="type-row"><span class="label">.lead</span><span class="lead">190+ firm contracts. A principal in every meeting. Every deal structured for you.</span></div>
+        <div class="type-row"><span class="label">.body</span><span class="body">The recruiting industry built itself on volume. Generic outreach. Three or four firm partners.</span></div>
+        <div class="type-row"><span class="label">.small</span><span class="small">Recruited assets, 2024.</span></div>
+        <div class="type-row"><span class="label">.eyebrow</span><span class="eyebrow"><span class="rule"></span>Section label</span></div>
+        <div class="type-row"><span class="label">.label</span><span class="label">Track A</span></div>
+        <div class="type-row"><span class="label">strikethrough</span><span class="h2">You are being shown <span class="strike">three firms</span>.</span></div>
+      </div>
+    </section>
+
+    <!-- ===== Buttons ===== -->
+    <section class="preview__section bg-cream">
+      <span class="eyebrow"><span class="rule"></span>03 · Buttons</span>
+      <h2 class="h2" style="margin-top: 24px;">Three only.</h2>
+      <div class="row" style="margin-top: 40px;">
+        <a class="btn-primary" href="#">Text the Desk</a>
+        <a class="btn-ghost" href="#">See the four service lines</a>
+        <a class="btn-sms" href="sms:+17865551234">Text the Desk</a>
+      </div>
+      <p class="small" style="margin-top: 24px; color: var(--slate-60); max-width: 60ch;">On dark backgrounds the ghost button uses currentColor for its border and shifts to mustard on hover.</p>
+      <div class="bg-block bg-black" style="margin-top: 32px;">
+        <div class="row">
+          <a class="btn-primary" href="#">Start a private conversation</a>
+          <a class="btn-ghost" href="#">Read the framework</a>
+          <a class="btn-sms" href="sms:+17865551234">Text the Desk</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Background utilities ===== -->
+    <section class="preview__section bg-cream">
+      <span class="eyebrow"><span class="rule"></span>04 · Section backgrounds</span>
+      <h2 class="h2" style="margin-top: 24px;">Each utility sets bg + text colors.</h2>
+      <div class="stack" style="margin-top: 40px;">
+        <div class="bg-block bg-black">
+          <span class="eyebrow"><span class="rule"></span>Black</span>
+          <h3 class="h2" style="margin-top: 16px;">Primary dark section.</h3>
+          <p class="lead" style="margin-top: 12px; max-width: 60ch;">H2 in white, body in cream-80, eyebrow in mustard.</p>
+        </div>
+        <div class="bg-block bg-slate">
+          <span class="eyebrow"><span class="rule"></span>Slate</span>
+          <h3 class="h2" style="margin-top: 16px;">Secondary dark.</h3>
+          <p class="lead" style="margin-top: 12px; max-width: 60ch;">Used on cards over black or when two darks need a tonal step.</p>
+        </div>
+        <div class="bg-block bg-tan">
+          <span class="eyebrow"><span class="rule"></span>Tan</span>
+          <h3 class="h2" style="margin-top: 16px;">Warm-neutral.</h3>
+          <p class="lead" style="margin-top: 12px; max-width: 60ch;">H2 in ink. Body in ink. Eyebrow in slate.</p>
+        </div>
+        <div class="bg-block bg-olive">
+          <span class="eyebrow"><span class="rule"></span>Olive</span>
+          <h3 class="h2" style="margin-top: 16px;">Warm tertiary.</h3>
+          <p class="lead" style="margin-top: 12px; max-width: 60ch;">Balances tan. H2 white, body cream, eyebrow mustard.</p>
+        </div>
+        <div class="bg-block bg-teal">
+          <span class="eyebrow"><span class="rule"></span>Teal</span>
+          <h3 class="h2" style="margin-top: 16px;">Accent. One per page max.</h3>
+          <p class="lead" style="margin-top: 12px; max-width: 60ch;">Used for the confidentiality moment on M&amp;A.</p>
+        </div>
+        <div class="bg-block bg-cream">
+          <span class="eyebrow"><span class="rule"></span>Cream</span>
+          <h3 class="h2" style="margin-top: 16px;">Default light.</h3>
+          <p class="lead" style="margin-top: 12px; max-width: 60ch;">Page-frame default.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Components ===== -->
+    <section class="preview__section bg-cream">
+      <span class="eyebrow"><span class="rule"></span>05 · Components</span>
+      <h2 class="h2" style="margin-top: 24px;">Tile, compare, FAQ, field.</h2>
+
+      <h3 class="h3" style="margin-top: 64px;">.tile (4-col grid on desktop)</h3>
+      <div class="grid-4" style="margin-top: 24px;">
+        <a class="tile" href="#">
+          <span class="tile__num">01</span>
+          <span class="tile__title">Advisor Recruiting</span>
+          <span class="tile__desc">The deepest contract network in the industry. 190+ firm relationships.</span>
+        </a>
+        <a class="tile" href="#">
+          <span class="tile__num">02</span>
+          <span class="tile__title">Team Recruiting</span>
+          <span class="tile__desc">The seats that free the principal to do what only the principal can do.</span>
+        </a>
+        <a class="tile" href="#">
+          <span class="tile__num">03</span>
+          <span class="tile__title">M&amp;A</span>
+          <span class="tile__desc">The first licensed investment bank built for the independent advisor space.</span>
+        </a>
+        <a class="tile" href="#">
+          <span class="tile__num">04</span>
+          <span class="tile__title">Platform</span>
+          <span class="tile__desc">Coming 2026. Upload once. See what 190 firms would actually offer.</span>
+        </a>
+      </div>
+
+      <h3 class="h3" style="margin-top: 64px;">.compare__row</h3>
+      <div style="margin-top: 24px;">
+        <div class="compare__row">
+          <div class="industry">3 to 5 firm contracts</div>
+          <div class="revolt">190+ firm contracts, audited annually</div>
+        </div>
+        <div class="compare__row">
+          <div class="industry">Phone calls and email blasts</div>
+          <div class="revolt">Principal-led intake, in person where it matters</div>
+        </div>
+        <div class="compare__row">
+          <div class="industry">Submit a name, wait for an offer</div>
+          <div class="revolt">Custom 40-point deal structures</div>
+        </div>
+      </div>
+
+      <h3 class="h3" style="margin-top: 64px;">.faq (native &lt;details&gt;)</h3>
+      <div style="margin-top: 24px;">
+        <details class="faq">
+          <summary>How long does a move take?</summary>
+          <p>Typically 90 days from intake to signed deal, but the timeline runs on your readiness, not ours. Some teams take 12 months. Some take 30 days.</p>
+        </details>
+        <details class="faq">
+          <summary>What does Revolt actually cost me?</summary>
+          <p>Nothing direct. We are paid by the firm you join, contingent on you staying through the retention period. We win when you stay.</p>
+        </details>
+      </div>
+
+      <h3 class="h3" style="margin-top: 64px;">.field (underlined inputs, square corners)</h3>
+      <form style="margin-top: 24px; display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap-lg); max-width: 720px;">
+        <div class="field">
+          <label for="pv-name">Name</label>
+          <input id="pv-name" type="text" placeholder="Your name">
+        </div>
+        <div class="field">
+          <label for="pv-firm">Firm (current)</label>
+          <input id="pv-firm" type="text" placeholder="Where are you now">
+        </div>
+        <div class="field" style="grid-column: 1 / -1;">
+          <label for="pv-msg">What is on your mind?</label>
+          <textarea id="pv-msg" rows="3"></textarea>
+        </div>
+        <div style="grid-column: 1 / -1;">
+          <button class="btn-primary" type="button">Send to the desk</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- ===== Stats + reveal demo ===== -->
+    <section class="preview__section bg-black">
+      <span class="eyebrow"><span class="rule"></span>06 · Stats + scroll reveal</span>
+      <h2 class="h2" style="margin-top: 24px;">Counters fire on intersection.</h2>
+      <div class="grid-4" style="margin-top: 64px;">
+        <div class="stat" data-reveal data-stagger="1"><span class="stat__figure" data-counter="$84M">$84M</span><span class="stat__label">Recruited assets, 2024</span></div>
+        <div class="stat" data-reveal data-stagger="2"><span class="stat__figure" data-counter="190+">190+</span><span class="stat__label">Firm contracts</span></div>
+        <div class="stat" data-reveal data-stagger="3"><span class="stat__figure" data-counter="40">40</span><span class="stat__label">Negotiation points per deal</span></div>
+        <div class="stat" data-reveal data-stagger="4"><span class="stat__figure" data-counter="#1">#1</span><span class="stat__label">Nationally, last 24 months</span></div>
+      </div>
+    </section>
+
+    <!-- ===== Backdrop numeral demo ===== -->
+    <section class="preview__section bg-tan" style="position: relative;">
+      <span class="backdrop-num" style="top: -40px; right: -40px;">190</span>
+      <span class="eyebrow"><span class="rule"></span>07 · Backdrop numeral</span>
+      <h2 class="h2" style="margin-top: 24px; max-width: 24ch; position: relative;">Most advisors are shown three firms. We work with one hundred and ninety.</h2>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER (canonical, inlined from components/footer.html) ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__cols">
+        <div class="footer__col">
+          <span class="footer__mark"><img src="assets/images/revolt-logo-stacked.png" alt="Revolt"></span>
+          <p class="small" style="margin-top: 24px; max-width: 36ch; color: var(--cream-80);">Boutique excellence.</p>
+          <p class="small" style="margin-top: 12px; max-width: 42ch; color: var(--cream-60);">A principal in every meeting. 190+ firm contracts. Discreet by default.</p>
+        </div>
+        <div class="footer__col">
+          <h4>Site</h4>
+          <ul>
+            <li><a href="/advisor-recruiting.html">Advisor Recruiting</a></li>
+            <li><a href="/team-recruiting.html">Team Recruiting</a></li>
+            <li><a href="/ma.html">M&amp;A</a></li>
+            <li><a href="/platform.html">Platform</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a class="btn-sms" href="sms:+17865551234" style="margin-bottom: 8px;">Text the Desk</a></li>
+            <li><a href="mailto:desk@revoltfinancial.com">desk@revoltfinancial.com</a></li>
+            <li><a href="https://www.linkedin.com/" rel="noopener">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__rule"></div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 Revolt Financial. All rights reserved.</p>
+        <p>Securities offered through Revolt Financial. Registered representatives. Legal disclosure to be confirmed by compliance pre-launch.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/revolt.js" defer></script>
+</body>
+</html>

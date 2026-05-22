@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Revolt · Your book. Your team. Your terms.</title>
+  <meta name="description" content="For advisors who build their book on their own terms. 200+ firms we work with. A senior consultant on every deal. We don't pitch you. We sit with you.">
+
+  <link rel="canonical" href="https://revoltfinancial.com/">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Revolt">
+  <meta property="og:url" content="https://revoltfinancial.com/">
+  <meta property="og:title" content="Revolt · Your book. Your team. Your terms.">
+  <meta property="og:description" content="For advisors who build their book on their own terms. 200+ firms we work with. A senior consultant on every deal. We don't pitch you. We sit with you.">
+  <meta property="og:image" content="https://revoltfinancial.com/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Revolt. Your book. Your team. Your terms.">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Revolt · Your book. Your team. Your terms.">
+  <meta name="twitter:description" content="For advisors who build their book on their own terms. 200+ firms we work with. A senior consultant on every deal. We don't pitch you. We sit with you.">
+  <meta name="twitter:image" content="https://revoltfinancial.com/assets/og-image.png">
+  <meta name="twitter:image:alt" content="Revolt. Your book. Your team. Your terms.">
+
+  <!-- Theme -->
+  <meta name="theme-color" content="#0B0E13">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap">
+  <link rel="preload" href="assets/fonts/DegularDisplay-Bold.otf" as="font" type="font/otf" crossorigin>
+  <link rel="stylesheet" href="assets/css/revolt.css?v=3">
+  <style>
+    /* Page-specific positioning only. */
+    .home-hero { min-height: 92vh; }
+    .home-hero .backdrop-num { right: -3vw; bottom: -10vh; font-size: 22vw; }
+    .pos-num    { top: -40px; right: -30px; font-size: 18vw; color: var(--mustard); opacity: 0.08; }
+    .rule-three-num { left: 50%; top: 50%; transform: translate(-50%, -50%); font-size: 30vw; color: var(--mustard); opacity: 0.06; }
+    .founder-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap-2xl); align-items: center; }
+    .founder-photo { aspect-ratio: 4/5; width: 100%; }
+    .firms-half { max-width: 720px; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap-2xl); align-items: start; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap-lg); }
+    .form-grid .span-2 { grid-column: 1 / -1; }
+    .metric-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gap-lg); margin-top: var(--gap-xl); }
+    @media (max-width: 900px) {
+      .founder-grid, .contact-grid, .form-grid { grid-template-columns: 1fr; }
+      .metric-strip { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAV (canonical) =====
+       Locked nav labels: "Explore Your Next Firm / Hire Staff / Sell Your Practice / Compare Deals".
+       Fourth slot updated from "Value Your Business" -> "Compare Deals" per this prompt's locked decisions.
+       Hrefs unchanged. Consider file renames: /advisor-recruiting.html -> /explore-your-next-firm.html,
+       /team-recruiting.html -> /hire-staff.html, /ma.html -> /sell-your-practice.html,
+       /platform.html -> /compare-deals.html. -->
+  <nav class="nav" data-scroll-state="top" aria-label="Primary">
+    <a class="nav__logo" href="/">
+      <img src="assets/images/revolt-logo-stacked.png" alt="Revolt">
+    </a>
+    <ul class="nav__links">
+      <li><a href="/advisor-recruiting.html">Explore Your Next Firm</a></li>
+      <li><a href="/team-recruiting.html">Hire Staff</a></li>
+      <li><a href="/ma.html">Sell Your Practice</a></li>
+      <li><a href="/platform.html">Compare Deals</a></li>
+    </ul>
+    <a class="btn-primary" href="/contact.html">Contact Us</a>
+    <button class="nav__toggle" type="button" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav__mobile" role="menu">
+      <a href="/advisor-recruiting.html">Explore Your Next Firm</a>
+      <a href="/team-recruiting.html">Hire Staff</a>
+      <a href="/ma.html">Sell Your Practice</a>
+      <a href="/platform.html">Compare Deals</a>
+      <a class="btn-primary" href="/contact.html">Contact Us</a>
+    </div>
+  </nav>
+
+  <main class="page" data-screen-label="01 Home">
+
+    <!-- ===== 2.1 Hero (black over photo) =====
+         CHANGES:
+           - "Discreet by default. Relentless on your behalf." moved out of footer into the hero as a small kicker.
+           - Primary CTA replaced with "Schedule a confidential conversation" -> #contact.
+           - Locked line "Confidential. Thirty minutes. No pitch. No pressure." sits under the CTA buttons. -->
+    <section class="hero home-hero bg-black" data-screen-label="2.1 Hero">
+      <div class="hero__photo" style="background-image: url('assets/images/brand/woman-walking.avif');" role="img" aria-label="Woman walking past glass towers, grayscale"></div>
+      <div class="hero__overlay"></div>
+      <span class="backdrop-num" aria-hidden="true">200</span>
+      <div class="hero__inner container">
+        <span class="eyebrow"><span class="rule"></span>Revolt</span>
+        <h1 class="h1" style="margin-top: 32px; max-width: 14ch;">Your book. Your team. Your terms.</h1>
+        <p class="lead" style="margin-top: 32px; max-width: 60ch;">For advisors who build their book on their own terms.</p>
+        <div class="cta" style="display: flex; flex-wrap: wrap; gap: var(--gap-md); margin-top: 40px;">
+          <a class="btn-primary" href="/contact.html">Schedule a confidential conversation</a>
+          <a class="btn-ghost" href="#service-lines">See the three business lines ↓</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 2.2 Trust Bar (black, no photo) =====
+         Locked stat set, three only. -->
+    <section class="section section--tight bg-black" data-screen-label="2.2 Trust Bar">
+      <div class="container">
+        <div class="grid-3" data-reveal>
+          <div class="stat" data-reveal data-stagger="1"><span class="stat__figure" data-counter="$30B+">$30B+</span><span class="stat__label">Assets moved since 2024</span></div>
+          <div class="stat" data-reveal data-stagger="2"><span class="stat__figure" data-counter="$200M+">$200M+</span><span class="stat__label">Recruited GDC since 2024</span></div>
+          <div class="stat" data-reveal data-stagger="3"><span class="stat__figure" data-counter="200+">200+</span><span class="stat__label">Firms we work with</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 2.3 Positioning (tan) =====
+         CHANGES:
+           - H2 updated: "one hundred and ninety" -> "two hundred".
+           - Lead rewritten to weave in "We don't pitch you. We sit with you." and the $4B status proof.
+           - Closer line "Discreet by default. Relentless on your behalf." removed from end (it now lives in the hero). -->
+    <section class="section bg-tan" data-screen-label="2.3 Positioning">
+      <span class="backdrop-num pos-num" aria-hidden="true">01</span>
+      <div class="container" style="position: relative;">
+        <span class="eyebrow" data-reveal><span class="rule"></span>Built boutique. Run deep.</span>
+        <h2 class="h2" data-reveal data-stagger="1" style="margin-top: 24px; max-width: 22ch;">Most advisors are shown three firms. We work with two hundred.</h2>
+        <p class="lead" data-reveal data-stagger="2" style="margin-top: 32px; max-width: 70ch;">The industry built itself on volume. Generic outreach. Three or four firm partners. Junior associates running the call. We work differently. We don't pitch you. We sit with you. More teams over $4 billion have moved with us than with any other firm in the country.</p>
+      </div>
+    </section>
+
+    <!-- ===== 2.4 Three Business Lines (cream) =====
+         CHANGES:
+           - Card titles renamed: "Revolt Recruiting" -> "Explore Your Next Firm",
+             "Revolt Team Recruiting" -> "Hire Staff", "Revolt M&A" -> "Sell Your Practice".
+           - Card 01 description: removed "190+ firm relationships" and "principal in every meeting" language;
+             reworked to use 200+ and senior-lead-plus-team model.
+           - Card 03 description: removed "licensed investment bank" language; reworked to "consultants" voice. -->
+    <section id="service-lines" class="section bg-cream" data-screen-label="2.4 Three Business Lines">
+      <div class="container">
+        <span class="eyebrow" data-reveal><span class="rule"></span>What we do</span>
+        <h2 class="h2" data-reveal data-stagger="1" style="margin-top: 24px; max-width: 22ch;">Three business lines. One operating principle.</h2>
+        <div class="grid-3" style="margin-top: 64px;">
+          <a class="tile" href="/advisor-recruiting.html" data-reveal data-stagger="1">
+            <span class="tile__num">01</span>
+            <span class="tile__title">Explore Your Next Firm</span>
+            <span class="tile__desc">The deepest contract network in the industry. 200+ firms, all in front of you on one screen. A senior consultant is assigned to your deal, with a team behind them, from first call through onboarding day one.</span>
+          </a>
+          <a class="tile" href="/team-recruiting.html" data-reveal data-stagger="2">
+            <span class="tile__num">02</span>
+            <span class="tile__title">Hire Staff</span>
+            <span class="tile__desc">The salary-side bench that frees the principal to do what only the principal can do. Associate advisors, paraplanners, ops, compliance, marketing.</span>
+          </a>
+          <a class="tile" href="/ma.html" data-reveal data-stagger="3">
+            <span class="tile__num">03</span>
+            <span class="tile__title">Sell Your Practice</span>
+            <span class="tile__desc">Sell-side consultants built for the independent advisor space. Succession, valuation, complex deals. We show you the math.</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 2.5 The Contrast (olive) =====
+         REWRITE per Eric's May 11 note: previous "Five things every other recruiter has to say no to"
+         framing was confusing. New section uses a Them vs Us contrast pattern; each row opens with a
+         frustration the reader has already had and closes with Revolt's answer.
+         CHANGES:
+           - Eyebrow "What the others structurally cannot do" -> "The contrast".
+           - H2 "Five things every other recruiter has to say no to." -> anchor line "Don't go it alone."
+           - Subhead added: "We don't pitch you. We sit with you."
+           - Closer added below the five rows: "We don't sell the move. We show you the math."
+           - All five rows rewritten. Row 05 keeps the press-stayout idea (Eric flagged that row as good).
+           - DELETED prior row "Lead M&A with a license" (false compliance claim per hard rules).
+         FLAG: Row 04 below ("They get paid when you sign. We get paid when the move actually works.")
+         was specified in this prompt verbatim, but it conflicts with the Prompt 2 system rule that
+         bans income/earnings/fee language anywhere on the site. Compliant alternatives if we need to
+         pull the fee framing:
+           a) Them: "They disappear after the signature." Us: "We stay through onboarding day one."
+           b) Them: "They optimize for the close." Us: "We optimize for the move actually working."
+         Holding the prompt's wording until you confirm. -->
+    <section class="section bg-olive" data-screen-label="2.5 The Contrast">
+      <div class="container">
+        <span class="eyebrow" data-reveal><span class="rule"></span>The contrast</span>
+        <h2 class="h2" data-reveal data-stagger="1" style="margin-top: 24px; max-width: 22ch;">Don't go it alone.</h2>
+        <p class="lead" data-reveal data-stagger="2" style="margin-top: 32px; max-width: 60ch;">We don't pitch you. We sit with you.</p>
+        <div style="margin-top: 64px;">
+          <div class="diff-row" data-reveal data-stagger="1">
+            <span class="diff-row__num">01</span>
+            <span class="diff-row__claim">They shop your deal to whoever pays them most.</span>
+            <span class="diff-row__proof">We work for you.</span>
+          </div>
+          <div class="diff-row" data-reveal data-stagger="2">
+            <span class="diff-row__num">02</span>
+            <span class="diff-row__claim">They show you three offers.</span>
+            <span class="diff-row__proof">We show you the market.</span>
+          </div>
+          <div class="diff-row" data-reveal data-stagger="3">
+            <span class="diff-row__num">03</span>
+            <span class="diff-row__claim">They hand you off to a junior.</span>
+            <span class="diff-row__proof">You stay with a senior who owns your outcome.</span>
+          </div>
+          <div class="diff-row" data-reveal data-stagger="4">
+            <span class="diff-row__num">04</span>
+            <span class="diff-row__claim">They get paid when you sign.</span>
+            <span class="diff-row__proof">We get paid when the move actually works.</span>
+          </div>
+          <div class="diff-row" data-reveal data-stagger="5">
+            <span class="diff-row__num">05</span>
+            <span class="diff-row__claim">They publicize the deal.</span>
+            <span class="diff-row__proof">We have never named a team we have moved.</span>
+          </div>
+        </div>
+        <p class="lead" data-reveal data-stagger="6" style="margin-top: 64px; max-width: 60ch;">We don't sell the move. We show you the math.</p>
+      </div>
+    </section>
+
+    <!-- ===== 2.5b Pull-quote (black) =====
+         NEW section: loss-aversion pull-quote between Differentiators and Process. -->
+    <section class="section section--tight bg-black" data-screen-label="2.5b Pull-quote">
+      <div class="container" style="text-align: center;">
+        <p class="h2" data-reveal style="max-width: 22ch; margin: 0 auto;">Move once. Move right.</p>
+        <p class="small" data-reveal data-stagger="1" style="margin-top: 24px; color: var(--mustard);">Don't limit your options</p>
+      </div>
+    </section>
+
+    <!-- ===== 2.6 How It Works (cream) =====
+         CHANGES:
+           - Card 02 body: "190+ firms" -> "200+ firms".
+           - Card 03 body: removed "Forty points. Real numbers. Principals only." -> senior-lead + team language. -->
+    <section class="section bg-cream" data-screen-label="2.6 How It Works">
+      <div class="container">
+        <span class="eyebrow" data-reveal><span class="rule"></span>The process</span>
+        <h2 class="h2" data-reveal data-stagger="1" style="margin-top: 24px; max-width: 24ch;">Three steps from quiet curiosity to signed deal.</h2>
+        <div class="grid-3" style="margin-top: 64px;">
+          <div class="process-card" data-reveal data-stagger="1">
+            <span class="process-card__num">01</span>
+            <span class="process-card__title">Start a real conversation</span>
+            <span class="process-card__body">Contact us. Thirty minutes. Confidential. We listen first, talk second. No pressure, no pitch.</span>
+          </div>
+          <div class="process-card" data-reveal data-stagger="2">
+            <span class="process-card__num">02</span>
+            <span class="process-card__title">See your market through our platform</span>
+            <span class="process-card__body">Apply to enter the Revolt platform where you can enter your practice profile and details and get access to real deal economics across 200+ firms in one screen.</span>
+          </div>
+          <div class="process-card" data-reveal data-stagger="3">
+            <span class="process-card__num">03</span>
+            <span class="process-card__title">Structure the move</span>
+            <span class="process-card__body">When you decide to move, a senior consultant is assigned to your deal, with a full team behind them. We negotiate every line, from signature to onboarding day one.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 2.7 Founder Credibility (black over photo, split) =====
+         CHANGES:
+           - Founder strip "10 / Deals over $1M commission, 24 months" REMOVED (commission/income language + not in locked stat set).
+             Replaced with "$200M+ / Recruited GDC since 2024" so the three founder metrics are all from the approved set.
+         KEEP VERBATIM: pull-quote text and "Eric Grinberg · Founder · Revolt" attribution. -->
+    <section class="section bg-black" data-screen-label="2.7 Founder">
+      <div class="container">
+        <div class="founder-grid">
+          <div class="founder-photo" style="background: url('assets/images/brand/eric-grinberg.jpg') center top/cover no-repeat; filter: grayscale(1) contrast(1.05);" data-reveal role="img" aria-label="Eric Grinberg, Founder of Revolt"></div>
+          <div data-reveal data-stagger="1">
+            <span class="eyebrow"><span class="rule"></span>The principle</span>
+            <p class="pull-quote" style="margin-top: 32px;">&ldquo;These are not transactions. These are family legacies. When the stakes are generational, the advisor deserves someone who fights for them like it is personal.&rdquo;</p>
+            <p class="pull-quote-attr" style="margin-top: 32px;">Eric Grinberg · Founder · Revolt</p>
+            <div class="metric-strip">
+              <div class="stat"><span class="stat__figure" data-counter="$30B+">$30B+</span><span class="stat__label">Assets moved since 2024</span></div>
+              <div class="stat"><span class="stat__figure" data-counter="$200M+">$200M+</span><span class="stat__label">Recruited GDC since 2024</span></div>
+              <div class="stat"><span class="stat__figure" data-counter="0">0</span><span class="stat__label">Names publicized</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 2.8 For Firms & Custodians (teal, half-width) =====
+         CHANGE: "190+ firms" -> "200+ firms". -->
+    <section class="section bg-teal" data-screen-label="2.8 For Firms">
+      <div class="container">
+        <div class="firms-half">
+          <span class="eyebrow" data-reveal><span class="rule"></span>For firms and custodians</span>
+          <h3 class="h2" data-reveal data-stagger="1" style="margin-top: 24px;">If you want to understand where the market is moving, talk to us.</h3>
+          <p class="lead" data-reveal data-stagger="2" style="margin-top: 32px;">Revolt sees deal flow across 200+ firms in real time. We do not sell advisor data. We do, occasionally, sit down with firm leadership and custodians who want a true read on how the market is pricing talent.</p>
+          <div data-reveal data-stagger="3" style="margin-top: 40px;">
+            <a class="btn-ghost" href="mailto:enterprise@revoltfinancial.com">Inquire</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 2.9 Contact (cream) =====
+         CHANGE: lead replaced with the locked line "Confidential. Thirty minutes. No pitch. No pressure." -->
+    <section id="contact" class="section bg-cream" data-screen-label="2.9 Contact">
+      <div class="container">
+        <div class="contact-grid">
+          <div data-reveal>
+            <span class="eyebrow"><span class="rule"></span>Start here</span>
+            <h2 class="h2" style="margin-top: 24px;">Schedule a confidential conversation.</h2>
+            <p class="lead" style="margin-top: 32px; max-width: 50ch;">Confidential. Thirty minutes. No pitch. No pressure.</p>
+            <p class="small" style="margin-top: 40px; color: var(--slate-60); max-width: 50ch;">Or call directly: 786-555-1234. Or email: desk@revoltfinancial.com.</p>
+          </div>
+          <form data-reveal data-stagger="1" novalidate>
+            <div class="form-grid">
+              <div class="field">
+                <label for="f-name">Name</label>
+                <input id="f-name" name="name" type="text" autocomplete="name" required>
+              </div>
+              <div class="field">
+                <label for="f-firm">Firm (current)</label>
+                <input id="f-firm" name="firm" type="text" autocomplete="organization">
+              </div>
+                            <div class="field span-2">
+                <label for="f-email">Email</label>
+                <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" required>
+              </div>
+              <div class="field span-2">
+                <label for="f-mobile">Mobile</label>
+                <input id="f-mobile" name="mobile" type="tel" autocomplete="tel" inputmode="tel">
+              </div>
+              <div class="field span-2">
+                <label for="f-msg">What is on your mind?</label>
+                <textarea id="f-msg" name="message" rows="4"></textarea>
+              </div>
+              <div class="span-2" style="margin-top: var(--gap-md);">
+                <button class="btn-primary" type="submit">Send</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER (canonical) =====
+       CHANGES:
+         - footer__principle line "Discreet by default. Relentless on your behalf." REMOVED (moved into hero).
+         - footer__lede rewritten to drop internal vocabulary ("Recruiting, Team Recruiting, and M&A") and align to new positioning.
+         - "Resources -> Platform" link relabeled "Compare Deals" to match the new nav.
+       FLAG: footer column heading "Revolt" still reads as internal vocabulary. Proposed replacement: "Work With Us". Left as-is pending direction. -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__cols">
+        <div class="footer__col">
+          <span class="footer__mark"><img src="assets/images/revolt-logo-stacked.png" alt="Revolt"></span>
+          <p class="small footer__lede">Revolt is a boutique financial-services talent firm for advisors who build their book on their own terms. We work with established advisors, the firms that hire and grow them, and the principals three to five years from a sale.</p>
+        </div>
+        <div class="footer__col">
+          <h4>Revolt</h4>
+          <ul>
+            <li><a href="/advisor-recruiting.html">Explore Your Next Firm</a></li>
+            <li><a href="/team-recruiting.html">Hire Staff</a></li>
+            <li><a href="/ma.html">Sell Your Practice</a></li>
+          </ul>
+          <h4 style="margin-top: 32px;">Resources</h4>
+          <ul>
+            <li><a href="/platform.html">Compare Deals</a></li>
+            <li><a href="https://www.example.com/podcast" rel="noopener">Podcast</a></li>
+            <li><a href="https://www.linkedin.com/" rel="noopener">LinkedIn</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+17865551234">786-555-1234</a></li>
+            <li><a href="mailto:desk@revoltfinancial.com">desk@revoltfinancial.com</a></li>
+            <li><a href="mailto:enterprise@revoltfinancial.com">enterprise@revoltfinancial.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__rule"></div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 Revolt. All rights reserved. &nbsp;<a href="/privacy.html">Privacy</a> &nbsp; <a href="/terms.html">Terms</a></p>
+        <p>Registration disclosures pending compliance review pre-launch.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/revolt.js" defer></script>
+</body>
+</html>
