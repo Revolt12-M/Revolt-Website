@@ -7,6 +7,7 @@
   <meta name="description" content="Confidential. Thirty minutes. No pitch. No pressure. Start a private conversation with Revolt.">
 
   <link rel="canonical" href="https://revoltfinancial.com/contact.html">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
 
@@ -32,7 +33,21 @@
   <link rel="preload" href="assets/fonts/DegularDisplay-Bold.otf" as="font" type="font/otf" crossorigin>
   <link rel="stylesheet" href="assets/css/revolt.css?v=3">
   <style>
-    .contact-hero { min-height: 64vh; }
+    .contact-hero { min-height: 42vh; padding-top: 72px; padding-bottom: 56px; } /* D2: override the tall base hero padding so the header block is short and the channels section peeks above the fold */
+    .scroll-cue {
+      position: absolute; left: 50%; bottom: 12px; transform: translateX(-50%);
+      z-index: 2; color: var(--cream-80); text-decoration: none;
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 44px; height: 44px;
+      animation: scrollCue 1.8s var(--ease) infinite;
+    }
+    .scroll-cue:hover { color: var(--mustard); }
+    @keyframes scrollCue { 0%, 100% { transform: translate(-50%, 0); } 50% { transform: translate(-50%, 8px); } }
+    @media (prefers-reduced-motion: reduce) { .scroll-cue { animation: none; } }
+    /* D1: the entire channel box is the link */
+    a.channel-card { text-decoration: none; color: inherit; cursor: pointer; transition: transform 0.3s var(--ease); }
+    a.channel-card:hover { transform: translateY(-4px); }
+    a.channel-card:hover .channel-card__value { color: var(--mustard); }
     .contact-hero .backdrop-num { right: -3vw; bottom: -10vh; font-size: 22vw; }
     .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap-2xl); align-items: start; }
     .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap-lg); }
@@ -63,7 +78,7 @@
     .channel-card__value a:hover { color: var(--mustard); }
     .channel-card__note {
       font-family: var(--body); font-weight: 400;
-      font-size: 14px; line-height: 1.5;
+      font-size: 16px; line-height: 1.5;
       color: var(--fg-muted);
       margin-top: var(--gap-sm);
     }
@@ -72,6 +87,28 @@
       .contact-grid, .form-grid, .channels-grid { grid-template-columns: 1fr; }
     }
   </style>
+  <!-- A5: Organization structured data — anchors the "Revolt Financial" entity and disambiguates it from "Revolut". sameAs -> LinkedIn + YouTube (Podcast). -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Revolt",
+    "legalName": "Revolt Financial",
+    "url": "https://revoltfinancial.com/",
+    "logo": "https://revoltfinancial.com/assets/images/revolt-logo-stacked.png",
+    "description": "A boutique financial-services talent firm for advisors who build their book on their own terms.",
+    "sameAs": [
+      "https://www.linkedin.com/company/revoltfinancial/",
+      "https://www.youtube.com/@RevoltFinancial"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+1-786-555-1234",
+      "email": "desk@revoltfinancial.com",
+      "contactType": "sales"
+    }
+  }
+  </script>
 </head>
 <body>
 
@@ -109,29 +146,32 @@
         <h1 class="h1" style="margin-top: 32px; max-width: 18ch;">Start a private conversation.</h1>
         <p class="lead" style="margin-top: 32px; max-width: 60ch;">Confidential. Thirty minutes. No pitch. No pressure.</p>
       </div>
+      <a class="scroll-cue" href="#channels" aria-label="Scroll to contact options">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+      </a>
     </section>
 
     <!-- ===== Channels ===== -->
-    <section class="section bg-cream" data-screen-label="Channels">
+    <section id="channels" class="section bg-cream" data-screen-label="Channels">
       <div class="container">
         <span class="eyebrow" data-reveal><span class="rule"></span>Three ways to reach us</span>
         <h2 class="h2" data-reveal data-stagger="1" style="margin-top: 24px; max-width: 22ch;">Pick the channel that fits.</h2>
         <div class="channels-grid">
-          <article class="channel-card" data-reveal data-stagger="1">
+          <a class="channel-card" href="tel:+17865551234" data-reveal data-stagger="1">
             <span class="channel-card__label">Call</span>
-            <span class="channel-card__value"><a href="tel:+17865551234">786-555-1234</a></span>
+            <span class="channel-card__value">786-555-1234</span>
             <p class="channel-card__note">Monday through Friday. We pick up.</p>
-          </article>
-          <article class="channel-card" data-reveal data-stagger="2">
+          </a>
+          <a class="channel-card" href="mailto:desk@revoltfinancial.com" data-reveal data-stagger="2">
             <span class="channel-card__label">Email the desk</span>
-            <span class="channel-card__value"><a href="mailto:desk@revoltfinancial.com">desk@revoltfinancial.com</a></span>
+            <span class="channel-card__value">desk@revoltfinancial.com</span>
             <p class="channel-card__note">For advisors, teams, and practice owners.</p>
-          </article>
-          <article class="channel-card" data-reveal data-stagger="3">
+          </a>
+          <a class="channel-card" href="mailto:enterprise@revoltfinancial.com" data-reveal data-stagger="3">
             <span class="channel-card__label">Firms and custodians</span>
-            <span class="channel-card__value"><a href="mailto:enterprise@revoltfinancial.com">enterprise@revoltfinancial.com</a></span>
+            <span class="channel-card__value">enterprise@revoltfinancial.com</span>
             <p class="channel-card__note">For firm leadership and custodian inquiries.</p>
-          </article>
+          </a>
         </div>
       </div>
     </section>
@@ -208,8 +248,8 @@
           <h4 style="margin-top: 32px;">Resources</h4>
           <ul>
             <li><a href="/platform.html">Compare Deals</a></li>
-            <li><a href="https://www.example.com/podcast" rel="noopener">Podcast</a></li>
-            <li><a href="https://www.linkedin.com/" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://www.youtube.com/@RevoltFinancial" rel="noopener" target="_blank">Podcast</a></li>
+            <li><a href="https://www.linkedin.com/company/revoltfinancial/" rel="noopener" target="_blank">LinkedIn</a></li>
           </ul>
         </div>
         <div class="footer__col">

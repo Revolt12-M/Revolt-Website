@@ -95,7 +95,7 @@
     }
     .pillar-card__num {
       font-family: var(--display); font-weight: 700;
-      font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase;
+      font-size: 14px; letter-spacing: 0.18em; text-transform: uppercase;
       color: var(--white);
     }
     .pillar-card__title {
@@ -105,7 +105,7 @@
     }
     .pillar-card__body {
       font-family: var(--body); font-weight: 300;
-      font-size: 15px; line-height: 1.6; color: var(--fg);
+      font-size: 16px; line-height: 1.6; color: var(--fg);
     }
     .pillar-preview {
       width: 100%;
@@ -116,7 +116,7 @@
         #0B0E13;
       background-size: 24px 24px;
       position: relative;
-      margin-top: var(--gap-md);
+      margin-top: auto; /* D4: push preview to the bottom so all three pillar boxes line up */
     }
     .pillar-preview::after {
       content: 'Preview coming · 2026';
@@ -166,7 +166,7 @@
     }
     .access-card__body {
       font-family: var(--body); font-weight: 300;
-      font-size: 15px; line-height: 1.6; color: var(--cream-80);
+      font-size: 16px; line-height: 1.6; color: var(--cream-80);
     }
     .ea-form { display: flex; gap: var(--gap-sm); margin-top: auto; padding-top: var(--gap-md); align-items: end; flex-wrap: wrap; }
     .ea-form .field { flex: 1 1 220px; min-width: 0; }
@@ -181,6 +181,28 @@
       .counter-row { flex-direction: column; gap: var(--gap-md); }
     }
   </style>
+  <!-- A5: Organization structured data — anchors the "Revolt Financial" entity and disambiguates it from "Revolut". sameAs -> LinkedIn + YouTube (Podcast). -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Revolt",
+    "legalName": "Revolt Financial",
+    "url": "https://revoltfinancial.com/",
+    "logo": "https://revoltfinancial.com/assets/images/revolt-logo-stacked.png",
+    "description": "A boutique financial-services talent firm for advisors who build their book on their own terms.",
+    "sameAs": [
+      "https://www.linkedin.com/company/revoltfinancial/",
+      "https://www.youtube.com/@RevoltFinancial"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+1-786-555-1234",
+      "email": "desk@revoltfinancial.com",
+      "contactType": "sales"
+    }
+  }
+  </script>
 </head>
 <body>
 
@@ -366,7 +388,7 @@
             <h3 class="access-card__title">Start with a conversation.</h3>
             <p class="access-card__body">The fastest way is the same way every Revolt engagement starts. Contact us. Thirty minutes. If we are the right fit for the conversation, your senior consultant generates a private link. You enter your practice profile and the Revolt platform opens.</p>
             <div style="margin-top: var(--gap-md);">
-              <a class="btn-primary" href="mailto:desk@revoltfinancial.com">Contact Us</a>
+              <a class="btn-primary" href="/contact.html">Contact Us</a>
             </div>
           </article>
           <article class="access-card" data-reveal data-stagger="2">
@@ -416,8 +438,8 @@
           <h4 style="margin-top: 32px;">Resources</h4>
           <ul>
             <li><a href="/platform.html">Compare Deals</a></li>
-            <li><a href="https://www.example.com/podcast" rel="noopener">Podcast</a></li>
-            <li><a href="https://www.linkedin.com/" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://www.youtube.com/@RevoltFinancial" rel="noopener" target="_blank">Podcast</a></li>
+            <li><a href="https://www.linkedin.com/company/revoltfinancial/" rel="noopener" target="_blank">LinkedIn</a></li>
           </ul>
         </div>
         <div class="footer__col">

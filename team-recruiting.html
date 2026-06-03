@@ -9,6 +9,7 @@
   <link rel="canonical" href="https://revoltfinancial.com/team-recruiting.html">
 
   <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
 
@@ -87,7 +88,7 @@
     }
     .stat-cell__body {
       font-family: var(--body); font-weight: 300;
-      font-size: 15px; line-height: 1.55;
+      font-size: 16px; line-height: 1.55;
       color: var(--fg);
       max-width: 32ch;
     }
@@ -104,7 +105,7 @@
     }
     .role-card__num {
       font-family: var(--display); font-weight: 700;
-      font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase;
+      font-size: 14px; letter-spacing: 0.18em; text-transform: uppercase;
       color: var(--white);
     }
     .role-card__name {
@@ -114,7 +115,7 @@
     }
     .role-card__desc {
       font-family: var(--body); font-weight: 400;
-      font-size: 15px; line-height: 1.55;
+      font-size: 16px; line-height: 1.55;
       color: var(--white);
     }
     .role-spec { display: grid; grid-template-columns: 1fr; gap: var(--gap-sm); margin-top: auto; padding-top: var(--gap-md); border-top: 1px solid rgba(255,255,255,0.10); }
@@ -124,7 +125,7 @@
       color: var(--white);
     }
     .role-spec dd {
-      font-family: var(--body); font-weight: 400; font-size: 14px;
+      font-family: var(--body); font-weight: 400; font-size: 16px;
       line-height: 1.5; color: var(--white);
     }
     .role-spec dd + dt { margin-top: var(--gap-sm); }
@@ -133,11 +134,12 @@
     .vet-flow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; align-items: stretch; position: relative; }
     .vet-stage {
       display: flex; flex-direction: column; gap: var(--gap-md);
-      padding: var(--gap-xl) var(--gap-lg) var(--gap-xl) 0;
+      padding: var(--gap-xl) var(--gap-xl); /* C8: even, symmetric gutters across stages 01-03 */
       position: relative;
     }
-    .vet-stage:not(:last-child) { padding-right: var(--gap-xl); border-right: 1px solid var(--hairline, var(--slate-30)); }
-    .vet-stage:not(:first-child) { padding-left: var(--gap-xl); }
+    .vet-stage:first-child { padding-left: 0; }
+    .vet-stage:last-child { padding-right: 0; }
+    .vet-stage:not(:last-child) { border-right: 1px solid var(--hairline, var(--slate-30)); }
     .vet-stage__num {
       font-family: var(--display); font-weight: 700;
       font-size: clamp(48px, 4.5vw, 72px);
@@ -150,7 +152,7 @@
       color: var(--fg);
     }
     .vet-stage__body {
-      font-family: var(--body); font-weight: 300; font-size: 15px;
+      font-family: var(--body); font-weight: 300; font-size: 16px;
       line-height: 1.55; color: var(--fg-muted);
     }
 
@@ -159,8 +161,11 @@
     .day-card {
       display: flex; flex-direction: column; gap: var(--gap-sm);
       padding: var(--gap-lg);
-      background: rgba(255,255,255,0.04);
-      border-top: 2px solid var(--mustard);
+      background: transparent; /* D3: default to page background (was a faint white fill that read inconsistently on tan) */
+      border-top: 3px solid var(--mustard);
+      border-right: 1.5px solid var(--hairline, var(--slate-30));
+      border-bottom: 1.5px solid var(--hairline, var(--slate-30));
+      border-left: 1.5px solid var(--hairline, var(--slate-30));
     }
     .day-card__day {
       font-family: var(--display); font-weight: 700;
@@ -175,7 +180,7 @@
     }
     .day-card__body {
       font-family: var(--body); font-weight: 300;
-      font-size: 14px; line-height: 1.55;
+      font-size: 16px; line-height: 1.55;
       color: var(--fg-muted);
     }
 
@@ -240,7 +245,7 @@
     }
     .ie-row__body {
       font-family: var(--body); font-weight: 300;
-      font-size: 14px; line-height: 1.55; color: var(--cream-80);
+      font-size: 16px; line-height: 1.55; color: var(--cream-80);
     }
 
     /* 4.7 Contact */
@@ -259,6 +264,28 @@
       .vet-stage:not(:first-child) { padding-left: 0; padding-top: var(--gap-lg); }
     }
   </style>
+  <!-- A5: Organization structured data — anchors the "Revolt Financial" entity and disambiguates it from "Revolut". sameAs -> LinkedIn + YouTube (Podcast). -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Revolt",
+    "legalName": "Revolt Financial",
+    "url": "https://revoltfinancial.com/",
+    "logo": "https://revoltfinancial.com/assets/images/revolt-logo-stacked.png",
+    "description": "A boutique financial-services talent firm for advisors who build their book on their own terms.",
+    "sameAs": [
+      "https://www.linkedin.com/company/revoltfinancial/",
+      "https://www.youtube.com/@RevoltFinancial"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+1-786-555-1234",
+      "email": "desk@revoltfinancial.com",
+      "contactType": "sales"
+    }
+  }
+  </script>
 </head>
 <body>
 
@@ -321,7 +348,7 @@
         <p class="lead" data-reveal data-stagger="2" style="margin-top: 32px; max-width: 70ch;">Most firms hire for the resume on the page. The right designations, the right tenure, the right LinkedIn. The credentials check out, the culture doesn't, and the hire is gone in twelve months. We hire for culture first. We learn how your practice actually runs, what your clients expect, and how your team works together. Then we open the search.</p>
         <div class="stat-row" data-reveal data-stagger="3">
           <div class="stat-cell">
-            <span class="stat-cell__figure" data-counter="35">35</span><span class="small" style="color: var(--slate-60); font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase;">Percent</span>
+            <span class="stat-cell__figure" data-counter="35%">35%</span>
             <p class="stat-cell__body">First-year turnover for advisor-team hires industry-wide.</p>
           </div>
           <div class="stat-cell">
@@ -329,7 +356,7 @@
             <p class="stat-cell__body">Typical time-to-fill on a senior advisor hire run by a non-specialist.</p>
           </div>
           <div class="stat-cell">
-            <span class="stat-cell__figure">1.5x</span>
+            <span class="stat-cell__figure" style="letter-spacing: 0;">1.5x</span>
             <p class="stat-cell__body">Annual salary cost of a mis-hire in a $10M+ practice.</p>
           </div>
         </div>
@@ -537,7 +564,7 @@
             <span class="eyebrow"><span class="rule"></span>Begin</span>
             <h2 class="h2" style="margin-top: 24px;">Build your bench. Contact us.</h2>
             <p class="lead" style="margin-top: 32px; max-width: 50ch;">Tell us how your practice runs and who you want next to you. We hire for culture first.</p>
-            <p class="small" style="margin-top: 40px; color: var(--slate-60); max-width: 50ch;">Call directly: 786-555-1234. Email: desk@revoltfinancial.com.</p>
+            <p class="small" style="margin-top: 40px; color: var(--slate); font-size: 16px; max-width: 50ch;">Call directly: 786-555-1234. Email: desk@revoltfinancial.com.</p>
           </div>
           <form action="https://formspree.io/f/mpqnrkqe" method="POST" data-reveal data-stagger="1"  novalidate>
             <div class="form-grid">
@@ -591,8 +618,8 @@
           <h4 style="margin-top: 32px;">Resources</h4>
           <ul>
             <li><a href="/platform.html">Compare Deals</a></li>
-            <li><a href="https://www.example.com/podcast" rel="noopener">Podcast</a></li>
-            <li><a href="https://www.linkedin.com/" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://www.youtube.com/@RevoltFinancial" rel="noopener" target="_blank">Podcast</a></li>
+            <li><a href="https://www.linkedin.com/company/revoltfinancial/" rel="noopener" target="_blank">LinkedIn</a></li>
           </ul>
         </div>
         <div class="footer__col">

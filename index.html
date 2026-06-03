@@ -9,6 +9,7 @@
   <link rel="canonical" href="https://revoltfinancial.com/">
 
   <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
 
@@ -44,18 +45,45 @@
     .home-hero .backdrop-num { right: -3vw; bottom: -10vh; font-size: 22vw; }
     .pos-num    { top: -40px; right: -30px; font-size: 18vw; color: var(--mustard); opacity: 0.08; }
     .rule-three-num { left: 50%; top: 50%; transform: translate(-50%, -50%); font-size: 30vw; color: var(--mustard); opacity: 0.06; }
-    .founder-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap-2xl); align-items: center; }
-    .founder-photo { aspect-ratio: 4/5; width: 100%; }
+    .founder-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--gap-2xl); align-items: stretch; }
+    .founder-photo { width: 100%; height: 100%; min-height: 560px; }
+    /* Founder metric strip: smaller figures so 3-up fits its half-width column and never starves the photo. */
+    .founder-grid .stat__figure { font-size: clamp(28px, 2.6vw, 40px); }
     .firms-half { max-width: 720px; }
     .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap-2xl); align-items: start; }
     .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap-lg); }
     .form-grid .span-2 { grid-column: 1 / -1; }
-    .metric-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gap-lg); margin-top: var(--gap-xl); }
+    .metric-strip { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--gap-md); margin-top: var(--gap-xl); }
+    /* C8: center the home trust-bar number row, equal spacing across the three stats */
+    section[data-screen-label="2.2 Trust Bar"] .grid-3 { justify-items: center; }
+    section[data-screen-label="2.2 Trust Bar"] .stat { align-items: center; text-align: center; }
     @media (max-width: 900px) {
       .founder-grid, .contact-grid, .form-grid { grid-template-columns: 1fr; }
       .metric-strip { grid-template-columns: 1fr; }
     }
   </style>
+  <!-- A5: Organization structured data — anchors the "Revolt Financial" entity and disambiguates it from "Revolut". sameAs -> LinkedIn + YouTube (Podcast). -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Revolt",
+    "legalName": "Revolt Financial",
+    "url": "https://revoltfinancial.com/",
+    "logo": "https://revoltfinancial.com/assets/images/revolt-logo-stacked.png",
+    "description": "A boutique financial-services talent firm for advisors who build their book on their own terms.",
+    "sameAs": [
+      "https://www.linkedin.com/company/revoltfinancial/",
+      "https://www.youtube.com/@RevoltFinancial"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+1-786-555-1234",
+      "email": "desk@revoltfinancial.com",
+      "contactType": "sales"
+    }
+  }
+  </script>
 </head>
 <body>
 
@@ -130,7 +158,7 @@
     <section class="section bg-tan" data-screen-label="2.3 Positioning">
       <span class="backdrop-num pos-num" aria-hidden="true">01</span>
       <div class="container" style="position: relative;">
-        <span class="eyebrow" data-reveal><span class="rule"></span>Built boutique. Run deep.</span>
+        <span class="eyebrow" data-reveal><span class="rule"></span>Know all of your options.</span>
         <h2 class="h2" data-reveal data-stagger="1" style="margin-top: 24px; max-width: 22ch;">Most advisors are shown three firms. We work with two hundred.</h2>
         <p class="lead" data-reveal data-stagger="2" style="margin-top: 32px; max-width: 70ch;">The industry built itself on volume. Generic outreach. Three or four firm partners. Junior associates running the call. We work differently. We don't pitch you. We sit with you. More teams over $4 billion have moved with us than with any other firm in the country.</p>
       </div>
@@ -226,7 +254,7 @@
     <section class="section section--tight bg-black" data-screen-label="2.5b Pull-quote">
       <div class="container" style="text-align: center;">
         <p class="h2" data-reveal style="max-width: 22ch; margin: 0 auto;">Move once. Move right.</p>
-        <p class="small" data-reveal data-stagger="1" style="margin-top: 24px; color: var(--mustard);">Don't limit your options</p>
+        <p class="small" data-reveal data-stagger="1" style="margin-top: 24px; color: var(--mustard); font-size: 20px;">Don't limit your options</p>
       </div>
     </section>
 
@@ -237,7 +265,7 @@
     <section class="section bg-cream" data-screen-label="2.6 How It Works">
       <div class="container">
         <span class="eyebrow" data-reveal><span class="rule"></span>The process</span>
-        <h2 class="h2" data-reveal data-stagger="1" style="margin-top: 24px; max-width: 24ch;">Three steps from quiet curiosity to signed deal.</h2>
+        <h2 class="h2" data-reveal data-stagger="1" style="margin-top: 24px; max-width: 24ch;">Three steps from quiet curiosity to a signed deal.</h2>
         <div class="grid-3" style="margin-top: 64px;">
           <div class="process-card" data-reveal data-stagger="1">
             <span class="process-card__num">01</span>
@@ -266,11 +294,11 @@
     <section class="section bg-black" data-screen-label="2.7 Founder">
       <div class="container">
         <div class="founder-grid">
-          <div class="founder-photo" style="background: url('assets/images/brand/eric-grinberg.jpg') center top/cover no-repeat; filter: grayscale(1) contrast(1.05);" data-reveal role="img" aria-label="Eric Grinberg, Founder of Revolt"></div>
+          <div class="founder-photo" style="background: url('assets/images/brand/eric-grinberg-2026.jpg') center 18%/cover no-repeat; filter: grayscale(1) contrast(1.05);" data-reveal role="img" aria-label="Eric Grinberg, Founder of Revolt"></div>
           <div data-reveal data-stagger="1">
             <span class="eyebrow"><span class="rule"></span>The principle</span>
             <p class="pull-quote" style="margin-top: 32px;">&ldquo;These are not transactions. These are family legacies. When the stakes are generational, the advisor deserves someone who fights for them like it is personal.&rdquo;</p>
-            <p class="pull-quote-attr" style="margin-top: 32px;">Eric Grinberg · Founder · Revolt</p>
+            <p class="pull-quote-attr" style="margin-top: 32px;">Eric Grinberg · Founder</p>
             <div class="metric-strip">
               <div class="stat"><span class="stat__figure" data-counter="$30B+">$30B+</span><span class="stat__label">Assets moved since 2024</span></div>
               <div class="stat"><span class="stat__figure" data-counter="$200M+">$200M+</span><span class="stat__label">Recruited GDC since 2024</span></div>
@@ -288,7 +316,7 @@
         <div class="firms-half">
           <span class="eyebrow" data-reveal><span class="rule"></span>For firms and custodians</span>
           <h3 class="h2" data-reveal data-stagger="1" style="margin-top: 24px;">If you want to understand where the market is moving, talk to us.</h3>
-          <p class="lead" data-reveal data-stagger="2" style="margin-top: 32px;">Revolt sees deal flow across 200+ firms in real time. We do not sell advisor data. We do, occasionally, sit down with firm leadership and custodians who want a true read on how the market is pricing talent.</p>
+          <p class="lead" data-reveal data-stagger="2" style="margin-top: 32px;">Revolt sees deal flow across 200+ firms in real time. We do not sell advisor data. We do sit down with firm leadership and custodians who want a true read on how the market is pricing talent.</p>
           <div data-reveal data-stagger="3" style="margin-top: 40px;">
             <a class="btn-ghost" href="mailto:enterprise@revoltfinancial.com">Inquire</a>
           </div>
@@ -305,7 +333,7 @@
             <span class="eyebrow"><span class="rule"></span>Start here</span>
             <h2 class="h2" style="margin-top: 24px;">Schedule a confidential conversation.</h2>
             <p class="lead" style="margin-top: 32px; max-width: 50ch;">Confidential. Thirty minutes. No pitch. No pressure.</p>
-            <p class="small" style="margin-top: 40px; color: var(--slate-60); max-width: 50ch;">Or call directly: 786-555-1234. Or email: desk@revoltfinancial.com.</p>
+            <p class="small" style="margin-top: 40px; color: var(--slate); font-size: 16px; max-width: 50ch;">Or call directly: 786-555-1234. Or email: desk@revoltfinancial.com.</p>
           </div>
           <form action="https://formspree.io/f/mpqnrkqe" method="POST" data-reveal data-stagger="1"  novalidate>
             <div class="form-grid">
@@ -363,8 +391,8 @@
           <h4 style="margin-top: 32px;">Resources</h4>
           <ul>
             <li><a href="/platform.html">Compare Deals</a></li>
-            <li><a href="https://www.example.com/podcast" rel="noopener">Podcast</a></li>
-            <li><a href="https://www.linkedin.com/" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://www.youtube.com/@RevoltFinancial" rel="noopener" target="_blank">Podcast</a></li>
+            <li><a href="https://www.linkedin.com/company/revoltfinancial/" rel="noopener" target="_blank">LinkedIn</a></li>
           </ul>
         </div>
         <div class="footer__col">

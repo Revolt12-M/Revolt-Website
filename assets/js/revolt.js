@@ -53,7 +53,15 @@
     var target = parseFloat(numStr);
     if (isNaN(target)) return;
     var hasDecimal = numStr.indexOf('.') !== -1;
-    if (prefersReduced) { el.textContent = prefix + format(target, hasDecimal) + suffix; return; }
+    // A1: lock the box to the FINAL rendered width before animating so the
+    // count-up can never grow/shrink the layout. Tabular figures keep each
+    // digit the same width, so the value settles cleanly with no jitter.
+    el.style.display = 'inline-block';
+    el.style.fontVariantNumeric = 'tabular-nums';
+    el.style.whiteSpace = 'nowrap';
+    el.textContent = prefix + format(target, hasDecimal) + suffix;
+    el.style.minWidth = Math.ceil(el.getBoundingClientRect().width) + 'px';
+    if (prefersReduced) { return; }
     var dur = 1500, start = performance.now();
     function tick(now) {
       var t = Math.min(1, (now - start) / dur);

@@ -43,7 +43,7 @@
   --h3: clamp(20px, 2vw, 26px);
   --lead: clamp(18px, 1.4vw, 22px);
   --body-size: 16px;
-  --small: 14px;
+  --small: 16px; /* C1: 16px body-text minimum sitewide (was 14px) */
   --eyebrow-size: 12px;
   --label-size: 11px;
 
@@ -127,8 +127,8 @@ details summary::-webkit-details-marker { display: none; }
 .bg-slate  { background: var(--slate);  color: var(--cream-80); --bg: var(--slate);  --fg: var(--white); --fg-muted: var(--cream-80); --fg-eyebrow: var(--mustard); --hairline: var(--white-30); }
 .bg-cream  { background: var(--cream);  color: var(--ink);      --bg: var(--cream);  --fg: var(--ink);   --fg-muted: var(--ink);      --fg-eyebrow: var(--slate-60); --hairline: var(--slate-30); }
 .bg-tan    { background: var(--tan);    color: var(--ink);      --bg: var(--tan);    --fg: var(--ink);   --fg-muted: var(--ink);      --fg-eyebrow: var(--slate);    --hairline: var(--slate-30); }
-.bg-olive  { background: var(--olive);  color: var(--cream);    --bg: var(--olive);  --fg: var(--white); --fg-muted: var(--cream);    --fg-eyebrow: var(--mustard); --hairline: var(--white-30); }
-.bg-teal   { background: var(--teal);   color: var(--cream-80); --bg: var(--teal);   --fg: var(--white); --fg-muted: var(--cream-80); --fg-eyebrow: var(--mustard); --hairline: var(--white-30); }
+.bg-olive  { background: var(--olive);  color: var(--cream);    --bg: var(--olive);  --fg: var(--white); --fg-muted: var(--cream);    --fg-eyebrow: var(--white);   --hairline: var(--white-30); } /* B1 addendum: olive follows dark-beige rule, no yellow text (white, since olive is a dark section) */
+.bg-teal   { background: var(--teal);   color: var(--cream-80); --bg: var(--teal);   --fg: var(--white); --fg-muted: var(--cream-80); --fg-eyebrow: var(--white);   --hairline: var(--white-30); } /* B2: eyebrow text white on blue, never mustard */
 .bg-white  { background: var(--white);  color: var(--ink);      --bg: var(--white);  --fg: var(--ink);   --fg-muted: var(--ink);      --fg-eyebrow: var(--slate-60); --hairline: var(--slate-30); }
 
 /* ---------- 6. Type scale classes ---------- */
@@ -299,7 +299,7 @@ details summary::-webkit-details-marker { display: none; }
 /* Service tile */
 .tile {
   background: transparent;
-  border: 1px solid var(--hairline, var(--slate-30));
+  border: 1.5px solid var(--hairline, var(--slate-30)); /* C7: thicker stroke */
   padding: var(--gap-lg);
   display: flex;
   flex-direction: column;
@@ -307,11 +307,11 @@ details summary::-webkit-details-marker { display: none; }
   position: relative;
   text-decoration: none;
   color: inherit;
-  transition: border-color 0.3s var(--ease), transform 0.3s var(--ease);
+  transition: box-shadow 0.3s var(--ease), transform 0.3s var(--ease);
 }
 .tile:hover {
-  border-color: var(--mustard);
   transform: translateY(-4px);
+  box-shadow: inset 0 3px 0 0 var(--mustard); /* C7: yellow top-line on hover, not a full border */
 }
 .tile__num {
   font-family: var(--display);
@@ -488,8 +488,8 @@ details summary::-webkit-details-marker { display: none; }
 [data-reveal][data-stagger="5"].is-visible { transition-delay: 0.5s; }
 
 /* Footer V2 typography */
-.footer__lede { margin-top: 24px; max-width: 48ch; color: var(--cream-80); line-height: 1.5; }
-.footer__principle { margin-top: 16px; max-width: 42ch; color: var(--cream-60); font-style: italic; }
+.footer__lede { margin-top: 24px; max-width: 48ch; color: var(--white); line-height: 1.5; }
+.footer__principle { margin-top: 16px; max-width: 42ch; color: var(--cream-80); font-style: italic; }
 
 /* ---------- 11. Nav ---------- */
 .nav {
@@ -614,9 +614,10 @@ details summary::-webkit-details-marker { display: none; }
 }
 
 /* ---------- 12. Footer ---------- */
+/* B3: navy (slate) footer was an orphan color — replaced with the dominant brand black, text set to white. */
 .footer {
-  background: var(--slate);
-  color: var(--cream-80);
+  background: var(--black);
+  color: var(--white);
   padding-top: var(--pad-section);
   padding-bottom: var(--pad-tight);
 }
@@ -649,9 +650,9 @@ details summary::-webkit-details-marker { display: none; }
 .footer__col ul { display: flex; flex-direction: column; gap: var(--gap-sm); }
 .footer__col a {
   font-family: var(--body);
-  font-size: 15px;
-  font-weight: 300;
-  color: var(--cream-80);
+  font-size: 16px; /* C1: was 15px */
+  font-weight: 400;
+  color: var(--white);
   transition: color 0.25s var(--ease);
 }
 .footer__col a:hover { color: var(--mustard); }
@@ -662,22 +663,24 @@ details summary::-webkit-details-marker { display: none; }
   align-items: flex-start;
   gap: var(--gap-lg);
   font-size: 12px;
-  color: var(--cream-60);
+  color: var(--cream-80);
 }
 .footer__bottom p { max-width: 64ch; }
 
 /* ---------- 12.5 Process card (numbered, mustard top border) ---------- */
 .process-card {
   border-top: 3px solid var(--mustard);
-  border-right: 1px solid var(--hairline, var(--slate-30));
-  border-bottom: 1px solid var(--hairline, var(--slate-30));
-  border-left: 1px solid var(--hairline, var(--slate-30));
+  border-right: 1.5px solid var(--hairline, var(--slate-30));
+  border-bottom: 1.5px solid var(--hairline, var(--slate-30));
+  border-left: 1.5px solid var(--hairline, var(--slate-30));
   padding: var(--gap-lg);
   display: flex;
   flex-direction: column;
   gap: var(--gap-md);
   background: transparent;
+  transition: transform 0.3s var(--ease);
 }
+.process-card:hover { transform: translateY(-4px); } /* C7: consistent hover lift; keeps its permanent yellow top-line */
 .process-card__num {
   font-family: var(--display);
   font-weight: 700;
@@ -705,7 +708,7 @@ details summary::-webkit-details-marker { display: none; }
   display: grid;
   grid-template-columns: 120px 1fr 2fr;
   gap: var(--gap-lg);
-  align-items: baseline;
+  align-items: start; /* C6: top-align claim/proof text with the big index number beside it (was baseline) */
   padding: var(--gap-lg) 0;
   border-bottom: 1px solid var(--hairline, var(--slate-30));
 }
@@ -718,19 +721,19 @@ details summary::-webkit-details-marker { display: none; }
   letter-spacing: -0.02em;
 }
 .diff-row__claim {
+  font-family: var(--body);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--fg-muted);
+} /* E7: de-emphasized — this is the competitor ("They...") statement */
+.diff-row__proof {
   font-family: var(--display);
   font-weight: 700;
   font-size: clamp(22px, 2vw, 28px);
   line-height: 1.15;
   color: var(--fg);
-}
-.diff-row__proof {
-  font-family: var(--body);
-  font-weight: 300;
-  font-size: 16px;
-  line-height: 1.6;
-  color: var(--fg-muted);
-}
+} /* E7: emphasized — this is what Revolt does */
 @media (max-width: 900px) {
   .diff-row { grid-template-columns: 1fr; gap: var(--gap-sm); padding: var(--gap-md) 0; }
 }
@@ -790,16 +793,49 @@ details summary::-webkit-details-marker { display: none; }
   font-size: clamp(48px, 6vw, 96px);
   line-height: 0.9;
   color: var(--mustard);
-  letter-spacing: -0.02em;
+  letter-spacing: 0; /* C2: was -0.02em; the tight tracking crowded the + against the 0 in 200+/$30B+ */
+  /* A1: tabular figures keep digit width constant so count-up never jitters. */
+  font-variant-numeric: tabular-nums;
 }
 .stat__label {
   font-family: var(--body);
-  font-size: 13px;
+  font-size: 16px; /* C1: was 13px */
   font-weight: 500;
   line-height: 1.4;
   letter-spacing: 0.04em;
   color: var(--fg-muted);
 }
+
+/* ---------- 13.5 Class B — blue (teal) legibility ---------- */
+/* B2: never yellow TEXT on blue. Eyebrow text is handled by --fg-eyebrow above;
+   component number labels that hardcode mustard become white here. The <=48px
+   mustard accent rule line inside the eyebrow is intentionally kept. */
+.bg-teal .conf-rule__num { color: var(--white); }
+/* B5 / D6: faint light body copy on blue (Light 300) reads poorly. Bump to
+   Regular (400) so it holds up on the teal. Reusable treatment for blue sections. */
+.bg-teal .lead,
+.bg-teal .body,
+.bg-teal .conf-rule__body,
+.bg-teal p { font-weight: 400; }
+
+/* B1 addendum (per review): olive follows the dark-beige rule — no yellow TEXT.
+   Olive is built as a dark section (white sibling text + white hairlines), so the
+   readable replacement is WHITE rather than black. The <=48px mustard rule tick stays. */
+.bg-olive .diff-row__num,
+.bg-olive .claim-cell__figure,
+.bg-olive .data-cell__label,
+.bg-olive .role-card__name { color: var(--white); }
+
+/* ---------- 13.6 Class C — orphans (C3) ---------- */
+/* Longer prose uses `pretty` (good last-line handling). Short card bodies and
+   all headings/titles use `balance` — it evens the lines so no single word is
+   stranded alone on the last line (which `pretty` does not guarantee on 2-line text). */
+p, .lead, .body, .small, [class*="__lede"] { text-wrap: pretty; }
+.h1, .h2, .h3,
+[class*="__title"], [class*="__name"], .tile__title,
+[class*="__claim"], [class*="__proof"],
+[class*="__body"], [class*="__desc"], [class*="__inputs"], [class*="__measures"],
+[class*="__note"] { text-wrap: balance; }
 
 /* ---------- 14. Reduced motion ---------- */
 @media (prefers-reduced-motion: reduce) {
@@ -855,8 +891,8 @@ details summary::-webkit-details-marker { display: none; }
     --h2: 32px;
     --h3: 18px;
     --lead: 17px;
-    --body-size: 15px;
-    --small: 13px;
+    --body-size: 16px; /* C1: 16px minimum on mobile too (was 15px) */
+    --small: 16px;     /* C1: was 13px */
     --eyebrow-size: 11px;
     --label-size: 10px;
   }

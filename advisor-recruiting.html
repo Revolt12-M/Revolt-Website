@@ -9,6 +9,7 @@
   <link rel="canonical" href="https://revoltfinancial.com/advisor-recruiting.html">
 
   <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
 
@@ -52,14 +53,14 @@
       margin-top: 64px;
     }
     .bucket {
-      border: 1px solid var(--cream-30, rgba(244,238,225,0.18));
+      border: 1.5px solid var(--cream-30, rgba(244,238,225,0.18));
       padding: var(--gap-xl);
       display: flex;
       flex-direction: column;
       gap: var(--gap-md);
-      transition: border-color 0.3s var(--ease);
+      transition: box-shadow 0.3s var(--ease), transform 0.3s var(--ease);
     }
-    .bucket:hover { border-color: var(--mustard); }
+    .bucket:hover { transform: translateY(-4px); box-shadow: inset 0 3px 0 0 var(--mustard); } /* C7: thicker stroke + yellow top-line on hover */
     .bucket__num {
       font-family: var(--display);
       font-weight: 700;
@@ -216,8 +217,8 @@
       margin-top: var(--gap-sm);
     }
 
-    /* 3.5 Case Study (bg-olive) — mustard eyebrow, bolded */
-    section[data-screen-label="3.5 Case Study"] .eyebrow { font-weight: 700; color: var(--mustard); }
+    /* 3.5 Case Study (bg-olive) — bold eyebrow; white per dark-beige rule (no yellow on olive) */
+    section[data-screen-label="3.5 Case Study"] .eyebrow { font-weight: 700; color: var(--white); }
 
     /* 3.9 Contact CTA (cream split layout) */
     .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap-2xl); align-items: start; }
@@ -233,6 +234,28 @@
       .contact-grid, .form-grid { grid-template-columns: 1fr; }
     }
   </style>
+  <!-- A5: Organization structured data — anchors the "Revolt Financial" entity and disambiguates it from "Revolut". sameAs -> LinkedIn + YouTube (Podcast). -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Revolt",
+    "legalName": "Revolt Financial",
+    "url": "https://revoltfinancial.com/",
+    "logo": "https://revoltfinancial.com/assets/images/revolt-logo-stacked.png",
+    "description": "A boutique financial-services talent firm for advisors who build their book on their own terms.",
+    "sameAs": [
+      "https://www.linkedin.com/company/revoltfinancial/",
+      "https://www.youtube.com/@RevoltFinancial"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+1-786-555-1234",
+      "email": "desk@revoltfinancial.com",
+      "contactType": "sales"
+    }
+  }
+  </script>
 </head>
 <body>
 
@@ -296,7 +319,11 @@
       <div class="container">
         <span class="eyebrow" data-reveal><span class="rule"></span>The problem</span>
         <h2 class="h2" data-reveal data-stagger="1" style="margin-top: 24px; max-width: 22ch;">Most advisors get sold. We get hired.</h2>
-        <div style="margin-top: 64px;" data-reveal data-stagger="2">
+        <div style="margin-top: 64px; display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap-lg); padding-bottom: var(--gap-md); border-bottom: 1px solid var(--hairline, var(--slate-30));" data-reveal data-stagger="2">
+          <span class="label" style="color: var(--slate-60);">How the industry does it</span>
+          <span class="label" style="color: var(--mustard); padding-left: var(--gap-md);">How Revolt does it</span>
+        </div>
+        <div data-reveal>
           <div class="compare__row">
             <span class="industry">3 to 5 firm relationships</span>
             <span class="revolt">200+ firms, audited annually</span>
@@ -388,7 +415,7 @@
     <section class="section bg-tan" data-screen-label="3.4 Process">
       <div class="container">
         <span class="eyebrow" data-reveal><span class="rule"></span>What a Revolt engagement looks like</span>
-        <h2 class="h2" data-reveal data-stagger="1" style="margin-top: 24px; max-width: 22ch;">Seven stages. Ninety days, typically.</h2>
+        <h2 class="h2" data-reveal data-stagger="1" style="margin-top: 24px; max-width: 22ch;">Seven Stages.<br>Ninety Days.</h2>
         <div class="process-list" data-reveal data-stagger="2">
           <div class="process-stage">
             <span class="process-stage__num">01</span>
@@ -667,8 +694,8 @@
           <h4 style="margin-top: 32px;">Resources</h4>
           <ul>
             <li><a href="/platform.html">Compare Deals</a></li>
-            <li><a href="https://www.example.com/podcast" rel="noopener">Podcast</a></li>
-            <li><a href="https://www.linkedin.com/" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://www.youtube.com/@RevoltFinancial" rel="noopener" target="_blank">Podcast</a></li>
+            <li><a href="https://www.linkedin.com/company/revoltfinancial/" rel="noopener" target="_blank">LinkedIn</a></li>
           </ul>
         </div>
         <div class="footer__col">

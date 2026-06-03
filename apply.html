@@ -7,6 +7,7 @@
   <meta name="description" content="Apply for access to the Revolt platform. Tell us about your practice. We respond within one business day.">
 
   <link rel="canonical" href="https://revoltfinancial.com/apply.html">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
 
@@ -50,7 +51,7 @@
     .apply-intro .bullet-list { display: flex; flex-direction: column; gap: var(--gap-md); margin-top: var(--gap-xl); }
     .apply-intro .bullet-list li {
       font-family: var(--body); font-weight: 400;
-      font-size: 14px; line-height: 1.5;
+      font-size: 16px; line-height: 1.5;
       color: var(--cream-80);
       padding-left: 28px;
       position: relative;
@@ -87,7 +88,7 @@
     .radio-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--gap-sm); margin-top: var(--gap-xs); }
     .radio-grid label {
       display: flex; align-items: center; gap: 10px;
-      font-family: var(--body); font-weight: 400; font-size: 14px;
+      font-family: var(--body); font-weight: 400; font-size: 16px;
       color: var(--white);
       padding: 12px 16px;
       border: 1px solid rgba(255,255,255,0.2);
@@ -155,6 +156,28 @@
       .form-grid, .radio-grid { grid-template-columns: 1fr; }
     }
   </style>
+  <!-- A5: Organization structured data — anchors the "Revolt Financial" entity and disambiguates it from "Revolut". sameAs -> LinkedIn + YouTube (Podcast). -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Revolt",
+    "legalName": "Revolt Financial",
+    "url": "https://revoltfinancial.com/",
+    "logo": "https://revoltfinancial.com/assets/images/revolt-logo-stacked.png",
+    "description": "A boutique financial-services talent firm for advisors who build their book on their own terms.",
+    "sameAs": [
+      "https://www.linkedin.com/company/revoltfinancial/",
+      "https://www.youtube.com/@RevoltFinancial"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+1-786-555-1234",
+      "email": "desk@revoltfinancial.com",
+      "contactType": "sales"
+    }
+  }
+  </script>
 </head>
 <body>
 
@@ -369,8 +392,8 @@
           <h4 style="margin-top: 32px;">Resources</h4>
           <ul>
             <li><a href="/platform.html">Compare Deals</a></li>
-            <li><a href="https://www.example.com/podcast" rel="noopener">Podcast</a></li>
-            <li><a href="https://www.linkedin.com/" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://www.youtube.com/@RevoltFinancial" rel="noopener" target="_blank">Podcast</a></li>
+            <li><a href="https://www.linkedin.com/company/revoltfinancial/" rel="noopener" target="_blank">LinkedIn</a></li>
           </ul>
         </div>
         <div class="footer__col">
