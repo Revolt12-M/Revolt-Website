@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Explore Your Next Firm · Revolt</title>
-  <meta name="description" content="For advisors thinking about a move. 200+ firms we work with. A senior consultant who owns your outcome. We don't pitch you. We sit with you.">
+  <meta name="description" content="For advisors thinking about a move. An open marketplace of 200+ firms, with specialists for every practice size and style. We are your due diligence partner, and the firm pays us, so it costs you nothing.">
 
   <link rel="canonical" href="https://revoltfinancial.com/advisor-recruiting.html">
 
@@ -18,7 +18,7 @@
   <meta property="og:site_name" content="Revolt">
   <meta property="og:url" content="https://revoltfinancial.com/advisor-recruiting.html">
   <meta property="og:title" content="Explore Your Next Firm · Revolt">
-  <meta property="og:description" content="For advisors thinking about a move. 200+ firms we work with. A senior consultant who owns your outcome. We don't pitch you. We sit with you.">
+  <meta property="og:description" content="For advisors thinking about a move. An open marketplace of 200+ firms, with specialists for every practice size and style. We are your due diligence partner, and the firm pays us, so it costs you nothing.">
   <meta property="og:image" content="https://revoltfinancial.com/assets/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -27,7 +27,7 @@
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Explore Your Next Firm · Revolt">
-  <meta name="twitter:description" content="For advisors thinking about a move. 200+ firms we work with. A senior consultant who owns your outcome. We don't pitch you. We sit with you.">
+  <meta name="twitter:description" content="For advisors thinking about a move. An open marketplace of 200+ firms, with specialists for every practice size and style. We are your due diligence partner, and the firm pays us, so it costs you nothing.">
   <meta name="twitter:image" content="https://revoltfinancial.com/assets/og-image.png">
   <meta name="twitter:image:alt" content="Revolt · Explore Your Next Firm. 200+ firms we work with.">
 
@@ -42,6 +42,9 @@
   <style>
     /* Page-specific positioning. Inline scope only. */
     .ar-hero .backdrop-num { right: -3vw; bottom: -10vh; font-size: 22vw; }
+    .faq-photo { position: relative; isolation: isolate; overflow: hidden; }
+    .faq-photo__img { position: absolute; inset: 0; z-index: -2; background-size: cover; background-position: center; background-repeat: no-repeat; filter: grayscale(1) contrast(1.05); }
+    .faq-photo__overlay { position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(11,14,19,0.86) 0%, rgba(11,14,19,0.9) 100%); }
     .ar-buckets-num { right: -2vw; top: -40px; font-size: 22vw; color: var(--mustard); opacity: 0.05; }
     .ar-rule3-num   { left: 50%; top: 50%; transform: translate(-50%, -50%); font-size: 34vw; color: var(--mustard); opacity: 0.06; }
 
@@ -87,6 +90,7 @@
     .bucket__spec .industry {
       font-family: var(--body);
       font-size: 12px;
+      font-weight: 600;
       letter-spacing: 0.06em;
       text-transform: uppercase;
       padding-right: 0;
@@ -98,31 +102,81 @@
       padding-left: 0;
     }
 
-    /* Process — vertical numbered list, 7 stages */
-    .process-list { margin-top: 64px; display: flex; flex-direction: column; }
-    .process-stage {
+    /* Process — accordion list, reference-matched */
+    .process-section-grid {
       display: grid;
-      grid-template-columns: 64px 1fr 140px;
-      gap: var(--gap-lg);
-      padding: var(--gap-lg) 0;
-      border-bottom: 1px solid var(--mustard);
-      align-items: baseline;
+      grid-template-columns: 0.85fr 1fr;
+      gap: 80px;
+      align-items: start;
     }
-    .process-stage:last-child { border-bottom: 0; }
+    .process-list { display: flex; flex-direction: column; }
+    .process-stage {
+      border-bottom: 1px solid rgba(26, 31, 40, 0.2);
+      border-radius: 0;
+      transition: border-color 0.2s ease;
+    }
+    .process-stage:last-child { border-bottom: 1px solid rgba(26, 31, 40, 0.2); }
+    .process-stage.is-open {
+      border: 2px solid var(--ink);
+    }
+    .process-stage__header {
+      width: 100%;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 24px;
+      padding: 22px 24px;
+      align-items: center;
+      background: none;
+      border: 0;
+      margin: 0;
+      cursor: pointer;
+      text-align: left;
+      color: inherit;
+      font: inherit;
+    }
     .process-stage__num {
       font-family: var(--display);
       font-weight: 700;
-      font-size: 14px;
-      letter-spacing: 0.04em;
+      font-size: 15px;
+      letter-spacing: 0.02em;
       color: var(--ink);
     }
-    .process-stage__body { display: flex; flex-direction: column; gap: var(--gap-sm); }
     .process-stage__title {
       font-family: var(--display);
       font-weight: 700;
-      font-size: 24px;
-      line-height: 1.15;
-      color: var(--fg);
+      font-size: 18px;
+      line-height: 1.2;
+      color: var(--ink);
+      transition: opacity 0.2s ease;
+    }
+    .process-stage__arrow {
+      justify-self: end;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--ink);
+      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .process-stage__arrow svg { display: block; width: 18px; height: 18px; }
+    .process-stage.is-open .process-stage__arrow { transform: rotate(180deg); }
+    .process-stage__header:hover .process-stage__title { opacity: 0.6; }
+    .process-stage__panel {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .process-stage__panel-inner { overflow: hidden; }
+    .process-stage__time {
+      display: block;
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink);
+      padding: 0 24px 8px 24px;
     }
     .process-stage__desc {
       font-family: var(--body);
@@ -130,15 +184,56 @@
       font-size: 16px;
       line-height: 1.6;
       color: var(--ink);
-      max-width: 60ch;
+      max-width: 52ch;
+      padding: 0 24px 22px 24px;
     }
-    .process-stage__time {
-      font-family: var(--display);
-      font-weight: 700;
-      font-size: 14px;
-      letter-spacing: 0.04em;
-      color: var(--ink);
-      text-align: right;
+
+    /* 3.4 Process — photo background treatment (dark) */
+    .operate-photo {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      color: var(--cream-80);
+      --fg: var(--white);
+      --fg-muted: var(--cream-80);
+      --fg-eyebrow: var(--mustard);
+      --hairline: var(--white-30);
+    }
+    .operate-photo__img {
+      position: absolute; inset: 0; z-index: -2;
+      background-size: cover; background-position: center; background-repeat: no-repeat;
+      filter: grayscale(1) contrast(1.05);
+    }
+    .operate-photo__overlay {
+      position: absolute; inset: 0; z-index: -1;
+      background: linear-gradient(180deg, rgba(11,14,19,0.80) 0%, rgba(11,14,19,0.88) 100%);
+    }
+    .operate-photo .container { position: relative; z-index: 1; }
+    .operate-photo .process-stage,
+    .operate-photo .process-stage:last-child { border-bottom: 1px solid var(--white-30); }
+    .operate-photo .process-stage.is-open { border: 2px solid var(--mustard); }
+    .operate-photo .process-stage__num { color: var(--mustard); }
+    .operate-photo .process-stage__title { color: var(--white); }
+    .operate-photo .process-stage__time { color: var(--mustard); }
+    .operate-photo .process-stage__desc { color: var(--cream-80); }
+    .operate-photo .process-stage__arrow { color: var(--white); }
+
+    /* 3.6 Our values — eyebrow heads the section; accordion (left) and
+       title block (right) share a baseline below it. Mirror of How we operate. */
+    .values-grid { grid-template-columns: 1fr 0.9fr; align-items: start; }
+    .values-grid > .values-intro { grid-column: 2; grid-row: 1; }
+    .values-grid > .process-list { grid-column: 1; grid-row: 1; }
+    .values-section .process-stage,
+    .values-section .process-stage:last-child { border-bottom: 1px solid var(--white-30); }
+    .values-section .process-stage.is-open { border: 2px solid var(--mustard); }
+    .values-section .process-stage__num { color: var(--mustard); }
+    .values-section .process-stage__title { color: var(--white); }
+    .values-section .process-stage__desc { color: var(--cream-80); padding-top: 4px; }
+    .values-section .process-stage__arrow { color: var(--white); }
+    @media (max-width: 900px) {
+      .values-grid { grid-template-columns: 1fr; }
+      .values-grid > .values-intro,
+      .values-grid > .process-list { grid-column: 1; grid-row: auto; }
     }
 
     /* Case study — split + 2x2 data grid */
@@ -220,6 +315,10 @@
     /* 3.5 Case Study (bg-olive) — bold eyebrow; white per dark-beige rule (no yellow on olive) */
     section[data-screen-label="3.5 Case Study"] .eyebrow { font-weight: 700; color: var(--white); }
 
+    /* 3.2 Problem compare — darker old-standard text, bold Revolt for legibility */
+    .problem-compare .compare__row .industry { color: var(--ink); }
+    .problem-compare .compare__row .revolt { font-weight: 700; }
+
     /* 3.9 Contact CTA (cream split layout) */
     .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap-2xl); align-items: start; }
     .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap-lg); }
@@ -227,11 +326,25 @@
 
     @media (max-width: 900px) {
       .buckets-grid { grid-template-columns: 1fr; gap: var(--gap-lg); }
-      .process-stage { grid-template-columns: 48px 1fr; }
-      .process-stage__time { grid-column: 2 / 3; text-align: left; }
+      .process-section-grid { grid-template-columns: 1fr; gap: 40px; }
       .case-grid { grid-template-columns: 1fr; }
       .get-row { grid-template-columns: 48px 1fr; }
       .contact-grid, .form-grid { grid-template-columns: 1fr; }
+    }
+
+    /* Hero rotating word */
+    .rotator { color: var(--white); display: inline-block; position: relative; }
+    .rotator::after { content: "Opportunity"; visibility: hidden; }
+    .rotator__word {
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: inline-block;
+      transition: opacity 0.34s var(--ease), transform 0.34s var(--ease);
+    }
+    .rotator__word.is-out { opacity: 0; transform: translateY(-0.35em); }
+    @media (prefers-reduced-motion: reduce) {
+      .rotator__word { transition: none; }
     }
   </style>
   <!-- A5: Organization structured data — anchors the "Revolt Financial" entity and disambiguates it from "Revolut". sameAs -> LinkedIn + YouTube (Podcast). -->
@@ -250,7 +363,6 @@
     ],
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+1-786-555-1234",
       "email": "desk@revoltfinancial.com",
       "contactType": "sales"
     }
@@ -260,7 +372,7 @@
 <body>
 
   <!-- ===== NAV (canonical — active: Explore Your Next Firm) =====
-       Fourth slot updated "Value Your Business" -> "Compare Deals" per locked decisions. -->
+       Fourth slot updated "Value Your Business" -> "Transition packages" per locked decisions. -->
   <nav class="nav" data-scroll-state="top" aria-label="Primary">
     <a class="nav__logo" href="/">
       <img src="assets/images/revolt-logo-stacked.png" alt="Revolt">
@@ -269,7 +381,7 @@
       <li><a href="/advisor-recruiting.html" aria-current="page">Explore Your Next Firm</a></li>
       <li><a href="/team-recruiting.html">Hire Staff</a></li>
       <li><a href="/ma.html">Sell Your Practice</a></li>
-      <li><a href="/platform.html">Compare Deals</a></li>
+      <li><a href="/platform.html">Transition Packages</a></li>
     </ul>
     <a class="btn-primary" href="/contact.html">Contact Us</a>
     <button class="nav__toggle" type="button" aria-label="Open menu" aria-expanded="false">
@@ -279,7 +391,7 @@
       <a href="/advisor-recruiting.html">Explore Your Next Firm</a>
       <a href="/team-recruiting.html">Hire Staff</a>
       <a href="/ma.html">Sell Your Practice</a>
-      <a href="/platform.html">Compare Deals</a>
+      <a href="/platform.html">Transition Packages</a>
       <a class="btn-primary" href="/contact.html">Contact Us</a>
     </div>
   </nav>
@@ -295,13 +407,13 @@
            - Added status proof line and "Move once. Move right." kicker.
          FLAG: $4 billion status-proof claim included as you specified. Confirm before launch. -->
     <section class="hero ar-hero bg-black" data-screen-label="3.1 Hero">
+      <div class="hero__photo" style="background-image: url('assets/images/brand/crosswalk.jpg');" role="img" aria-label="Figure crossing striped crosswalk, grayscale"></div>
       <div class="hero__overlay"></div>
       <span class="backdrop-num" aria-hidden="true">200</span>
       <div class="hero__inner container">
         <span class="eyebrow"><span class="rule"></span>Explore Your Next Firm</span>
-        <h1 class="h1" style="margin-top: 32px; max-width: 22ch;">Figure out if a move makes sense. And if so, where.</h1>
-        <p class="lead" style="margin-top: 32px; max-width: 64ch;">Most advisors compare three firms. We help you compare the market. We don't pitch you. We sit with you.</p>
-        <p class="small" style="margin-top: 24px; color: var(--cream-80); max-width: 64ch;">Of the advisors moving teams over $4 billion in the country, more come through us than anywhere else.</p>
+        <h1 class="h1" style="margin-top: 32px; max-width: 26ch;">Advisors Move With<br><span style="white-space: nowrap;">Us for More <span class="rotator" aria-live="polite"><span class="rotator__word" data-rotator>Autonomy</span></span></span></h1>
+        <p class="lead" style="margin-top: 32px; max-width: 60ch;">We are your due diligence partner who works with the firms so you can stay focused on your clients.</p>
         <div class="cta" style="display: flex; flex-wrap: wrap; gap: var(--gap-md); margin-top: 40px;">
           <a class="btn-primary" href="/contact.html">Start a private conversation</a>
         </div>
@@ -318,31 +430,27 @@
     <section class="section bg-cream" data-screen-label="3.2 Most advisors get sold">
       <div class="container">
         <span class="eyebrow" data-reveal><span class="rule"></span>The problem</span>
-        <h2 class="h2" data-reveal data-stagger="1" style="margin-top: 24px; max-width: 22ch;">Most advisors get sold. We get hired.</h2>
+        <h2 class="h2" data-reveal data-stagger="1" style="margin-top: 24px; max-width: 22ch;">The Recruiting Industry Is Broken.</h2>
         <div style="margin-top: 64px; display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap-lg); padding-bottom: var(--gap-md); border-bottom: 1px solid var(--hairline, var(--slate-30));" data-reveal data-stagger="2">
-          <span class="label" style="color: var(--slate-60);">How the industry does it</span>
-          <span class="label" style="color: var(--mustard); padding-left: var(--gap-md);">How Revolt does it</span>
+          <span class="label" style="color: var(--ink);">The old standard</span>
+          <span class="label" style="color: var(--mustard); font-weight: 700; padding-left: var(--gap-md);">Revolt</span>
         </div>
-        <div data-reveal>
+        <div class="problem-compare" data-reveal>
           <div class="compare__row">
-            <span class="industry">3 to 5 firm relationships</span>
-            <span class="revolt">200+ firms, audited annually</span>
+            <span class="industry">Recruiters hold exclusive deals with firms. Limiting your options.</span>
+            <span class="revolt">An open marketplace of 200+ firms.</span>
           </div>
           <div class="compare__row">
-            <span class="industry">Phone calls and email blasts</span>
-            <span class="revolt">We sit with you. In person where it matters.</span>
+            <span class="industry">Quotas to fill and big retainers to collect.</span>
+            <span class="revolt">No quota, no retainer. The firm pays us on placement, it costs you nothing.</span>
           </div>
           <div class="compare__row">
-            <span class="industry">Submit a name, wait for an offer</span>
-            <span class="revolt">We negotiate every line of every offer</span>
+            <span class="industry">Cold calls and email blasts to place you.</span>
+            <span class="revolt">Curated list of the best options for you.</span>
           </div>
           <div class="compare__row">
-            <span class="industry">Junior associate runs the call</span>
-            <span class="revolt">A senior consultant owns your outcome, with a team behind them</span>
-          </div>
-          <div class="compare__row">
-            <span class="industry">Press release at signature</span>
-            <span class="revolt">Discreet by default. Never publicized.</span>
+            <span class="industry">Submit your name, disappear, reach back in six months to get paid.</span>
+            <span class="revolt">As your due diligence partner we do all of the work, so you can focus on building your business.</span>
           </div>
         </div>
       </div>
@@ -351,44 +459,44 @@
     <!-- ===== 3.3 The Four Structural Buckets (black, signature framework) =====
          KEPT per your "framework is strong, keep" note. No "recruiting" language in this section.
          Bucket economics describe the prospect's grid/payout structure (industry context), not Revolt fees. -->
-    <section class="section bg-black" data-screen-label="3.3 Four Buckets">
-      <span class="backdrop-num ar-buckets-num" aria-hidden="true">04</span>
+    <section class="section bg-black" data-screen-label="3.3 Six Categories">
+      <span class="backdrop-num ar-buckets-num" aria-hidden="true">06</span>
       <div class="container" style="position: relative;">
         <span class="eyebrow" data-reveal><span class="rule"></span>The framework</span>
-        <h2 class="h2" data-reveal data-stagger="1" style="margin-top: 24px; max-width: 26ch;">Most advisors get pitched from inside one bucket without knowing the other three exist.</h2>
-        <p class="lead" data-reveal data-stagger="2" style="margin-top: 32px; max-width: 64ch;">Before the firm question, there is a structure question. The right move is the right structure first, the right firm second. Here are the four.</p>
+        <h2 class="h2" data-reveal data-stagger="1" style="margin-top: 24px; max-width: 26ch;">Most Advisors Get Pitched From Inside One Category Without Knowing the Other Five Exist.</h2>
+        <p class="lead" data-reveal data-stagger="2" style="margin-top: 32px; max-width: 64ch;">Before the firm question, there is a structure question. The right move is the right structure first, the right firm second. Here are the six.</p>
 
         <div class="buckets-grid">
           <article class="bucket" data-reveal data-stagger="1">
             <span class="bucket__num">01</span>
-            <span class="bucket__name">W-2 at a major firm</span>
+            <span class="bucket__name">Wirehouse</span>
             <div class="bucket__spec">
-              <div class="compare__row"><span class="industry">Economics</span><span class="revolt">Salary + production grid</span></div>
-              <div class="compare__row"><span class="industry">Autonomy</span><span class="revolt">Low. Compliance dictates.</span></div>
-              <div class="compare__row"><span class="industry">Equity</span><span class="revolt">None in firm.</span></div>
-              <div class="compare__row"><span class="industry">Best fit</span><span class="revolt">Advisors who want infrastructure and scale and accept the cap.</span></div>
+              <div class="compare__row"><span class="industry">Economics</span><span class="revolt">Salary plus production grid</span></div>
+              <div class="compare__row"><span class="industry">Autonomy</span><span class="revolt">Low. Compliance sets the rules.</span></div>
+              <div class="compare__row"><span class="industry">Equity</span><span class="revolt">None in the firm.</span></div>
+              <div class="compare__row"><span class="industry">Best fit</span><span class="revolt">Advisors who want big-firm scale and accept the ceiling.</span></div>
             </div>
           </article>
 
           <article class="bucket" data-reveal data-stagger="2">
             <span class="bucket__num">02</span>
-            <span class="bucket__name">Independent BD / Insurance BD</span>
+            <span class="bucket__name">Independent BD</span>
             <div class="bucket__spec">
-              <div class="compare__row"><span class="industry">Economics</span><span class="revolt">80–95% payout grid</span></div>
-              <div class="compare__row"><span class="industry">Autonomy</span><span class="revolt">Medium. Platform dictates.</span></div>
-              <div class="compare__row"><span class="industry">Equity</span><span class="revolt">None in firm; book is yours.</span></div>
-              <div class="compare__row"><span class="industry">Best fit</span><span class="revolt">Advisors who want grid economics and moderate freedom.</span></div>
+              <div class="compare__row"><span class="industry">Economics</span><span class="revolt">80 to 95% payout grid</span></div>
+              <div class="compare__row"><span class="industry">Autonomy</span><span class="revolt">Medium. The platform sets the rules.</span></div>
+              <div class="compare__row"><span class="industry">Equity</span><span class="revolt">None in the firm. Your book is yours.</span></div>
+              <div class="compare__row"><span class="industry">Best fit</span><span class="revolt">Advisors who want strong economics and room to run.</span></div>
             </div>
           </article>
 
           <article class="bucket" data-reveal data-stagger="3">
             <span class="bucket__num">03</span>
-            <span class="bucket__name">Hybrid RIA</span>
+            <span class="bucket__name">Insurance BD</span>
             <div class="bucket__spec">
-              <div class="compare__row"><span class="industry">Economics</span><span class="revolt">RIA fees + BD commissions</span></div>
-              <div class="compare__row"><span class="industry">Autonomy</span><span class="revolt">High. You set the platform.</span></div>
-              <div class="compare__row"><span class="industry">Equity</span><span class="revolt">Build practice equity.</span></div>
-              <div class="compare__row"><span class="industry">Best fit</span><span class="revolt">Advisors with both fee + commission books who want optionality.</span></div>
+              <div class="compare__row"><span class="industry">Economics</span><span class="revolt">Payout grid built around insurance and annuities</span></div>
+              <div class="compare__row"><span class="industry">Autonomy</span><span class="revolt">Medium. Built for protection-first practices.</span></div>
+              <div class="compare__row"><span class="industry">Equity</span><span class="revolt">None in the firm. Your book is yours.</span></div>
+              <div class="compare__row"><span class="industry">Best fit</span><span class="revolt">Advisors with an insurance-heavy practice who want a home built for it.</span></div>
             </div>
           </article>
 
@@ -399,79 +507,142 @@
               <div class="compare__row"><span class="industry">Economics</span><span class="revolt">100% of revenue, fee-only</span></div>
               <div class="compare__row"><span class="industry">Autonomy</span><span class="revolt">Highest. You are the platform.</span></div>
               <div class="compare__row"><span class="industry">Equity</span><span class="revolt">Full practice equity.</span></div>
-              <div class="compare__row"><span class="industry">Best fit</span><span class="revolt">Advisors building a generational firm.</span></div>
+              <div class="compare__row"><span class="industry">Best fit</span><span class="revolt">Advisors building a generational, fee-only firm.</span></div>
+            </div>
+          </article>
+
+          <article class="bucket" data-reveal data-stagger="5">
+            <span class="bucket__num">05</span>
+            <span class="bucket__name">M&amp;A RIA</span>
+            <div class="bucket__spec">
+              <div class="compare__row"><span class="industry">Economics</span><span class="revolt">Upfront value for your book plus equity</span></div>
+              <div class="compare__row"><span class="industry">Autonomy</span><span class="revolt">High. Shared platform and back office.</span></div>
+              <div class="compare__row"><span class="industry">Equity</span><span class="revolt">Real equity in a larger firm.</span></div>
+              <div class="compare__row"><span class="industry">Best fit</span><span class="revolt">Advisors ready to take value off the table and scale inside a bigger firm.</span></div>
+            </div>
+          </article>
+
+          <article class="bucket" data-reveal data-stagger="6">
+            <span class="bucket__num">06</span>
+            <span class="bucket__name">Independent W-2</span>
+            <div class="bucket__spec">
+              <div class="compare__row"><span class="industry">Economics</span><span class="revolt">Salary or grid inside an independent firm</span></div>
+              <div class="compare__row"><span class="industry">Autonomy</span><span class="revolt">Medium to high. Independence with support.</span></div>
+              <div class="compare__row"><span class="industry">Equity</span><span class="revolt">A path to equity over time.</span></div>
+              <div class="compare__row"><span class="industry">Best fit</span><span class="revolt">Advisors who want independence without running the business.</span></div>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- ===== 3.4 The Process (tan) — 7-stage vertical numbered list =====
-         CHANGES:
-           - Stage 06 desc: dropped "Up to 40 points per deal." -> "Every line on the page."
-           - Stage 07 desc: "Principal stays" -> "Your senior consultant stays."
-           - Stage 04 ("Three firms, never more") KEPT — this is the curated shortlist after a 200-firm scan, no conflict.
-         FLAG: prior standalone 3.5 "Rule of Three" section was REMOVED. The three-firm idea now lives only in stage 04. -->
-    <section class="section bg-tan" data-screen-label="3.4 Process">
+    <!-- ===== 3.4 The Process (tan), 7-step vertical numbered list =====
+         Sequence: Discovery call, Firm shortlist, Valuation and pro forma, Term sheet review,
+         Negotiation, Transition, Ongoing collaboration. Timeline reframed from a fixed 90 days to
+         the advisor's pace (30 days to two years). -->
+    <section class="section bg-tan operate-photo" data-screen-label="3.4 Process">
+      <div class="operate-photo__img" style="background-image: url('assets/images/brand/operate-bg.jpg');" role="img" aria-label="Businessman standing at a crosswalk, grayscale"></div>
+      <div class="operate-photo__overlay"></div>
       <div class="container">
-        <span class="eyebrow" data-reveal><span class="rule"></span>What a Revolt engagement looks like</span>
-        <h2 class="h2" data-reveal data-stagger="1" style="margin-top: 24px; max-width: 22ch;">Seven Stages.<br>Ninety Days.</h2>
-        <div class="process-list" data-reveal data-stagger="2">
+        <div class="process-section-grid">
+          <div>
+            <span class="eyebrow" data-reveal><span class="rule"></span>How we operate</span>
+            <h2 class="h2" data-reveal data-stagger="1" style="margin-top: 24px; max-width: 16ch;">Seven Stages.<br>At Your Pace.</h2>
+            <p class="lead" data-reveal data-stagger="2" style="margin-top: 32px; max-width: 44ch;">Some advisors sign a deal in 30 days while others take two years; we move at the pace that is right for you.</p>
+            <a class="btn-primary" href="/contact.html" data-reveal data-stagger="3" style="margin-top: 40px; display: inline-flex;">Start a private conversation</a>
+          </div>
+          <div class="process-list" data-reveal data-stagger="2" data-process-accordion>
           <div class="process-stage">
-            <span class="process-stage__num">01</span>
-            <div class="process-stage__body">
-              <span class="process-stage__title">Intake</span>
-              <span class="process-stage__desc">Thirty minutes. We listen. You decide whether to keep talking.</span>
+            <button class="process-stage__header" type="button" aria-expanded="false">
+              <span class="process-stage__num">01.</span>
+              <span class="process-stage__title">Discovery call</span>
+              <span class="process-stage__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+            </button>
+            <div class="process-stage__panel">
+              <div class="process-stage__panel-inner">
+                <span class="process-stage__time">30 min</span>
+                <p class="process-stage__desc">A thirty-minute call where we get to know you, your business, and where you want to go, and you decide whether to keep the conversation going.</p>
+              </div>
             </div>
-            <span class="process-stage__time">30 min</span>
           </div>
           <div class="process-stage">
-            <span class="process-stage__num">02</span>
-            <div class="process-stage__body">
-              <span class="process-stage__title">Practice mapping</span>
-              <span class="process-stage__desc">We document what you have actually built: production, AUM, client mix, team, real estate.</span>
+            <button class="process-stage__header" type="button" aria-expanded="false">
+              <span class="process-stage__num">02.</span>
+              <span class="process-stage__title">Evolving options</span>
+              <span class="process-stage__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+            </button>
+            <div class="process-stage__panel">
+              <div class="process-stage__panel-inner">
+                <span class="process-stage__time">Three to start</span>
+                <p class="process-stage__desc">We present you with a shortlist of the best options according to your needs, then build an evolving list as you rule options in and out.</p>
+              </div>
             </div>
-            <span class="process-stage__time">1 week</span>
           </div>
           <div class="process-stage">
-            <span class="process-stage__num">03</span>
-            <div class="process-stage__body">
-              <span class="process-stage__title">Bucket selection</span>
-              <span class="process-stage__desc">The structural question first. Right structure, then right firm.</span>
+            <button class="process-stage__header" type="button" aria-expanded="false">
+              <span class="process-stage__num">03.</span>
+              <span class="process-stage__title">Valuation and pro forma</span>
+              <span class="process-stage__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+            </button>
+            <div class="process-stage__panel">
+              <div class="process-stage__panel-inner">
+                <span class="process-stage__time">Real numbers</span>
+                <p class="process-stage__desc">We build real pro formas, not the inflated ones that come from the carriers or firms, so you see the real numbers behind the deal.</p>
+              </div>
             </div>
-            <span class="process-stage__time">Week 2</span>
           </div>
           <div class="process-stage">
-            <span class="process-stage__num">04</span>
-            <div class="process-stage__body">
-              <span class="process-stage__title">Firm shortlist</span>
-              <span class="process-stage__desc">Three firms, never more. Each one a real fit, not filler.</span>
-            </div>
-            <span class="process-stage__time">Week 3</span>
-          </div>
-          <div class="process-stage">
-            <span class="process-stage__num">05</span>
-            <div class="process-stage__body">
+            <button class="process-stage__header" type="button" aria-expanded="false">
+              <span class="process-stage__num">04.</span>
               <span class="process-stage__title">Term sheet review</span>
-              <span class="process-stage__desc">Apples-to-apples comparison. Net-of-cost economics, not headline grids.</span>
+              <span class="process-stage__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+            </button>
+            <div class="process-stage__panel">
+              <div class="process-stage__panel-inner">
+                <span class="process-stage__time">Side by side</span>
+                <p class="process-stage__desc">We line up every offer side by side on real economics, not headline grids, so you compare apples to apples.</p>
+              </div>
             </div>
-            <span class="process-stage__time">Week 4</span>
           </div>
           <div class="process-stage">
-            <span class="process-stage__num">06</span>
-            <div class="process-stage__body">
+            <button class="process-stage__header" type="button" aria-expanded="false">
+              <span class="process-stage__num">05.</span>
               <span class="process-stage__title">Negotiation</span>
-              <span class="process-stage__desc">Valuation, transition, platform, model fees, real estate. Every line on the page.</span>
+              <span class="process-stage__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+            </button>
+            <div class="process-stage__panel">
+              <div class="process-stage__panel-inner">
+                <span class="process-stage__time">Every line</span>
+                <p class="process-stage__desc">We negotiate every line on the page: valuation, transition, platform, model fees, real estate, technology, and staff.</p>
+              </div>
             </div>
-            <span class="process-stage__time">Weeks 5–10</span>
           </div>
           <div class="process-stage">
-            <span class="process-stage__num">07</span>
-            <div class="process-stage__body">
-              <span class="process-stage__title">Onboarding</span>
-              <span class="process-stage__desc">Your senior consultant stays in the room through your first day at the new firm.</span>
+            <button class="process-stage__header" type="button" aria-expanded="false">
+              <span class="process-stage__num">06.</span>
+              <span class="process-stage__title">Transition</span>
+              <span class="process-stage__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+            </button>
+            <div class="process-stage__panel">
+              <div class="process-stage__panel-inner">
+                <span class="process-stage__time">At your pace</span>
+                <p class="process-stage__desc">Continuous communication, check-ins and progress monitoring to make sure the move is going the way it should.</p>
+              </div>
             </div>
-            <span class="process-stage__time">Days 1–90</span>
+          </div>
+          <div class="process-stage">
+            <button class="process-stage__header" type="button" aria-expanded="false">
+              <span class="process-stage__num">07.</span>
+              <span class="process-stage__title">Ongoing collaboration</span>
+              <span class="process-stage__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+            </button>
+            <div class="process-stage__panel">
+              <div class="process-stage__panel-inner">
+                <span class="process-stage__time">Ongoing</span>
+                <p class="process-stage__desc">We keep the relationship going. We work together, and over time we become friends.</p>
+              </div>
+            </div>
+          </div>
           </div>
         </div>
       </div>
@@ -484,13 +655,13 @@
            - Body: "We ran a 40-point negotiation" -> "We negotiated every line of the term sheet."
            - Data cell "40 / Negotiation points" REMOVED. Replaced with "2 yrs / Stuck before us"
              (ties directly to the narrative: stuck for two years before reaching us). -->
-    <section class="section bg-olive" data-screen-label="3.5 Case Study">
+    <section class="section bg-teal" data-screen-label="3.5 Case Study">
       <div class="container">
         <div class="case-grid">
           <div data-reveal>
             <span class="eyebrow"><span class="rule"></span>Recent work</span>
-            <h2 class="h2" style="margin-top: 24px; max-width: 22ch;">$50M Maryland team. Stuck for two years. Ninety days to signed.</h2>
-            <p class="lead" style="margin-top: 32px; max-width: 60ch;">The team had been in conversation with two retained firms for over a year before they reached us. Both held the same handful of firm relationships. The deal economics on the table were a 110% transition with a five-year retention. Standard. We negotiated every line of the term sheet. The final structure included a higher transition, a shorter retention, real-estate concessions, and a custom equity ramp the firm had never offered before. Materially higher economic value. Materially less risk on the back end. Six months from intake to signature.</p>
+            <h2 class="h2" style="margin-top: 24px; max-width: 22ch;">$50M Merrill Lynch Team. Stuck for Two Years. Took Us 90 Days.</h2>
+            <p class="lead" style="margin-top: 32px; max-width: 60ch;">The team had been in conversation with two retained firms for over a year before they reached us, and both held the same handful of firm relationships. The deal economics on the table were a standard 110% transition with a five-year retention. We negotiated every line of the term sheet, and the final structure included a higher transition, a shorter retention, real-estate concessions, and a custom equity ramp the firm had never offered before. The result was materially higher economic value with materially less risk on the back end, signed six months from intake.</p>
           </div>
           <div class="data-grid-2x2" data-reveal data-stagger="1">
             <div class="data-cell">
@@ -499,11 +670,11 @@
             </div>
             <div class="data-cell">
               <span class="data-cell__figure">2 yrs</span>
-              <span class="data-cell__label">Stuck before us</span>
+              <span class="data-cell__label">Stuck</span>
             </div>
             <div class="data-cell">
               <span class="data-cell__figure">4</span>
-              <span class="data-cell__label">Custom terms unlocked</span>
+              <span class="data-cell__label">Custom terms</span>
             </div>
             <div class="data-cell">
               <span class="data-cell__figure">6 mo.</span>
@@ -514,58 +685,67 @@
       </div>
     </section>
 
-    <!-- ===== 3.6 Don't go it alone (black) — 5 numbered rows =====
-         (Renumbered 3.8 -> 3.6.)
-         REWRITE: prior H2 "Five things you cannot get from a retained recruiter" used "recruiter" in a
-         headline; replaced with the loss-aversion anchor "Don't go it alone." Subhead carries the "five things" idea.
-         ROW CHANGES:
-           - Row 01: removed "190+ contracts vs. 3-5" -> "200+ firms, not three to five."
-           - Row 02: removed "principal in every meeting" -> senior-lead + team language.
-           - Row 03: removed "40 negotiation points" -> "We negotiate every line of every offer."
-           - Row 04: REWRITTEN. Prior text "Our fee is contingent on you staying through retention" violated
-             the no-fee-language hard rule. Replaced with "Alignment / We work for you, not whoever pays us most."
-             Keeps the skin-in-the-game spirit without disclosing fee structure.
-           - Row 05 ("Confidentiality"): kept. -->
-    <section class="section bg-black" data-screen-label="3.6 Don't go it alone">
+    <!-- ===== 3.6 Core values (black) =====
+         Core-values treatment. Leads on "better, not different": doing the work and being the
+         advisor's partner. Discretion pulled back (it lives in 3.7), so the old Confidentiality row is gone. -->
+    <section class="section bg-black values-section" data-screen-label="3.6 Core values">
       <div class="container">
-        <span class="eyebrow" data-reveal><span class="rule"></span>What you get</span>
-        <h2 class="h2" data-reveal data-stagger="1" style="margin-top: 24px; max-width: 24ch;">Don't go it alone.</h2>
-        <p class="lead" data-reveal data-stagger="2" style="margin-top: 32px; max-width: 60ch;">Five things you cannot get anywhere else.</p>
-        <div style="margin-top: 64px;">
-          <div class="get-row" data-reveal data-stagger="1">
-            <span class="get-row__num">01</span>
-            <span class="get-row__body">The full market.<em>You see 200+ firms, not three to five.</em></span>
+        <span class="eyebrow" data-reveal><span class="rule"></span>Our values</span>
+        <div class="process-section-grid values-grid" style="margin-top: 56px;">
+          <div class="values-intro">
+            <h2 class="h2" data-reveal data-stagger="1" style="max-width: 22ch;"><span style="color: var(--mustard);">Unreasonable</span> Representation, Communication, and Transparency.</h2>
+            <p class="lead" data-reveal data-stagger="2" style="margin-top: 32px; max-width: 44ch;">Four commitments that shape every engagement, top to bottom.</p>
           </div>
-          <div class="get-row" data-reveal data-stagger="2">
-            <span class="get-row__num">02</span>
-            <span class="get-row__body">A senior consultant who owns your outcome.<em>Same person from first call through onboarding day one. Team behind them.</em></span>
+          <div class="process-list" data-reveal data-stagger="1" data-process-accordion>
+            <div class="process-stage">
+              <button class="process-stage__header" type="button" aria-expanded="false">
+                <span class="process-stage__num">01.</span>
+                <span class="process-stage__title">We do the work.</span>
+                <span class="process-stage__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+              </button>
+              <div class="process-stage__panel">
+                <div class="process-stage__panel-inner">
+                  <p class="process-stage__desc">Real pro formas, every line negotiated, every detail handled.</p>
+                </div>
+              </div>
+            </div>
+            <div class="process-stage">
+              <button class="process-stage__header" type="button" aria-expanded="false">
+                <span class="process-stage__num">02.</span>
+                <span class="process-stage__title">We are your partner.</span>
+                <span class="process-stage__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+              </button>
+              <div class="process-stage__panel">
+                <div class="process-stage__panel-inner">
+                  <p class="process-stage__desc">Your due diligence partner from the first call through the transition, and long after.</p>
+                </div>
+              </div>
+            </div>
+            <div class="process-stage">
+              <button class="process-stage__header" type="button" aria-expanded="false">
+                <span class="process-stage__num">03.</span>
+                <span class="process-stage__title">No exclusive deals.</span>
+                <span class="process-stage__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+              </button>
+              <div class="process-stage__panel">
+                <div class="process-stage__panel-inner">
+                  <p class="process-stage__desc">We don't lock you into where we get paid the most.</p>
+                </div>
+              </div>
+            </div>
+            <div class="process-stage">
+              <button class="process-stage__header" type="button" aria-expanded="false">
+                <span class="process-stage__num">04.</span>
+                <span class="process-stage__title">Payment transparency.</span>
+                <span class="process-stage__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+              </button>
+              <div class="process-stage__panel">
+                <div class="process-stage__panel-inner">
+                  <p class="process-stage__desc">The firms pay us, and most of the time it does not come out of your deal. On the rare occasion it does, we tell you up front.</p>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="get-row" data-reveal data-stagger="3">
-            <span class="get-row__num">03</span>
-            <span class="get-row__body">Custom deal terms.<em>We negotiate every line of every offer. Others submit a name and wait.</em></span>
-          </div>
-          <div class="get-row" data-reveal data-stagger="4">
-            <span class="get-row__num">04</span>
-            <span class="get-row__body">Alignment.<em>We work for you, not whoever pays us most.</em></span>
-          </div>
-          <div class="get-row" data-reveal data-stagger="5">
-            <span class="get-row__num">05</span>
-            <span class="get-row__body">Confidentiality.<em>No press release. No leaks. Your team finds out when you decide.</em></span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== 3.7 Confidentiality block (cream) — KEPT VERBATIM per Prompt 4 explicit instruction =====
-         (Renumbered 3.9 -> 3.7.) -->
-    <section class="section bg-cream" data-screen-label="3.7 Confidentiality">
-      <div class="container">
-        <span class="eyebrow" data-reveal><span class="rule"></span>The operating principle</span>
-        <h2 class="h2" data-reveal data-stagger="1" style="margin-top: 24px; max-width: 24ch;">You will not find named testimonials on this website.</h2>
-        <div data-reveal data-stagger="2" style="margin-top: 40px; max-width: 68ch;">
-          <p class="lead" style="margin-bottom: 24px;">There are two reasons for that. The first is that the financial services industry runs on discretion. The advisors and firms we work with do not want their transitions turned into marketing content, and we are not willing to trade their privacy for our lead generation.</p>
-          <p class="lead" style="margin-bottom: 24px;">The second reason is simpler: when your name is the one on the deal, you will not want it on a website either. The same confidentiality that protects our past clients will protect you.</p>
-          <p class="lead">What we will show you is the work itself. Real deal structures (anonymized). Real economics. Real patterns from hundreds of transitions. The kind of intelligence most recruiters will not share because they do not have it. If you want names, there are firms that will give you names. We will give you a track record, a process, and a handshake. That is what we trade on.</p>
         </div>
       </div>
     </section>
@@ -583,42 +763,44 @@
              which conflicted with the new positioning. FLAG: confirm the $10M production floor reads
              right for a top-of-funnel FAQ (the locked positioning says $10M+, but the FAQ has historically
              been more open). -->
-    <section class="section bg-cream" data-screen-label="3.8 FAQ">
-      <div class="container">
-        <span class="eyebrow" data-reveal><span class="rule"></span>Questions, answered</span>
-        <h2 class="h2" data-reveal data-stagger="1" style="margin-top: 24px; max-width: 22ch;">The eight that come up first.</h2>
+    <section class="section bg-black faq-photo" data-screen-label="3.8 FAQ">
+      <div class="faq-photo__img" style="background-image: url('assets/images/brand/faq-bg.png');" role="img" aria-label="Advisors reviewing figures on a tablet, grayscale"></div>
+      <div class="faq-photo__overlay"></div>
+      <div class="container" style="position: relative; z-index: 1;">
+        <span class="eyebrow" data-reveal><span class="rule"></span>FAQs</span>
+        <h2 class="h2" data-reveal data-stagger="1" style="margin-top: 24px; max-width: 22ch;">The Questions That Come up First</h2>
         <div style="margin-top: 64px; max-width: 880px;" data-reveal data-stagger="2">
           <details class="faq">
             <summary>How long does a move take?</summary>
-            <p>Typically 90 days from intake to signed deal, but the timeline runs on your readiness, not ours. Some teams take 12 months. Some take 30 days.</p>
+            <p>Some advisors sign a deal in 30 days while others take two years; we move at the pace that is right for you.</p>
           </details>
           <details class="faq">
             <summary>What does Revolt actually cost me?</summary>
-            <p>Nothing direct. You do not pay us out of pocket. We can walk you through the full structure on a call.</p>
+            <p>It costs you nothing directly, because the firms pay us, and most of the time it does not come out of your deal; on the rare occasion it does, we tell you up front.</p>
           </details>
           <details class="faq">
             <summary>How do you avoid conflicts of interest across 200 firms?</summary>
-            <p>We do not have favorites. No firm gets preferred placement. The 200-firm network exists so we never have to push a firm that does not fit you.</p>
+            <p>We do not have favorites and no firm gets preferred placement, because the 200-firm network exists so we never have to push a firm that does not fit you.</p>
           </details>
           <details class="faq">
             <summary>Can I talk to you without committing?</summary>
-            <p>Yes. The first conversation is thirty minutes. No commitment. No follow-up unless you ask for it.</p>
+            <p>Yes; the first conversation is thirty minutes with no commitment, and there is no follow-up unless you ask for it.</p>
           </details>
           <details class="faq">
             <summary>What if I am not ready to move for two years?</summary>
-            <p>That is the right time to start the conversation. The advisors who get the best deals plan the move years out.</p>
+            <p>That is the right time to start the conversation, because the advisors who get the best deals plan the move years out.</p>
           </details>
           <details class="faq">
             <summary>What size practice do you work with?</summary>
-            <p>We work with advisors at all sizes of production. Every deal gets a senior consultant and a full team behind them.</p>
+            <p>We have specialists for every practice size and style, and every deal gets a full team behind it.</p>
           </details>
           <details class="faq">
             <summary>What happens to my team and clients?</summary>
-            <p>Your team can move with you. Your clients move with you. We map both before the offer goes out.</p>
+            <p>Your team can move with you and your clients move with you, and we map both before the offer goes out.</p>
           </details>
           <details class="faq">
             <summary>Will my current firm find out?</summary>
-            <p>No. We have never publicized a team we have moved. Discretion is operational, not aspirational.</p>
+            <p>We stay confidential through the entire process, so your current firm finds out only when you choose to resign, and we protect that because our reputation depends on it.</p>
           </details>
         </div>
       </div>
@@ -632,11 +814,12 @@
         <div class="contact-grid">
           <div data-reveal>
             <span class="eyebrow"><span class="rule"></span>Start here</span>
-            <h2 class="h2" style="margin-top: 24px; max-width: 22ch;">Ready? Contact us.</h2>
-            <p class="lead" style="margin-top: 32px; max-width: 50ch;">Confidential. Thirty minutes. No pitch. No pressure. We listen first. You decide whether to keep talking.</p>
-            <p class="small" style="margin-top: 40px; color: var(--slate); max-width: 50ch;">Or call directly: 786-555-1234. Or email: desk@revoltfinancial.com.</p>
+            <h2 class="h2" style="margin-top: 24px; max-width: 22ch;">Ready? Contact Us.</h2>
+            <p class="lead" style="margin-top: 32px; max-width: 50ch;">Unlock your full earning potential.</p>
+            <p class="small" style="margin-top: 40px; color: var(--slate); max-width: 50ch;">Or email: desk@revoltfinancial.com.</p>
           </div>
-          <form action="https://formspree.io/f/mpqnrkqe" method="POST" data-reveal data-stagger="1"  novalidate>
+          <form class="form-card" action="https://formspree.io/f/mpqnrkqe" method="POST" data-reveal data-stagger="1"  novalidate>
+            <span class="form-card__eyebrow">Start the conversation</span>
             <div class="form-grid">
               <div class="field">
                 <label for="f-name">Name</label>
@@ -672,7 +855,7 @@
   <!-- ===== FOOTER (canonical) =====
        CHANGES:
          - footer__lede rewritten to drop internal vocabulary ("Recruiting, Team Recruiting, and M&A").
-         - "Resources -> Value Your Business" relabeled "Compare Deals" to match locked nav.
+         - "Resources -> Value Your Business" relabeled "Transition packages" to match locked nav.
        FLAG: footer__principle "Discreet by default. Relentless on your behalf." kept on this page.
        On index.html it was moved into the hero per Prompt 3 spec. If you want footers consistent
        across pages, give the word and we'll either remove from all sub-pages or add to all sub-page heroes. -->
@@ -682,7 +865,7 @@
         <div class="footer__col">
           <span class="footer__mark"><img src="assets/images/revolt-logo-stacked.png" alt="Revolt"></span>
           <p class="small footer__lede">Revolt is a boutique financial-services talent firm for advisors who build their book on their own terms. We work with established advisors, the firms that hire and grow them, and the principals three to five years from a sale.</p>
-          <p class="small footer__principle">Discreet by default. Relentless on your behalf.</p>
+          <p class="small footer__principle" style="color: var(--mustard);">Your Business, Your Rules</p>
         </div>
         <div class="footer__col">
           <h4>Revolt</h4>
@@ -693,7 +876,8 @@
           </ul>
           <h4 style="margin-top: 32px;">Resources</h4>
           <ul>
-            <li><a href="/platform.html">Compare Deals</a></li>
+            <li><a href="/platform.html">Transition Packages</a></li>
+            <li><a href="/blog.html">Insights</a></li>
             <li><a href="https://www.youtube.com/@RevoltFinancial" rel="noopener" target="_blank">Podcast</a></li>
             <li><a href="https://www.linkedin.com/company/revoltfinancial/" rel="noopener" target="_blank">LinkedIn</a></li>
           </ul>
@@ -701,7 +885,6 @@
         <div class="footer__col">
           <h4>Contact</h4>
           <ul>
-            <li><a href="tel:+17865551234">786-555-1234</a></li>
             <li><a href="mailto:desk@revoltfinancial.com">desk@revoltfinancial.com</a></li>
             <li><a href="mailto:enterprise@revoltfinancial.com">enterprise@revoltfinancial.com</a></li>
           </ul>
@@ -710,11 +893,57 @@
       <div class="footer__rule"></div>
       <div class="footer__bottom">
         <p>&copy; 2026 Revolt. All rights reserved. &nbsp;<a href="/privacy.html">Privacy</a> &nbsp; <a href="/terms.html">Terms</a></p>
-        <p>Registration disclosures pending compliance review pre-launch.</p>
       </div>
     </div>
   </footer>
 
+  <!-- Hero headline word rotator -->
+  <script>
+    (function () {
+      var el = document.querySelector('[data-rotator]');
+      if (!el) return;
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      var words = ['Autonomy', 'Money', 'Freedom', 'Equity', 'Opportunity'];
+      var i = 0;
+      setInterval(function () {
+        el.classList.add('is-out');
+        setTimeout(function () {
+          i = (i + 1) % words.length;
+          el.textContent = words[i];
+          el.classList.remove('is-out');
+        }, 340);
+      }, 2400);
+    })();
+  </script>
+
+  <!-- Process accordion -->
+  <script>
+    (function () {
+      var lists = document.querySelectorAll('[data-process-accordion]');
+      lists.forEach(function (list) {
+        var headers = list.querySelectorAll('.process-stage__header');
+        headers.forEach(function (header) {
+          var stage = header.closest('.process-stage');
+          var panel = stage.querySelector('.process-stage__panel');
+          header.addEventListener('click', function () {
+            var open = stage.classList.contains('is-open');
+            if (!open) {
+              list.querySelectorAll('.process-stage.is-open').forEach(function (other) {
+                other.classList.remove('is-open');
+                var oh = other.querySelector('.process-stage__header');
+                var op = other.querySelector('.process-stage__panel');
+                if (oh) oh.setAttribute('aria-expanded', 'false');
+                if (op) op.style.maxHeight = '0px';
+              });
+            }
+            stage.classList.toggle('is-open');
+            header.setAttribute('aria-expanded', open ? 'false' : 'true');
+            panel.style.maxHeight = open ? '0px' : panel.scrollHeight + 'px';
+          });
+        });
+      });
+    })();
+  </script>
   <script src="assets/js/revolt.js" defer></script>
 </body>
 </html>

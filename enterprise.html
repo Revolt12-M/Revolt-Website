@@ -3,26 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Contact · Revolt</title>
-  <meta name="description" content="Confidential. Thirty minutes. No pitch. No pressure. Start a private conversation with Revolt.">
+  <title>For Firms &amp; Custodians · Revolt</title>
+  <meta name="description" content="Revolt sees deal flow across 200+ firms in real time. Talk to us about the data and where the market is moving. For firm leadership and custodians.">
 
-  <link rel="canonical" href="https://revoltfinancial.com/contact.html">
+  <link rel="canonical" href="https://revoltfinancial.com/enterprise.html">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Revolt">
-  <meta property="og:url" content="https://revoltfinancial.com/contact.html">
-  <meta property="og:title" content="Contact · Revolt">
-  <meta property="og:description" content="Confidential. Thirty minutes. No pitch. No pressure.">
+  <meta property="og:url" content="https://revoltfinancial.com/enterprise.html">
+  <meta property="og:title" content="For Firms &amp; Custodians · Revolt">
+  <meta property="og:description" content="Revolt sees deal flow across 200+ firms in real time. Talk to us about the data.">
   <meta property="og:image" content="https://revoltfinancial.com/assets/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Contact · Revolt">
-  <meta name="twitter:description" content="Confidential. Thirty minutes. No pitch. No pressure.">
+  <meta name="twitter:title" content="For Firms &amp; Custodians · Revolt">
+  <meta name="twitter:description" content="Revolt sees deal flow across 200+ firms in real time. Talk to us about the data.">
   <meta name="twitter:image" content="https://revoltfinancial.com/assets/og-image.png">
 
   <meta name="theme-color" content="#0B0E13">
@@ -33,7 +33,7 @@
   <link rel="preload" href="assets/fonts/DegularDisplay-Bold.otf" as="font" type="font/otf" crossorigin>
   <link rel="stylesheet" href="assets/css/revolt.css?v=3">
   <style>
-    .contact-hero { min-height: 42vh; padding-top: 72px; padding-bottom: 56px; } /* D2: override the tall base hero padding so the header block is short and the channels section peeks above the fold */
+    .ent-hero { min-height: 42vh; padding-top: 72px; padding-bottom: 56px; }
     .scroll-cue {
       position: absolute; left: 50%; bottom: 12px; transform: translateX(-50%);
       z-index: 2; color: var(--cream-80); text-decoration: none;
@@ -44,50 +44,25 @@
     .scroll-cue:hover { color: var(--mustard); }
     @keyframes scrollCue { 0%, 100% { transform: translate(-50%, 0); } 50% { transform: translate(-50%, 8px); } }
     @media (prefers-reduced-motion: reduce) { .scroll-cue { animation: none; } }
-    /* D1: the entire channel box is the link */
-    a.channel-card { text-decoration: none; color: inherit; cursor: pointer; transition: transform 0.3s var(--ease); }
-    a.channel-card:hover { transform: translateY(-4px); }
-    a.channel-card:hover .channel-card__value { color: var(--mustard); }
-    .contact-hero .backdrop-num { right: -3vw; bottom: -10vh; font-size: 22vw; }
-    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap-2xl); align-items: start; }
+    .ent-hero .backdrop-num { right: -3vw; bottom: -10vh; font-size: 22vw; }
+
+    .ent-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap-2xl); align-items: start; }
     .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap-lg); }
     .form-grid .span-2 { grid-column: 1 / -1; }
 
-    .channels-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--gap-xl); margin-top: 64px; }
-    .channel-card {
+    .ent-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--gap-xl); margin-top: 64px; }
+    .ent-stat {
       display: flex; flex-direction: column; gap: var(--gap-sm);
-      padding: var(--gap-lg);
+      padding-top: var(--gap-md);
       border-top: 3px solid var(--mustard);
-      border-right: 1px solid var(--hairline, var(--slate-30));
-      border-bottom: 1px solid var(--hairline, var(--slate-30));
-      border-left: 1px solid var(--hairline, var(--slate-30));
     }
-    .channel-card__label {
-      font-family: var(--body); font-weight: 700;
-      font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
-      color: var(--mustard);
-    }
-    .channel-card__value {
-      font-family: var(--display); font-weight: 700;
-      font-size: clamp(13px, 1.2vw, 17px); line-height: 1.2;
-      color: var(--fg);
-      margin-top: var(--gap-sm);
-      white-space: nowrap;
-    }
-    .channel-card__value a { color: inherit; }
-    .channel-card__value a:hover { color: var(--mustard); }
-    .channel-card__note {
-      font-family: var(--body); font-weight: 400;
-      font-size: 16px; line-height: 1.5;
-      color: var(--fg-muted);
-      margin-top: var(--gap-sm);
-    }
+    .ent-stat__figure { font-family: var(--display); font-weight: 700; font-size: clamp(32px, 3.2vw, 52px); line-height: 1; color: var(--fg); }
+    .ent-stat__label { font-family: var(--body); font-weight: 400; font-size: 16px; line-height: 1.5; color: var(--fg-muted); }
 
     @media (max-width: 900px) {
-      .contact-grid, .form-grid, .channels-grid { grid-template-columns: 1fr; }
+      .ent-grid, .form-grid, .ent-stats { grid-template-columns: 1fr; }
     }
   </style>
-  <!-- A5: Organization structured data — anchors the "Revolt Financial" entity and disambiguates it from "Revolut". sameAs -> LinkedIn + YouTube (Podcast). -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -103,7 +78,7 @@
     ],
     "contactPoint": {
       "@type": "ContactPoint",
-      "email": "desk@revoltfinancial.com",
+      "email": "enterprise@revoltfinancial.com",
       "contactType": "sales"
     }
   }
@@ -121,7 +96,7 @@
       <li><a href="/ma.html">Sell Your Practice</a></li>
       <li><a href="/platform.html">Transition Packages</a></li>
     </ul>
-    <a class="btn-primary" href="/contact.html" aria-current="page">Contact Us</a>
+    <a class="btn-primary" href="/contact.html">Contact Us</a>
     <button class="nav__toggle" type="button" aria-label="Open menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -134,66 +109,86 @@
     </div>
   </nav>
 
-  <main class="page" data-screen-label="05 Contact">
+  <main class="page" data-screen-label="08 For Firms &amp; Custodians">
 
     <!-- ===== Hero ===== -->
-    <section class="hero contact-hero bg-black" data-screen-label="Contact Hero">
+    <section class="hero ent-hero bg-black" data-screen-label="Enterprise Hero">
       <div class="hero__overlay"></div>
+      <span class="backdrop-num" aria-hidden="true">08</span>
       <div class="hero__inner container">
-        <span class="eyebrow"><span class="rule"></span>Contact</span>
-        <h1 class="h1" style="margin-top: 32px; max-width: 18ch;">Start a Private Conversation.</h1>
-        <p class="lead" style="margin-top: 32px; max-width: 60ch;">Unlock your full earning potential.</p>
+        <span class="eyebrow"><span class="rule"></span>For firms and custodians</span>
+        <h1 class="h1" style="margin-top: 32px; max-width: 20ch;">See Where the Market Is Moving.</h1>
+        <p class="lead" style="margin-top: 32px; max-width: 60ch;">Revolt sees deal flow across 200+ firms in real time. We do not sell advisor data. We do sit down with firm leadership and custodians to talk about where the market is moving.</p>
       </div>
-      <a class="scroll-cue" href="#channels" aria-label="Scroll to contact options">
+      <a class="scroll-cue" href="#form" aria-label="Scroll to inquiry form">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
       </a>
     </section>
 
-    <!-- ===== Channels ===== -->
     <!-- ===== Form ===== -->
-    <section id="form" class="section bg-cream" data-screen-label="Contact Form">
+    <section id="form" class="section bg-tan" data-screen-label="Enterprise Form">
       <div class="container">
-        <div class="contact-grid">
+        <div class="ent-grid">
           <div data-reveal>
-            <span class="eyebrow"><span class="rule"></span>Your Business, Your Rules</span>
-            <h2 class="h2" style="margin-top: 24px; max-width: 18ch;">How Can We Help You Earn More?</h2>
+            <span class="eyebrow"><span class="rule"></span>Start a conversation</span>
+            <h2 class="h2" style="margin-top: 24px; max-width: 18ch;">Talk to Us About the Data.</h2>
+            <p class="lead" style="margin-top: 32px; max-width: 50ch;">Tell us about your firm and what you want to understand. A senior partner reads every inquiry and responds within one business day.</p>
+            <p class="small" style="margin-top: 32px; max-width: 50ch;">We do not sell advisor data. Every engagement is governed by an NDA. Nothing you share leaves this conversation without your written request.</p>
           </div>
-          <form class="form-card" action="https://formspree.io/f/mpqnrkqe" method="POST" data-reveal data-stagger="1"  novalidate>
-            <span class="form-card__eyebrow">Send a message</span>
+          <form class="form-card" action="https://formspree.io/f/mpqnrkqe" method="POST" data-reveal data-stagger="1" novalidate>
+            <input type="hidden" name="form" value="Enterprise — Firms &amp; Custodians">
+            <span class="form-card__eyebrow">Inquire</span>
             <div class="form-grid">
               <div class="field">
                 <label for="f-name">Name</label>
                 <input id="f-name" name="name" type="text" autocomplete="name" required>
               </div>
               <div class="field">
-                <label for="f-firm">Firm or practice</label>
-                <input id="f-firm" name="firm" type="text" autocomplete="organization">
+                <label for="f-title">Title or role</label>
+                <input id="f-title" name="title" type="text" autocomplete="organization-title">
+              </div>
+              <div class="field span-2">
+                <label for="f-firm">Firm or institution</label>
+                <input id="f-firm" name="firm" type="text" autocomplete="organization" required>
+              </div>
+              <div class="field">
+                <label for="f-type">Organization type</label>
+                <select id="f-type" name="organization_type">
+                  <option value="">Pick one</option>
+                  <option value="broker-dealer">Broker-dealer</option>
+                  <option value="ria">RIA</option>
+                  <option value="custodian">Custodian</option>
+                  <option value="bank">Bank or trust</option>
+                  <option value="asset-manager">Asset manager</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="f-interest">What you want to understand</label>
+                <select id="f-interest" name="interest">
+                  <option value="">Pick one</option>
+                  <option value="market-intelligence">Where the market is moving</option>
+                  <option value="advisor-mindshare">Why certain firms are winning</option>
+                  <option value="deal-structures">Which deal structures are winning</option>
+                  <option value="talent-concentration">Where talent is concentrating</option>
+                  <option value="data-product">The data product overall</option>
+                  <option value="other">Something else</option>
+                </select>
               </div>
               <div class="field span-2">
                 <label for="f-email">Email</label>
                 <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" required>
               </div>
               <div class="field span-2">
-                <label for="f-mobile">Mobile</label>
-                <input id="f-mobile" name="mobile" type="tel" autocomplete="tel" inputmode="tel">
+                <label for="f-phone">Phone</label>
+                <input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel">
               </div>
               <div class="field span-2">
-                <label for="f-topic">What is this about?</label>
-                <select id="f-topic" name="topic">
-                  <option value="">Pick one</option>
-                  <option value="explore">Exploring my next firm</option>
-                  <option value="hire">Hiring staff for my practice</option>
-                  <option value="sell">Selling my practice</option>
-                  <option value="compare">Transition packages access</option>
-                  <option value="other">Something else</option>
-                </select>
-              </div>
-              <div class="field span-2">
-                <label for="f-msg">Tell us what's on your mind</label>
+                <label for="f-msg">What would you like to understand?</label>
                 <textarea id="f-msg" name="message" rows="5"></textarea>
               </div>
               <div class="span-2" style="margin-top: var(--gap-md);">
-                <button class="btn-primary" type="submit">Send</button>
+                <button class="btn-primary" type="submit">Send inquiry</button>
               </div>
             </div>
           </form>

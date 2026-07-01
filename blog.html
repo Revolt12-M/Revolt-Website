@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Insights · Revolt</title>
+  <meta name="description" content="Revolt's perspective on advisor transitions, deal economics, and building a practice on your own terms.">
+
+  <link rel="canonical" href="https://revoltfinancial.com/blog.html">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Revolt">
+  <meta property="og:url" content="https://revoltfinancial.com/blog.html">
+  <meta property="og:title" content="Insights · Revolt">
+  <meta property="og:description" content="Revolt's perspective on advisor transitions, deal economics, and building a practice on your own terms.">
+  <meta property="og:image" content="https://revoltfinancial.com/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Insights · Revolt">
+  <meta name="twitter:description" content="Revolt's perspective on advisor transitions, deal economics, and building a practice on your own terms.">
+  <meta name="twitter:image" content="https://revoltfinancial.com/assets/og-image.png">
+
+  <meta name="theme-color" content="#0B0E13">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap">
+  <link rel="preload" href="assets/fonts/DegularDisplay-Bold.otf" as="font" type="font/otf" crossorigin>
+  <link rel="stylesheet" href="assets/css/revolt.css?v=3">
+  <style>
+    .blog-hero { min-height: 42vh; padding-top: 72px; padding-bottom: 56px; }
+    .blog-hero .backdrop-num { right: -3vw; bottom: -10vh; font-size: 22vw; }
+
+    .blog-empty {
+      display: flex; flex-direction: column; align-items: flex-start;
+      max-width: 56ch;
+      padding: var(--gap-2xl) 0;
+      border-top: 3px solid var(--mustard);
+    }
+    .blog-empty__kicker {
+      font-family: var(--body); font-weight: 700;
+      font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--mustard);
+    }
+    .blog-empty__title {
+      font-family: var(--display); font-weight: 700;
+      font-size: clamp(28px, 3vw, 44px); line-height: 1.1;
+      color: var(--fg); margin-top: var(--gap-md); max-width: 18ch;
+    }
+    .blog-empty__body {
+      font-family: var(--body); font-weight: 400;
+      font-size: 18px; line-height: 1.6; color: var(--fg-muted);
+      margin-top: var(--gap-md);
+    }
+    .blog-empty__actions { display: flex; flex-wrap: wrap; gap: var(--gap-md); margin-top: var(--gap-xl); }
+  </style>
+</head>
+<body>
+
+  <nav class="nav" data-scroll-state="top" aria-label="Primary">
+    <a class="nav__logo" href="/">
+      <img src="assets/images/revolt-logo-stacked.png" alt="Revolt">
+    </a>
+    <ul class="nav__links">
+      <li><a href="/advisor-recruiting.html">Explore Your Next Firm</a></li>
+      <li><a href="/team-recruiting.html">Hire Staff</a></li>
+      <li><a href="/ma.html">Sell Your Practice</a></li>
+      <li><a href="/platform.html">Transition Packages</a></li>
+    </ul>
+    <a class="btn-primary" href="/contact.html">Contact Us</a>
+    <button class="nav__toggle" type="button" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav__mobile" role="menu">
+      <a href="/advisor-recruiting.html">Explore Your Next Firm</a>
+      <a href="/team-recruiting.html">Hire Staff</a>
+      <a href="/ma.html">Sell Your Practice</a>
+      <a href="/platform.html">Transition Packages</a>
+      <a class="btn-primary" href="/contact.html">Contact Us</a>
+    </div>
+  </nav>
+
+  <main class="page" data-screen-label="10 Insights">
+
+    <!-- ===== Hero ===== -->
+    <section class="hero blog-hero bg-black" data-screen-label="Blog Hero">
+      <div class="hero__overlay"></div>
+      <span class="backdrop-num" aria-hidden="true">10</span>
+      <div class="hero__inner container">
+        <span class="eyebrow"><span class="rule"></span>Insights</span>
+        <h1 class="h1" style="margin-top: 32px; max-width: 18ch;">Perspectives From the Team.</h1>
+        <p class="lead" style="margin-top: 32px; max-width: 60ch;">Notes on advisor transitions, deal economics, and building a practice on your own terms. Straight from the people doing the work.</p>
+      </div>
+    </section>
+
+    <!-- ===== Empty state ===== -->
+    <section class="section bg-tan" data-screen-label="Blog List">
+      <div class="container">
+        <div class="blog-empty" data-reveal>
+          <span class="blog-empty__kicker">Coming soon</span>
+          <h2 class="blog-empty__title">No posts yet.</h2>
+          <p class="blog-empty__body">We're putting the first pieces together. In the meantime, our two white papers cover the questions advisors ask us most, or reach out and we'll talk it through directly.</p>
+          <div class="blog-empty__actions">
+            <a class="btn-primary" href="/white-papers.html">Read the white papers</a>
+            <a class="btn-ghost" href="/contact.html">Start a conversation</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__cols">
+        <div class="footer__col">
+          <span class="footer__mark"><img src="assets/images/revolt-logo-stacked.png" alt="Revolt"></span>
+          <p class="small footer__lede">Revolt is a boutique financial-services talent firm for advisors who build their book on their own terms. We work with established advisors, the firms that hire and grow them, and the principals three to five years from a sale.</p>
+          <p class="small footer__principle" style="color: var(--mustard);">Your Business, Your Rules</p>
+        </div>
+        <div class="footer__col">
+          <h4>Revolt</h4>
+          <ul>
+            <li><a href="/advisor-recruiting.html">Explore Your Next Firm</a></li>
+            <li><a href="/team-recruiting.html">Hire Staff</a></li>
+            <li><a href="/ma.html">Sell Your Practice</a></li>
+          </ul>
+          <h4 style="margin-top: 32px;">Resources</h4>
+          <ul>
+            <li><a href="/platform.html">Transition Packages</a></li>
+            <li><a href="/blog.html">Insights</a></li>
+            <li><a href="https://www.youtube.com/@RevoltFinancial" rel="noopener" target="_blank">Podcast</a></li>
+            <li><a href="https://www.linkedin.com/company/revoltfinancial/" rel="noopener" target="_blank">LinkedIn</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:desk@revoltfinancial.com">desk@revoltfinancial.com</a></li>
+            <li><a href="mailto:enterprise@revoltfinancial.com">enterprise@revoltfinancial.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__rule"></div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 Revolt. All rights reserved. &nbsp;<a href="/privacy.html">Privacy</a> &nbsp; <a href="/terms.html">Terms</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/revolt.js" defer></script>
+</body>
+</html>

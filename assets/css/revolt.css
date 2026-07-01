@@ -389,6 +389,42 @@ details summary::-webkit-details-marker { display: none; }
 }
 .field textarea { resize: vertical; min-height: 96px; }
 
+/* Contact form — black container, yellow labels, white input text.
+   Mirrors the .access-card--primary vocabulary: mustard top rule + hairline border. */
+.form-card {
+  background: var(--black);
+  color: var(--white);
+  padding: clamp(32px, 3.5vw, 52px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-top: 3px solid var(--mustard);
+  --fg: var(--white);
+  --fg-muted: var(--cream-80);
+  --fg-eyebrow: var(--mustard);
+  --hairline: rgba(255, 255, 255, 0.22);
+}
+/* Optional eyebrow heading inside the card */
+.form-card__eyebrow {
+  display: block;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--mustard);
+  margin-bottom: var(--gap-lg);
+}
+.form-card .field input,
+.form-card .field textarea,
+.form-card .field select { color: var(--white); }
+.form-card .field input::placeholder,
+.form-card .field textarea::placeholder { color: var(--cream-60); }
+.form-card .field select option { background: var(--black); color: var(--white); }
+.form-card .field input:focus,
+.form-card .field textarea:focus,
+.form-card .field select:focus { border-color: var(--mustard); }
+/* Full-width, centered submit so the card reads as a deliberate form */
+.form-card .btn-primary { width: 100%; justify-content: center; }
+
 /* FAQ — native <details> */
 .faq {
   border-bottom: 1px solid var(--hairline, var(--slate-30));
@@ -519,17 +555,17 @@ details summary::-webkit-details-marker { display: none; }
   color: inherit;
 }
 .nav__logo img {
-  height: 36px !important;
+  height: 32px !important;
   width: auto;
   max-width: none;
-  max-height: 36px;
+  max-height: 32px;
   display: block;
   flex: 0 0 auto;
-  /* Logo is black-on-transparent. Invert + tint via filter on dark nav. */
-  filter: invert(1);
+  /* White horizontal logo at top; swaps to black when scrolled (see below). */
+  content: url('../images/revolt-logo-horizontal-white.png');
   transition: filter 0.3s var(--ease);
 }
-.nav[data-scroll-state="scrolled"] .nav__logo img { filter: none; }
+.nav[data-scroll-state="scrolled"] .nav__logo img { content: url('../images/revolt-logo-horizontal-black.png'); filter: none; }
 /* Compact CTA in the top nav — overrides default .btn-primary scale */
 .nav > .btn-primary {
   font-size: 13px;
@@ -560,7 +596,7 @@ details summary::-webkit-details-marker { display: none; }
   max-width: 14ch;
 }
 @media (max-width: 600px) {
-  .nav__logo img { height: 28px !important; max-height: 28px; }
+  .nav__logo img { height: 26px !important; max-height: 26px; }
   .nav__logo .tagline { display: none; }
 }
 .nav__links {
@@ -678,9 +714,32 @@ details summary::-webkit-details-marker { display: none; }
   flex-direction: column;
   gap: var(--gap-md);
   background: transparent;
-  transition: transform 0.3s var(--ease);
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease),
+              border-color 0.3s var(--ease), background-color 0.3s var(--ease);
 }
 .process-card:hover { transform: translateY(-4px); } /* C7: consistent hover lift; keeps its permanent yellow top-line */
+/* Clickable cards (links) get a stronger affordance so they read as tappable. */
+a.process-card { cursor: pointer; position: relative; }
+a.process-card::after {
+  content: '\2192';
+  position: absolute;
+  right: var(--gap-lg);
+  bottom: var(--gap-lg);
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 22px;
+  color: var(--mustard);
+  opacity: 0;
+  transform: translateX(-8px);
+  transition: opacity 0.3s var(--ease), transform 0.3s var(--ease);
+}
+a.process-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--ink);
+  box-shadow: 0 20px 44px rgba(11, 14, 19, 0.16);
+}
+a.process-card:hover::after { opacity: 1; transform: translateX(0); }
+a.process-card:active { transform: translateY(-4px); }
 .process-card__num {
   font-family: var(--display);
   font-weight: 700;
