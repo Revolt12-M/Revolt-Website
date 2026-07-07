@@ -645,6 +645,23 @@ details summary::-webkit-details-marker { display: none; }
 .nav[data-mobile-open="true"] .nav__toggle span:nth-child(2) { opacity: 0; }
 .nav[data-mobile-open="true"] .nav__toggle span:nth-child(3) { top: 10px; transform: rotate(-45deg); }
 
+/* Explicit close (X) button for the open mobile menu (injected by JS). */
+.nav__close {
+  display: none;
+  width: 40px; height: 40px;
+  margin: -9px 0;
+  position: relative;
+  z-index: 95; /* above the .nav__mobile overlay (z-index 90) so it stays tappable */
+  color: inherit;
+}
+.nav__close span {
+  position: absolute; left: 9px; right: 9px; top: 50%;
+  height: 2px; border-radius: 2px;
+  background: currentColor;
+}
+.nav__close span:nth-child(1) { transform: rotate(45deg); }
+.nav__close span:nth-child(2) { transform: rotate(-45deg); }
+
 .nav__mobile {
   display: none;
 }
@@ -916,6 +933,9 @@ p, .lead, .body, .small, [class*="__lede"] { text-wrap: pretty; }
   .nav .btn-sms,
   .nav > .btn-primary { display: none; }
   .nav__toggle { display: inline-block; }
+  /* Swap the hamburger for the explicit close button while the menu is open. */
+  .nav[data-mobile-open="true"] .nav__toggle { display: none; }
+  .nav[data-mobile-open="true"] .nav__close { display: inline-block; }
   .nav__mobile {
     display: none;
     position: fixed;

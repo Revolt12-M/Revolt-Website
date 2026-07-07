@@ -90,16 +90,30 @@
     // ---------- 3. Mobile nav ----------
     var toggle = nav.querySelector('.nav__toggle');
     if (toggle) {
+      var setOpen = function (open) {
+        nav.setAttribute('data-mobile-open', open ? 'true' : 'false');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        document.body.style.overflow = open ? 'hidden' : '';
+      };
+
+      // Explicit close (X) button so an open menu never feels "stuck".
+      // Lives in the nav (top layer) and only shows while the menu is open.
+      var closeBtn = document.createElement('button');
+      closeBtn.type = 'button';
+      closeBtn.className = 'nav__close';
+      closeBtn.setAttribute('aria-label', 'Close menu');
+      closeBtn.innerHTML = '<span></span><span></span>';
+      toggle.insertAdjacentElement('afterend', closeBtn);
+      closeBtn.addEventListener('click', function () { setOpen(false); });
+
       toggle.addEventListener('click', function () {
-        var open = nav.getAttribute('data-mobile-open') === 'true';
-        nav.setAttribute('data-mobile-open', open ? 'false' : 'true');
-        document.body.style.overflow = open ? '' : 'hidden';
+        setOpen(nav.getAttribute('data-mobile-open') !== 'true');
       });
       nav.querySelectorAll('.nav__mobile a').forEach(function (a) {
-        a.addEventListener('click', function () {
-          nav.setAttribute('data-mobile-open', 'false');
-          document.body.style.overflow = '';
-        });
+        a.addEventListener('click', function () { setOpen(false); });
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && nav.getAttribute('data-mobile-open') === 'true') setOpen(false);
       });
     }
   }
