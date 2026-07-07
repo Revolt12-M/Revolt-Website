@@ -960,5 +960,12 @@ p, .lead, .body, .small, [class*="__lede"] { text-wrap: pretty; }
   }
   .footer__cols { grid-template-columns: 1fr; }
   .footer__bottom { flex-direction: column; }
-  .hero { min-height: 86vh; }
+  /* Center the hero content vertically on phones (desktop bottom-aligns it,
+     which sits too low on a tall narrow screen). Equalize top/bottom padding
+     so it centers cleanly rather than nudging down. */
+  .hero {
+    min-height: 86vh;
+    align-items: center;
+    padding-top: var(--pad-section);
+  }
 }
