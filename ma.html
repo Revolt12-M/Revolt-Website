@@ -257,6 +257,9 @@
     @media (max-width: 900px) {
       .tracks-grid, .lens-grid, .conf-rules,
       .contact-grid, .form-grid { grid-template-columns: 1fr; }
+      /* Stack the label/value spec so the fixed 140px column doesn't
+         push the card wider than the phone viewport. */
+      .track-spec { grid-template-columns: 1fr; gap: 4px; }
       .proc-row { grid-template-columns: 64px 1fr; gap: var(--gap-md); }
       .proc-row__num { font-size: 36px; }
       .proc-row__desc { grid-column: 2 / 3; }

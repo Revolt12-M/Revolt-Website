@@ -940,6 +940,9 @@ p, .lead, .body, .small, [class*="__lede"] { text-wrap: pretty; }
     align-self: flex-start;
     margin-top: var(--gap-md);
   }
+  /* Keep the Contact CTA legible: dark label on the gold button,
+     overriding the gold text color .nav__mobile a sets for links. */
+  .nav__mobile .btn-primary { color: var(--slate); }
   .compare__row { grid-template-columns: 1fr; gap: var(--gap-md); }
   .compare__row .revolt { border-left: 0; border-top: 2px solid var(--mustard); padding-left: 0; padding-top: var(--gap-sm); }
 }

@@ -326,11 +326,18 @@
 
     @media (max-width: 900px) {
       .buckets-grid { grid-template-columns: 1fr; gap: var(--gap-lg); }
+      /* Stack the label/value spec rows; the fixed 140px column overflows the phone. */
+      .bucket__spec .compare__row { grid-template-columns: 1fr; gap: 2px; }
       .process-section-grid { grid-template-columns: 1fr; gap: 40px; }
       .case-grid { grid-template-columns: 1fr; }
       .get-row { grid-template-columns: 48px 1fr; }
       .contact-grid, .form-grid { grid-template-columns: 1fr; }
     }
+
+    /* Keep 'Us for More [word]' on one line on desktop, but let it wrap
+       on phones so the rotating word isn't clipped off the right edge. */
+    .hero-keep { white-space: nowrap; }
+    @media (max-width: 600px) { .hero-keep { white-space: normal; } }
 
     /* Hero rotating word */
     .rotator { color: var(--white); display: inline-block; position: relative; }
@@ -412,7 +419,7 @@
       <span class="backdrop-num" aria-hidden="true">200</span>
       <div class="hero__inner container">
         <span class="eyebrow"><span class="rule"></span>Explore Your Next Firm</span>
-        <h1 class="h1" style="margin-top: 32px; max-width: 26ch;">Advisors Move With<br><span style="white-space: nowrap;">Us for More <span class="rotator" aria-live="polite"><span class="rotator__word" data-rotator>Autonomy</span></span></span></h1>
+        <h1 class="h1" style="margin-top: 32px; max-width: 26ch;">Advisors Move With<br><span class="hero-keep">Us for More <span class="rotator" aria-live="polite"><span class="rotator__word" data-rotator>Autonomy</span></span></span></h1>
         <p class="lead" style="margin-top: 32px; max-width: 60ch;">We are your due diligence partner who works with the firms so you can stay focused on your clients.</p>
         <div class="cta" style="display: flex; flex-wrap: wrap; gap: var(--gap-md); margin-top: 40px;">
           <a class="btn-primary" href="/contact">Start a private conversation</a>
