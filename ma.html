@@ -254,17 +254,62 @@
     .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap-lg); }
     .form-grid .span-2 { grid-column: 1 / -1; }
 
+    /* 5.25 Value steps — numbered rows */
+    .value-steps { margin-top: 56px; }
+    .value-step {
+      display: grid; grid-template-columns: 120px 1fr; gap: var(--gap-lg) var(--gap-xl);
+      padding: var(--gap-xl) 0;
+      border-top: 1px solid var(--hairline, var(--slate-30));
+      align-items: start;
+    }
+    .value-step:last-child { border-bottom: 1px solid var(--hairline, var(--slate-30)); }
+    .value-step__num {
+      font-family: var(--display); font-weight: 700;
+      font-size: clamp(48px, 4.5vw, 72px); line-height: 0.9;
+      color: var(--mustard); letter-spacing: -0.02em;
+    }
+    .value-step__title {
+      font-family: var(--display); font-weight: 700;
+      font-size: clamp(22px, 2vw, 30px); line-height: 1.15; color: var(--fg);
+    }
+    .value-step__body {
+      margin-top: var(--gap-sm);
+      font-family: var(--body); font-weight: 300;
+      font-size: 17px; line-height: 1.6; color: var(--fg-muted);
+      max-width: 62ch;
+    }
+    .value-step__proof {
+      display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: var(--gap-lg); margin-top: var(--gap-lg);
+      padding-top: var(--gap-lg); border-top: 1px solid var(--hairline, var(--slate-30));
+      max-width: 62ch;
+    }
+    .value-step__proof .stat__figure {
+      display: block; font-family: var(--display); font-weight: 700;
+      font-size: clamp(28px, 2.6vw, 40px); line-height: 1; color: var(--mustard);
+    }
+    .value-step__proof .stat__label {
+      display: block; margin-top: 8px;
+      font-family: var(--body); font-weight: 400; font-size: 13px;
+      letter-spacing: 0.04em; color: var(--fg-muted);
+    }
+    .value-step__tag {
+      display: inline-block; margin-top: var(--gap-md);
+      font-family: var(--display); font-weight: 700; font-size: 15px;
+      letter-spacing: 0.02em; color: var(--fg);
+    }
+
     @media (max-width: 900px) {
       .tracks-grid, .lens-grid, .conf-rules,
       .contact-grid, .form-grid { grid-template-columns: 1fr; }
-      /* Stack the label/value spec so the fixed 140px column doesn't
-         push the card wider than the phone viewport. */
-      .track-spec { grid-template-columns: 1fr; gap: 4px; }
       .proc-row { grid-template-columns: 64px 1fr; gap: var(--gap-md); }
       .proc-row__num { font-size: 36px; }
       .proc-row__desc { grid-column: 2 / 3; }
       .proc-row__time { grid-column: 2 / 3; text-align: left; margin-top: 4px; }
       .conf-section { min-height: 0; }
+      .value-step { grid-template-columns: 64px 1fr; gap: var(--gap-sm) var(--gap-md); }
+      .value-step__num { font-size: 40px; }
+      .value-step__proof { grid-template-columns: 1fr; gap: var(--gap-md); }
     }
   </style>
   <!-- A5: Organization structured data — anchors the "Revolt Financial" entity and disambiguates it from "Revolut". sameAs -> LinkedIn + YouTube (Podcast). -->
@@ -342,7 +387,7 @@
       <div class="hero__inner container">
         <span class="eyebrow"><span class="rule"></span>Sell Your Practice</span>
         <h1 class="h1" style="margin-top: 32px; max-width: 22ch;">Don't undersell the business you spent 20 years building</h1>
-        <p class="lead" style="margin-top: 32px; max-width: 64ch;">You sell your practice once. The difference between a good number and a great one is knowing what drives it before you go to market. That is what we do.</p>
+        <p class="lead" style="margin-top: 32px; max-width: 64ch;">You sell your practice once. We use the 27 levers that raise your value and prepare the business for a clean transition.</p>
         <div class="cta" style="display: flex; flex-wrap: wrap; gap: var(--gap-md); margin-top: 40px;">
           <a class="btn-primary" href="/contact">Start a confidential intake</a>
           <a class="btn-ghost" href="#tracks">See the two tracks &darr;</a>
@@ -362,10 +407,68 @@
            - New rows reframe Revolt as a connector to qualified buyers, not an advisor/bank.
          FLAG: cross-check every line below against the 2023 finder's exemption when the article is in hand. -->
     <section class="section bg-cream" data-screen-label="5.2 Don't go it alone">
+      <style>
+        .sell-grid {
+          display: grid;
+          grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+          gap: clamp(48px, 6vw, 96px);
+          align-items: center;
+        }
+        .sell-photo {
+          width: 100%;
+          aspect-ratio: 4 / 5;
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          filter: grayscale(1) contrast(1.05);
+        }
+        @media (max-width: 860px) {
+          .sell-grid { grid-template-columns: 1fr; gap: 48px; }
+          .sell-photo { aspect-ratio: 16 / 10; order: -1; }
+        }
+      </style>
       <div class="container">
-        <span class="eyebrow" data-reveal><span class="rule"></span>Why This Matters</span>
-        <h2 class="h2" data-reveal data-stagger="1" style="margin-top: 24px; max-width: 24ch;">Selling is not walking away.</h2>
-        <p class="lead" data-reveal data-stagger="2" style="margin-top: 32px; max-width: 64ch;">We structure the transition properly because selling is not walking away. We map what the handoff looks like for your clients, your team, and your income, so continuity is protected and nothing you built gets lost in the deal.</p>
+        <div class="sell-grid">
+          <div>
+            <span class="eyebrow" data-reveal><span class="rule"></span>Why this matters</span>
+            <h2 class="h2" data-reveal data-stagger="1" style="margin-top: 24px; max-width: 18ch;">You Sell Once. Get it Right.</h2>
+            <p class="lead" data-reveal data-stagger="2" style="margin-top: 24px; max-width: 46ch;">Most advisors leave value on the table when they transition. The difference comes down to three moves.</p>
+            <div class="approach-list" data-reveal data-stagger="2" style="margin-top: 40px;">
+              <details class="approach-item" name="ma-sell" open>
+                <summary>
+                  <span class="approach-item__num">01.</span>
+                  <span class="approach-item__title">Create the Valuation</span>
+                  <span class="approach-item__chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></span>
+                </summary>
+                <div class="approach-item__body">
+                  <p>A real number, not a rule of thumb off revenue, and the factors moving it.</p>
+                </div>
+              </details>
+              <details class="approach-item" name="ma-sell">
+                <summary>
+                  <span class="approach-item__num">02.</span>
+                  <span class="approach-item__title">Work the Pro Forma</span>
+                  <span class="approach-item__chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></span>
+                </summary>
+                <div class="approach-item__body">
+                  <p>We model production mix, fee structure, and client concentration so you see the deal before you make it.</p>
+                </div>
+              </details>
+              <details class="approach-item" name="ma-sell">
+                <summary>
+                  <span class="approach-item__num">03.</span>
+                  <span class="approach-item__title">Optimize Before Market</span>
+                  <span class="approach-item__chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></span>
+                </summary>
+                <div class="approach-item__body">
+                  <p>A few deliberate moves on your economics can change your multiple, so you go to market at your strongest.</p>
+                </div>
+              </details>
+            </div>
+            <a class="btn-primary" href="/apply" data-reveal data-stagger="3" style="margin-top: 40px;">Value your business</a>
+          </div>
+          <div class="sell-photo" data-reveal data-stagger="1" style="background-image: url('assets/images/brand/boardroom.jpg');" role="img" aria-label="Boardroom table, grayscale"></div>
+        </div>
       </div>
     </section>
 
@@ -382,7 +485,7 @@
       <div class="container">
         <span class="eyebrow" data-reveal><span class="rule"></span>Two tracks</span>
         <h2 class="h2" data-reveal data-stagger="1" style="margin-top: 24px; max-width: 28ch;">When the Transaction Shapes Generations, the Process Has to Match.</h2>
-        <p class="lead" data-reveal data-stagger="2" style="margin-top: 32px; max-width: 60ch;">Knowing which track you are on is the first decision.</p>
+        <p class="lead" data-reveal data-stagger="2" style="margin-top: 32px; max-width: 60ch;">Which one fits is the first decision.</p>
         <div class="tracks-grid" style="margin-top: 64px;">
           <article class="track-card" data-reveal data-stagger="1">
             <span class="track-card__label">Track A</span>
@@ -390,13 +493,13 @@
             <span class="track-card__horizon">Three to seven years out</span>
             <dl class="track-spec">
               <dt>Best fit</dt>
-              <dd>Practice owners with an internal successor in mind, or open to one.</dd>
+              <dd>Owners with an internal successor in mind, or open to one.</dd>
               <dt>What we do</dt>
-              <dd>We introduce you to the people who have run this transition before. Internal successors, family-office buyers, partner-track candidates. You decide who is in the room.</dd>
-              <dt>What you walk away with</dt>
-              <dd>A short list of people who fit your practice, your timeline, and your terms.</dd>
+              <dd>Introduce you to people who have run this transition. You decide who's in the room.</dd>
+              <dt>You walk away with</dt>
+              <dd>A short list that fits your practice, timeline, and terms.</dd>
               <dt>Timeline</dt>
-              <dd>Months to years. We work to your pace.</dd>
+              <dd>Months to years, at your pace.</dd>
             </dl>
           </article>
           <article class="track-card" data-reveal data-stagger="2">
@@ -405,15 +508,19 @@
             <span class="track-card__horizon">Ready to move</span>
             <dl class="track-spec">
               <dt>Best fit</dt>
-              <dd>Multi-partner cap tables, carve-outs, and strategic roll-ups, or anything where the room has more than two chairs.</dd>
+              <dd>Multi-partner cap tables, carve-outs, and roll-ups, or any room with more than two chairs.</dd>
               <dt>What we do</dt>
-              <dd>We connect you, confidentially, to qualified buyers we already know. One at a time, under NDA.</dd>
-              <dt>What you walk away with</dt>
-              <dd>A curated list of buyers matched to your practice, with the introductions already made.</dd>
+              <dd>Connect you, confidentially, to qualified buyers we already know. One at a time, under NDA.</dd>
+              <dt>You walk away with</dt>
+              <dd>A curated buyer list, introductions already made.</dd>
               <dt>Timeline</dt>
-              <dd>Depends on your readiness, not ours.</dd>
+              <dd>Your readiness, not ours.</dd>
             </dl>
           </article>
+        </div>
+        <div data-reveal data-stagger="3" style="margin-top: 56px; display: flex; flex-wrap: wrap; gap: var(--gap-md); align-items: center;">
+          <a class="btn-primary" href="/apply">Value your business</a>
+          <span class="lead" style="margin: 0; max-width: 40ch;">See your number before you decide which track fits.</span>
         </div>
       </div>
     </section>
@@ -607,21 +714,21 @@
       <div class="container">
         <span class="eyebrow" data-reveal><span class="rule"></span>What buyers look at</span>
         <h2 class="h2" data-reveal data-stagger="1" style="margin-top: 24px; max-width: 26ch;">Capture Your Value.</h2>
-        <p class="lead" data-reveal data-stagger="2" style="margin-top: 32px; max-width: 64ch;">Before you take the call, it helps to know what the other side of the table is paying attention to.</p>
+        <p class="lead" data-reveal data-stagger="2" style="margin-top: 32px; max-width: 64ch;">Before you take the call, know what the other side of the table looks at.</p>
         <div class="lens-grid" style="margin-top: 64px;">
           <article class="lens-card" data-reveal data-stagger="1">
             <span class="lens-card__num">Lens 01</span>
             <h3 class="lens-card__title">Cash flow</h3>
-            <p class="lens-card__measures">What the practice earns, in the buyer's hands.</p>
+            <p class="lens-card__measures">What the practice earns in the buyer's hands.</p>
             <span class="lens-card__inputs-label">Buyers ask about</span>
-            <ul class="lens-card__inputs"><li>Revenue</li><li>Recurring vs. transactional mix</li><li>Margins</li><li>Run-rate adjustments</li></ul>
+            <ul class="lens-card__inputs"><li>Revenue and margins</li><li>Recurring vs. transactional mix</li><li>Run-rate adjustments</li></ul>
           </article>
           <article class="lens-card" data-reveal data-stagger="2">
             <span class="lens-card__num">Lens 02</span>
             <h3 class="lens-card__title">Client base</h3>
             <p class="lens-card__measures">Who your clients are and how well they're served.</p>
             <span class="lens-card__inputs-label">Buyers ask about</span>
-            <ul class="lens-card__inputs"><li>Client demographics</li><li>Segment mix</li><li>Service depth</li><li>Cross-sell potential</li></ul>
+            <ul class="lens-card__inputs"><li>Demographics and segment mix</li><li>Service depth</li><li>Cross-sell potential</li></ul>
           </article>
           <article class="lens-card" data-reveal data-stagger="3">
             <span class="lens-card__num">Lens 03</span>
@@ -690,7 +797,6 @@
     </section>
 
   </main>
-
   <!-- ===== FOOTER (canonical) ===== -->
   <footer class="footer">
     <div class="container">
